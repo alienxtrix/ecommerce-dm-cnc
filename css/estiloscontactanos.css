@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Andika';
+    width: 100%;
+}
+
+#carritoCompra {
+    width: 40px;
+    height: 29px;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: #F6F2ED;
+}
+
+.navbar-custom{/*Color de fondo para Navbar */
+    border-radius: 8px;
+    background-color: rgba(220, 239, 195, 1);
+}
+
+.logo {
+    width: 5%;
+    margin: 0 0 0 1%;
+    padding-right: 15px;
+}
+
+.logo_2 {
+    width: 60%;
+    margin: 0 0 0 1%;
+    padding-left: 0px;
+}
+
+main {
+    /* border: 1px red solid; */
+    position: relative;
+    width: 90%;
+    display: flex;
+    margin: 2% auto;
+}
+
+.right {
+    /* border: 1px red solid; */
+    align-self: center;
+}
+
+.left {
+    /* border: 1px red solid; */
+    align-self: center;
+    margin: 0 1% 0 0;
+    background-color: #F0E0B5;
+}
+
+.formC {/*centrado del formulario*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mapResponsive{
+    overflow: hidden;
+    padding-bottom:40%;
+    position:relative;
+    height: 0;
+}
+.mapResponsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position: absolute;
+}
+
+ul {
+    list-style: none;
+    margin: 0 0 0 1%;
+}
+
+#titulosn{
+    text-align: center;
+    background-color: rgba(74, 77, 71, 0.856);
+    color : white;
+    border-radius: 50px;
+    padding: 0.5%;
+    letter-spacing: 2px;
+}
+
+.footer {/*footer*/
+    bottom: 0px;
+    width: 100%;
+    display:inline-flex;
+    background-color: rgba(220, 239, 195, 1);
+    justify-content: space-around;
+}
+
+.footer-politicas {
+    color: #000;
+    text-align: center;
+    font-size: 30px;
+    position: flex;
+    padding-top: 20px;
+}
+.footer-lobo {
+    height: 6vw;
+    position: relative;
+}
+
+
+.alertContact{
+    color:red;
+}
+.lobo{
+    width: 350px;
+    height: 80px;
+}
+.footer-socialmedia {
+    position: relative;
+    float: inline-end;
+    top: 15px;
+    width: 40px;
+    height: 40px;
+}/*final del footer*/
+
+/*Aside informacion de la empresa*/
+.llamado{
+    padding-top:10px;
+    padding-left: 5px;
+    font-size: 10px;
+}
+
+.listaInfo{
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 10px;
+}
+.listaInfo li{
+    position: relative;
+    padding-left: 25px;
+}
+
+.iconMail:before{/*Icono y posicion de Mail*/
+    content: '';
+    width: 14px;
+    height: 13px;
+    position: absolute;
+    background-image: url('../img/email-icon.png');
+    background-size: contain;
+    background-position: center;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.iconTel:before{/*Icono y posicion de Telefono*/
+    content: '';
+    width: 13px;
+    height: 15px;
+    position: absolute;
+    background-image: url('../img/telefono-icon.png');
+    background-size: cover;
+    background-position: center;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.iconDire:before{/*Icono y posicion de Direccion*/
+    content: '';
+    width: 13px;
+    height: 16px;
+    position: absolute;
+    background-image: url('../img/map-icon.png');
+    background-size: cover;
+    background-position: center;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.iconReloj:before{/*Icono y posicion de reloj*/
+    content: '';
+    width: 13px;
+    height: 13px;
+    position: absolute;
+    background-image: url('../img/relog-icon.png');
+    background-size: cover;
+    background-position: center;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+/*Final de Aside informacion de la empresa*/
+
+.alert{
+    color:red;
+    font-size: 11px;
+}
+
+
+.btn{
+    background-color: #F0E0B5;
+    width: 50%;
+}
