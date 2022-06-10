@@ -8,6 +8,8 @@
 }
 
 #carritoCompra {
+    position: relative;
+    margin-left: 150px;
     width: 40px;
 }
 
