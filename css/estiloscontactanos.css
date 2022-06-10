@@ -9,7 +9,6 @@
 
 #carritoCompra {
     width: 40px;
-    height: 29px;
 }
 
 body {
@@ -23,15 +22,16 @@ body {
 }
 
 .logo {
-    width: 5%;
-    margin: 0 0 0 1%;
-    padding-right: 15px;
+    width: 12%; /*Se aumentó en un 7%*/
+    height: 25%; /*Se estableció en 25%*/
+    margin-right: 30px;
+    margin-left: 10px;
 }
 
 .logo_2 {
     width: 60%;
-    margin: 0 0 0 1%;
-    padding-left: 0px;
+    margin-left: -20px;
+    padding-left: -20px;
 }
 
 main {
