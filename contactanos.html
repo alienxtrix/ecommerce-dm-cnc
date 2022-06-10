@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/estiloscontactanos.css">
+
+    <title>Contactanos</title>
+</head>
+
+<!-- Inicio del body -->
+<body>
+<!--Inicio Navbar-->
+<nav class="navbar navbar-light navbar-expand-lg navbar navbar-custom bg-faded justify-content-center">
+    <span class="nav navbar-nav ml-auto w-100 justify-content-start">
+        <img src="./img/LoboMejorado.png" class="d-inline-block align-top logo navbar-brand  mr-auto d-flex" alt=""></img>
+        <img src="./img/Logo.png" class="d-inline-block align-top logo_2 navbar-brand  mr-auto d-flex" alt=""></img>
+    </span>
+    <div class="navbar-collapse collapse w-100" id="collapsingNavbar3">
+        <ul class="navbar-nav w-100 justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Inicio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Catálogo</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Contáctanos</a>
+            </li>
+          </ul>
+    </div>
+    <span class="nav navbar-nav ml-auto w-100 justify-content-end">
+      <img src="./img/carritoCompra.png" id="carritoCompra">
+  </span>
+</nav>
+  <!-- <nav class="navbar navbar-custom navbar-light navbar-expand-md bg-light justify-content-md-center justify-content-start">
+    <img src="./img/LoboMejorado.png" class="logo" alt=""></img>
+    <button class="navbar-toggler ml-1" type="button" data-toggle="collapse" data-target="#collapsingNavbar2">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="nav-link" href="#_"><i class="fa fa-search mr-1"></i></a> 
+    <div class="navbar-collapse collapse justify-content-between align-items-center w-100" id="collapsingNavbar2">
+        <ul class="navbar-nav mx-auto text-md-center text-left">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a> 
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item my-auto">
+                <a class="nav-link navbar-brand mx-0 d-none d-md-inline" href="">Brand</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a> 
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a> 
+            </li>
+        </ul>
+        <ul class="nav navbar-nav flex-row justify-content-md-center justify-content-start flex-nowrap">
+            <li class="nav-item"><a class="nav-link" href=""><i class="fa fa-facebook mr-1"></i></a> </li>
+            <li class="nav-item"><a class="nav-link" href=""><i class="fa fa-twitter"></i></a> </li>
+        </ul>
+    </div>
+  </nav> -->
+<!--Fin Navbar-->
+
+    
+    <main>
+        <!-- Contenido de información y mapa -->
+        <aside class="left">
+            <div class="llamact"><!--Llamado a la accion-->
+              <p>Si quieres informacion sobre cualquiera de nuestros productos,
+                promociones o estas interesado en su distribucion, rellena este formulario
+                y nos pondremos en contacto contigo lo antes posible.
+              </p>
+            </div>
+            <div class="listaInfo"><!--Informacion de la Empresa-->
+              <ul>
+                <li class="iconMail"><a href="mailto:cncstudiogm@gmail.com">cncstudiogm@gmail.com</a></li>
+                <li class="iconTel"><a href="tel:+524521916467">+52 452 191 6467</a></li>
+                <li class="iconDire"> Hnos. Flores Magon 390</li>
+                <li class="iconReloj"> Lunes - Viernes, 10:00 a.m - 5:00 p.m</li>
+              </ul>
+            </div>
+            <div class = "mapResponsive"> <!--Mapa-->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2286.091348665992!2d-99.20424938416691!3d19.44060835309022!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d2021a6e3a3d09%3A0x9372e2224c033cb3!2sMuseo%20Soumaya!5e0!3m2!1ses!2smx!4v1654703274611!5m2!1ses!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </aside> <!-- -->
+        <!-- Formulario -->
+        <section class="right">
+            <h3 id="titulosn">Contáctanos</h3>
+            <h4 style="text-align: center;">¡Queremos escucharte!</h4>
+            <form class="formC" action="">
+                <div class="form-group col-md-6">
+                  <label for="nameContact">Nombre Completo</label>
+                  <input type="text" class="form-control" id="nameContact" placeholder="Ingresa tu Nombre">
+                   <div class = "alert" id="alertnombre" style="display: none"></div>
+                </div>
+                  </div>
+                <div class="form-group col-md-6">
+                  <label for="mailContact">Correo electrónico</label>
+                  <input type="email" class="form-control" id="mailContact" placeholder="name@example.com" >
+                  <div class = "alert" id="alertmail" style="display: none"></div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="numberContact">Teléfono</label>
+                    <input class="form-control" type="text" id="numberContact" placeholder="+52 5555555555">
+                    <div class = "alert" id="alertnum" style="display: none"></div>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="descriptionContact">¿Cómo podemos ayudarte?</label>
+                  <textarea style="resize: none;" class="form-control" id="descriptionContact" rows="3"></textarea>
+                  <div class = "alert" id="alertdes" style="display: none"></div>
+                </div>
+                <button type="button" class="btn btn-outline" type="submit" id="enviar">Enviar</button>
+            </form>
+        </section> <!-- Formulario-->
+    </main>
+    <footer><!--Inicio footer-->
+        <div class="footer">
+            <div class="footer-logo">
+                <img class="footer-lobo lobo" src="./img/logoFooter.png" alt="" srcset="">
+            </div>
+            <div class="footer-politicas">
+                <h6><a href="http://"><strong>Politica de privacidad -</a>
+                    <a href="http://">Politica de cookies</strong></a>
+                    <h6><a href="http://"><strong>Sobre nosotros</strong></a></h6>
+            </div>
+            <div>
+                <a href="http://Facebook.com" target="_blank"><img class="footer-socialmedia" src="./img/facebook-icon.png" alt="" srcset=""></a>
+                <a href="http://Instagram.com" target="_blank"><img class="footer-socialmedia" src="./img/instagram-icon.png" alt="" srcset=""></a>
+                <a href="http://Twitter.com" target="_blank"><img class="footer-socialmedia" src="./img/twitter-icon.png" alt="" srcset=""></a>
+            </div>
+    </footer><!--Footer-->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./js/contacts.js"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+</body>
+</html>
