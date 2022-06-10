@@ -4,19 +4,22 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Andika';
-    width: 100%;
 }
 
+body {
+    overflow-x: hidden;
+
+}
+
+main {
+    position: relative;
+    width: 100%;
+}
 
 #carritoCompra {
     position: relative;
     margin-left: 150px;
     width: 40px;
-}
-
-body {
-    overflow-x: hidden;
-    background-color: #F6F2ED;
 }
 
 .navbar-custom{/*Color de fondo para Navbar */

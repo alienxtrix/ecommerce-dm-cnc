@@ -11,6 +11,7 @@
 
 <!-- Inicio del body -->
 <body>
+<main>
 <!--Inicio Navbar-->
 <nav class="navbar navbar-light navbar-expand-lg navbar navbar-custom bg-faded justify-content-center">
     <span class="nav navbar-nav ml-auto w-100 justify-content-right">
@@ -20,62 +21,28 @@
     <div class="navbar-collapse collapse w-100" id="navbarSupportedContent">
         <ul class="navbar-nav w-100 justify-content-center">
             <li class="nav-item">
-                <a class="nav-link" href="#">Inicio</a>
+                <a class="nav-link" href="/index.html">Inicio</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Login</a>
+                <a class="nav-link" href="/login.html">Login</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Catálogo</a>
+                <a class="nav-link" href="/catalogo.html">Catálogo</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Contáctanos</a>
+                <a class="nav-link" href="/contactanos.html">Contáctanos</a>
             </li>
-          </ul>
+        </ul>
     </div>
     <span class="nav navbar-nav ml-auto w-100 justify-content-end float-right">
-      <img src="./img/carritoCompra.png" id="carritoCompra" class="float-right img-fluid" alt="Responsive image">
-
-  </span>
+      <a href="carrito.html"><img src="./img/carritoCompra.png" id="carritoCompra" class="float-right img-fluid" alt="Responsive image"></a>
+    </span>
   <button class="navbar-toggler collapsed justify-content-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
 </button>
-
 </nav>
-  <!-- <nav class="navbar navbar-custom navbar-light navbar-expand-md bg-light justify-content-md-center justify-content-start">
-    <img src="./img/LoboMejorado.png" class="logo" alt=""></img>
-    <button class="navbar-toggler ml-1" type="button" data-toggle="collapse" data-target="#collapsingNavbar2">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <a class="nav-link" href="#_"><i class="fa fa-search mr-1"></i></a> 
-    <div class="navbar-collapse collapse justify-content-between align-items-center w-100" id="collapsingNavbar2">
-        <ul class="navbar-nav mx-auto text-md-center text-left">
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a> 
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item my-auto">
-                <a class="nav-link navbar-brand mx-0 d-none d-md-inline" href="">Brand</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a> 
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a> 
-            </li>
-        </ul>
-        <ul class="nav navbar-nav flex-row justify-content-md-center justify-content-start flex-nowrap">
-            <li class="nav-item"><a class="nav-link" href=""><i class="fa fa-facebook mr-1"></i></a> </li>
-            <li class="nav-item"><a class="nav-link" href=""><i class="fa fa-twitter"></i></a> </li>
-        </ul>
-    </div>
-  </nav> -->
-<!--Fin Navbar-->
-
+ 
     
-    <main>
         <!-- Contenido de información y mapa -->
         <aside class="left">
             <div class="llamact"><!--Llamado a la accion-->
@@ -125,7 +92,7 @@
                 <button type="button" class="btn btn-outline" type="submit" id="enviar"><a href="mailto:someone@yoursite.com">Enviar</a></button>
             </form>
         </section> <!-- Formulario-->
-    </main>
+    
     <footer><!--Inicio footer-->
         <div class="footer">
             <div class="footer-logo">
@@ -141,7 +108,9 @@
                 <a href="http://Instagram.com" target="_blank"><img class="footer-socialmedia" src="./img/img/redes/instagram-icon.png" alt="" srcset=""></a>
                 <a href="http://Twitter.com" target="_blank"><img class="footer-socialmedia" src="./img/img/redes/twitter-icon.png" alt="" srcset=""></a>
             </div>
-    </footer><!--Footer-->
+    </footer>
+    <!--Footer-->
+</main>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./js/contactanos.js"> </script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
