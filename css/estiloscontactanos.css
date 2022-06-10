@@ -47,12 +47,22 @@ main {
     align-self: center;
 }
 
+/* CAMBIE ESTILOS */
 .left {
     /* border: 1px red solid; */
     align-self: center;
-    margin: 0 1% 0 0;
+    padding: 2% 2% 2% 2%;     
+    margin: 0 1% 1% 0;
     background-color: #F0E0B5;
+    width: 70%;
 }
+
+.llamact{
+    text-align: center;
+}
+
+/* HASTA AQUI */
+
 
 .formC {/*centrado del formulario*/
     display: flex;
