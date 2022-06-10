@@ -1,4 +1,4 @@
-let nameContact = document.getElementById("nameContact");
+﻿let nameContact = document.getElementById("nameContact");
 let numberContact = document.getElementById("numberContact")
 let mailContact = document.getElementById("mailContact")
 let descriptionContact = document.getElementById("descriptionContact")
@@ -9,7 +9,7 @@ function validarDescripcion() {
     if(descriptionContact.value.length<20){
         descriptionContact.style.border = "red thin solid";
         document.getElementById("alertdes").innerHTML = "Texto inválido, tu mensaje debe contener mas de 20 caracteres";
-        document.getElementById("alertdes").style="block";
+        document.getElementById("alertdes").style="display: block; margin-bottom: -10px;";
         return false;
     }else{
         descriptionContact.style.border = "green thin solid";
@@ -23,7 +23,7 @@ function validarNombre () {
     if(nameContact.value.length<5){
         nameContact.style.border = "red thin solid";
         document.getElementById("alertnombre").innerHTML = "Dato inválido, tu nombre debe contener más de 5 caracteres";
-        document.getElementById("alertnombre").style.display="block";
+        document.getElementById("alertnombre").style="display: block; margin-bottom: -10px;";
         return false;
     }else{
         nameContact.style.border = "green thin solid";
@@ -39,7 +39,7 @@ function validarNumero (){
     if (!validacionCel.test(numberContact.value)){
         numberContact.style.border = "red thin solid";
         document.getElementById("alertnum").innerHTML = "Tu número debe tener 10 dígitos";
-        document.getElementById("alertnum").style.display="block";
+        document.getElementById("alertnum").style="display: block; margin-bottom: -10px;";
         return false;
     } else { 
         numberContact.style.border = "green thin solid";
@@ -54,7 +54,7 @@ function validarEmail (){
     if (!validacionEmail.test(mailContact.value)){
         mailContact.style.border = "red thin solid";
         document.getElementById("alertmail").innerHTML = "Escribe un email válido";
-        document.getElementById("alertmail").style.display ="block";
+        document.getElementById("alertmail").style="display: block; margin-bottom: -10px;";
         return false;
 
     } else{mailContact.style.border = "green thin solid";
