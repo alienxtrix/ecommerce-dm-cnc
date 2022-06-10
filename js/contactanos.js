@@ -107,19 +107,6 @@ enviar.addEventListener("click", (event)=> {
      return false;
     }
     
-    Email.send({
-        Host : "smtp.elasticemail.com",
-        Username : "marihan.bernal@gmail.com",
-        Password : "083E826626901B2131EB6AB1C8CE073C6629",
-        To : 'marihan.bernal@gmail.com',
-        From : "marihan.bernal@gmail.com",
-        Subject : "marihan",
-        Body : "And this is the body"
-    }).then(
-      message => alert(message)
-    );
-
-
 
 
 });

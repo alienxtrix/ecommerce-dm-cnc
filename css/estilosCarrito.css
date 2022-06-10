@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Andika';
+    width: 100%;
+}
+
+#carritoCompra {
+    position: relative;
+    margin-left: 150px;
+    width: 40px;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: #F6F2ED;
+}
+
+.navbar-custom{/*Color de fondo para Navbar */
+    border-radius: 8px;
+    background-color: rgba(220, 239, 195, 1);
+}
+
+.logo {
+    width: 12%; /*Se aumentó en un 7%*/
+    height: 25%; /*Se estableció en 25%*/
+    margin-right: 30px;
+    margin-left: 10px;
+}
+
+.logo_2 {
+    width: 60%;
+    margin-left: -20px;
+    padding-left: -20px;
+}
+
+.footer {/*footer*/
+    bottom: 0px;
+    width: 100%;
+    display:inline-flex;
+    background-color: rgba(220, 239, 195, 1);
+    justify-content: space-around;
+}
+
+.footer-politicas {
+    color: #000;
+    text-align: center;
+    font-size: 30px;
+    position: flex;
+    padding-top: 20px;
+}
+.footer-lobo {
+    height: 6vw;
+    position: relative;
+}
+.lobo{
+    width: 350px;
+    height: 80px;
+}
+.footer-socialmedia {
+    position: relative;
+    float: inline-end;
+    top: 15px;
+    width: 40px;
+    height: 40px;
+}/*final del footer*/
