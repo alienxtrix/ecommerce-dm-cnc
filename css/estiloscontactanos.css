@@ -8,6 +8,8 @@
 }
 
 #carritoCompra {
+    position: relative;
+    margin-left: 150px;
     width: 40px;
     height: 29px;
 }
@@ -26,10 +28,12 @@ body {
     width: 5%;
     margin: 0 0 0 1%;
     padding-right: 15px;
+    width: 80px;
+    height: 80px;
 }
 
 .logo_2 {
-    width: 60%;
+    width: 77%;
     margin: 0 0 0 1%;
     padding-left: 0px;
 }
