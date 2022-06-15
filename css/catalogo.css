@@ -40,12 +40,6 @@ main {
     padding-left: -20px;
 }
 
-main {
-    position: relative;
-    width: 90%;
-    display: flex;
-    margin: 2% auto;
-}
 
 #categoria{
     position: relative;
