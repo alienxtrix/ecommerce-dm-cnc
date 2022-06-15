@@ -47,12 +47,12 @@ main {
     margin: 2% auto;
 }
 
-#categorias {
+#botones {
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    margin: 1% 1% 0 1%;
+    margin: 20px auto;
 	position: static;
 	width: 50px auto;
 	height: auto;
@@ -61,7 +61,7 @@ main {
     padding: 5px;
 }
 
-#categorias a {
+#botones a {
 	border-radius: 15px;
     padding: 10px 20px;
 	display: inline-block;
@@ -74,49 +74,26 @@ main {
 	cursor: pointer;
 }
 
-#categorias a:hover {
+#botones a:hover {
     background: #C5F0EA;
 }
 
 #tarjetas img[src*="./img/LoboMejorado.png"] {
-    display: inline-block;
-    margin: 0 auto;
-    width: 50%;
-    height: 40%;
+    display: block;
+    margin: auto;
+    width: 20rem;
+    height: 20rem;
     
 }
 
 #tarjetas img[src*="./img/Logo.png"] {
-    display: inline-block;
-    margin: 0 auto;
-    width: 50%;
-    height: 40%;
+    display: block;
+    margin: auto;
+    width: 20rem;
+    height: 20rem;
 
 }
-
-.botones {
+.boton{
     display: flex;
-    justify-content: center;
-    align-content: center;
-    height: 10%;
-    width: 100%;
-}
-
-.botonDetalles {
-    margin: 1%;
-    padding: 2%;
-    
-}
-
-.botonAgregar {
-    margin: 1%;
-    padding: 2%;
-}
-
-.card-title {
-    text-align: center;
-}
-
-.card-text {
-    text-align: justify;
+    justify-content: space-evenly;
 }
