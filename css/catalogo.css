@@ -52,3 +52,35 @@ main {
     display: flex;
     margin: 2% auto;
 }
+
+/*footer*/
+.footer {
+    bottom: 0px;
+    height: 13vh;
+    width: 100%;
+    display:inline-flex;
+    background-color: rgba(220, 239, 195, 1);
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer-politicas {
+    color: #000;
+    text-align: center;
+    font-size: 2vmin;
+    position: flex;
+}
+
+.footer-lobo {
+    height: 10vh;
+    width: 20vmin;
+    position: relative;
+    
+    display: block;
+}
+
+
+.footer-socialmedia {
+    width: 6vmin;
+    
+}/*final del footer*/

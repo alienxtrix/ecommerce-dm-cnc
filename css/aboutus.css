@@ -40,35 +40,36 @@ main {
     padding-left: -20px;
 }
 
-.footer {/*footer*/
+/*footer*/
+.footer {
     bottom: 0px;
+    height: 13vh;
     width: 100%;
     display:inline-flex;
     background-color: rgba(220, 239, 195, 1);
     justify-content: space-around;
+    align-items: center;
 }
 
 .footer-politicas {
     color: #000;
     text-align: center;
-    font-size: 30px;
+    font-size: 2vmin;
     position: flex;
-    padding-top: 20px;
 }
+
 .footer-lobo {
-    height: 6vw;
+    height: 10vh;
+    width: 20vmin;
     position: relative;
+    
+    display: block;
 }
-.lobo{
-    width: 350px;
-    height: 80px;
-}
+
+
 .footer-socialmedia {
-    position: relative;
-    float: inline-end;
-    top: 15px;
-    width: 40px;
-    height: 40px;
+    width: 6vmin;
+    
 }/*final del footer*/
 
 p {
