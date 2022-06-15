@@ -40,17 +40,56 @@ main {
     padding-left: -20px;
 }
 
-main {
-    position: relative;
-    width: 90%;
+#btnCategoriaCatalogo {
     display: flex;
-    margin: 2% auto;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 20px auto;
+	position: static;
+	width: 50px auto;
+	height: auto;
+	background-color: #F0D7C5;
+    border-radius: 8px;
+    padding: 5px;
 }
 
-#categoria{
-    position: relative;
+
+#btnCategoriaCatalogo a {
+	border-radius: 15px;
+    padding: 10px 20px;
+	display: inline-block;
+	position: relative;
+	z-index: 1;
+	text-decoration: none;
+	text-transform:capitalize;
+	text-align: center;
+	color: black;
+	cursor: pointer;
+}
+
+#btnCategoriaCatalogo a:hover {
+    background: #C5F0EA;
+}
+
+#tarjetas img[src*="./img/LoboMejorado.png"] {
+    display: block;
+    margin: auto;
+    width: 20rem;
+    height: 20rem;
+    
+}
+
+#tarjetas img[src*="./img/Logo.png"] {
+    display: block;
+    margin: auto;
+    width: 20rem;
+    height: 20rem;
+
+}
+.btnCategoriaCard{
     display: flex;
-    margin: 2% auto;
+    justify-content: space-evenly;
 }
 
 /*footer*/
@@ -84,3 +123,37 @@ main {
     width: 6vmin;
     
 }/*final del footer*/
+
+
+
+
+/*ESTILO DE IMAGENES DE PRODUCTOS*/
+.ImgProdCat{
+    width: 200px;
+    height: 200px;
+    align-self: center;
+}
+
+/*ESTILO DE TARJETAS DE PRODUCTOS*/
+.card{
+    width: 400px;
+    height: 400px;
+    margin: 5% 5% 5% 5%;
+    align-self: center;
+}
+
+/*ESTILO DE TEXTO DE PRODUCTOS*/
+.card-text-cost{
+    text-align: center;
+    font-size: large;
+}
+.card-text-description{
+    text-align: center;
+    font-size: small;
+}
+.card-title{
+    text-align: center;
+    font-size: larger;
+   
+}
+
