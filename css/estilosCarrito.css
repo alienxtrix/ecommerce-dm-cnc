@@ -40,33 +40,77 @@ main {
     padding-left: -20px;
 }
 
-.footer {/*footer*/
+/*footer*/
+.footer {
     bottom: 0px;
+    height: 13vh;
     width: 100%;
     display:inline-flex;
     background-color: rgba(220, 239, 195, 1);
     justify-content: space-around;
+    align-items: center;
 }
 
 .footer-politicas {
     color: #000;
     text-align: center;
-    font-size: 30px;
+    font-size: 2vmin;
     position: flex;
-    padding-top: 20px;
 }
+
 .footer-lobo {
-    height: 6vw;
+    height: 10vh;
+    width: 20vmin;
     position: relative;
+    
+    display: block;
 }
-.lobo{
-    width: 350px;
-    height: 80px;
-}
+
+
 .footer-socialmedia {
-    position: relative;
-    float: inline-end;
-    top: 15px;
-    width: 40px;
-    height: 40px;
+    width: 6vmin;
+    
 }/*final del footer*/
+
+
+/*PAGINA*/
+
+/*SECTION INGRESO*/
+#ingreso{
+    margin-top: 20px;
+}
+
+
+/*SECTION PRODUCTOS*/
+.Productos{
+    border: 0.1rem dashed #d7d7d7;
+    background-color: #f9f9f9;
+    border-radius: 0.3rem;
+    float: left;
+}
+
+.Imgprod{
+    width: 200px;
+}
+
+
+.summary.summary-cart {
+    margin-bottom: 3rem;
+}
+
+.summary {
+    padding: 2.5rem 3rem 3rem;
+    border: 0.1rem dashed #d7d7d7;
+    background-color: #f9f9f9;
+    border-radius: 0.3rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    float: right;
+}
+
+tbody {
+   
+    
+    vertical-align: middle;
+    border-color: inherit;
+}

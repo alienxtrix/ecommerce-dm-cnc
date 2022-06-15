@@ -40,6 +40,28 @@ main {
     padding-left: -20px;
 }
 
+
+
+/*Inicio-formulario*/
+.tituloRegistro{
+    display: inline-block;
+    width: 250px;
+    text-align: center;
+    background-color: rgba(74, 77, 71, 0.856);
+    color : white;
+    border-radius: 50px;
+    padding: 0.5%;
+    letter-spacing: 2px;
+}
+.formRegistro{
+    
+    display: flex;
+  justify-content: center;
+}
+
+
+/*Final-formulario*/
+
 /*footer*/
 .footer {
     bottom: 0px;
