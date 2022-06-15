@@ -40,11 +40,56 @@ main {
     padding-left: -20px;
 }
 
-
-#categoria{
-    position: relative;
+#btnCategoriaCatalogo {
     display: flex;
-    margin: 2% auto;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 20px auto;
+	position: static;
+	width: 50px auto;
+	height: auto;
+	background-color: #F0D7C5;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+
+#btnCategoriaCatalogo a {
+	border-radius: 15px;
+    padding: 10px 20px;
+	display: inline-block;
+	position: relative;
+	z-index: 1;
+	text-decoration: none;
+	text-transform:capitalize;
+	text-align: center;
+	color: black;
+	cursor: pointer;
+}
+
+#btnCategoriaCatalogo a:hover {
+    background: #C5F0EA;
+}
+
+#tarjetas img[src*="./img/LoboMejorado.png"] {
+    display: block;
+    margin: auto;
+    width: 20rem;
+    height: 20rem;
+    
+}
+
+#tarjetas img[src*="./img/Logo.png"] {
+    display: block;
+    margin: auto;
+    width: 20rem;
+    height: 20rem;
+
+}
+.btnCategoriaCard{
+    display: flex;
+    justify-content: space-evenly;
 }
 
 /*footer*/
