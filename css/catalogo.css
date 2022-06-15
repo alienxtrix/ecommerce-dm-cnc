@@ -40,14 +40,7 @@ main {
     padding-left: -20px;
 }
 
-main {
-    position: relative;
-    width: 90%;
-    display: flex;
-    margin: 2% auto;
-}
-
-#botones {
+#btnCategoriaCatalogo {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -61,7 +54,7 @@ main {
     padding: 5px;
 }
 
-#botones a {
+#btnCategoriaCatalogo a {
 	border-radius: 15px;
     padding: 10px 20px;
 	display: inline-block;
@@ -74,7 +67,7 @@ main {
 	cursor: pointer;
 }
 
-#botones a:hover {
+#btnCategoriaCatalogo a:hover {
     background: #C5F0EA;
 }
 
@@ -93,7 +86,7 @@ main {
     height: 20rem;
 
 }
-.boton{
+.btnCategoriaCard{
     display: flex;
     justify-content: space-evenly;
 }
