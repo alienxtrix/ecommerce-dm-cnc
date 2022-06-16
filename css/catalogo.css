@@ -141,9 +141,10 @@ main {
 }
 
 /* ESTILO BOTONES*/
-#btnDetalles{
+.btnDetallesClass {
     width:120px;
 }
-#btnAgregar{
+
+.btnAgregarClass {
     width: 150px;
 }
