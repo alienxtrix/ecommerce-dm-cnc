@@ -71,3 +71,14 @@ main {
     width: 6vmin;
     
 }/*final del footer*/
+
+/*Body*/
+#descripcion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1000px;
+    height: 150px;
+    background: #F0E0B5;
+    border-radius: 20px;
+}
