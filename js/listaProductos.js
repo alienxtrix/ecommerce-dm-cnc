@@ -5,16 +5,7 @@ function addItem(item) {
     <div class="col" id="">
         <div class="card">
             <img class = "ImgProdCat" src="${item.img}" alt="..." >
-            <div class="btnCategoriaCard">
-                <div>
-                    <button type="button" class="btn btn-light btnAgregar" data-toggle=modal data-target="#staticBackdrop">Ver detalles</button>
-                </div>
-                <div class="botonAgregar">
-                    <button type="button" class="btn btn-dark" onclick="">Agregar</button>
-                </div>
-            </div>
-            <div class="card-body">
-                <h5 class="card-title" id="nameProduct${contador}">${item.name}</h5>
+            <div id="puntuacion">
                 <p class="card-text-description">
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
@@ -22,6 +13,15 @@ function addItem(item) {
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
                 </p>
+            </div>
+
+            <div class="btnsCard">
+                <button type="button"id="btnAgregar" class="btn btn-dark" onclick="">Agregar</button>
+                <button type="button" id="btnDetalles" class="btn btn-light btnAgregar" data-toggle=modal data-target="#staticBackdrop">Ver detalles</button>
+            </div>
+
+            <div class="card-body">
+                <h5 class="card-title" id="nameProduct${contador}">${item.name}</h5>
                 <p class="card-text-cost">${item.cost}</p>
             </div>
         </div>
@@ -141,8 +141,10 @@ for (let i = 0; i < agregar.length; i++) {
         let newName = document.getElementById("nombreProducto").innerHTML = "";
         let newDescription = document.getElementById("descripcionProducto").innerHTML =  "";
         // Agregar datos
-        lnewName = document.getElementById("nombreProducto").innerHTML =  document.getElementById("nameProduct" + id).innerHTML;
+        newName = document.getElementById("nombreProducto").innerHTML =  document.getElementById("nameProduct" + id).innerHTML;
         newDescription = document.getElementById("descripcionProducto").innerHTML =  document.getElementById("descriptionProduct" + id).innerHTML;
         console.log(id);
     });
+
+
 } // for

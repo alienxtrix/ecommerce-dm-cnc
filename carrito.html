@@ -43,10 +43,10 @@
     <!--SECCION PARA INGRESO A CUENTA-->
         <section class="Ingreso" >
           <div id = "ingreso">
-            <h4>¿Cómo deseas continuar con tu pedido?</h4>
-            <div>
-            <button onclick="location.href='./login.html'" type="button" id="logincar" class="btn btn-sm"> Ingresa a tu cuenta</button>
-            <button type="button" id="invitado" class="btn btn-sm">Continuar como invitado</button>
+            <h5>¿Cómo deseas continuar con tu pedido?</h5>
+            <div >
+            <button onclick="location.href='./login.html'" type="button" id="login" class="btn btn-dark btn-sm"> Ingresa a tu cuenta</button>
+            <button type="button" id="invitado" class="btn btn-dark btn-sm">Continuar como invitado</button>
             </div>
           </div>
         </section> 
@@ -54,12 +54,13 @@
     <!--SECCION PARA MOSTRAR PRODUCTOS DEL PEDIDO-->
 
         <section class = "Productos">
-            <div id = "productos">
-             <h3 id="tituloprod">Productos</h3>
+            <div id = "tproductos">
+             <h5 id="tituloprod">Productos</h5>
+            </div>
 
-           
+   
     <!--TARJETAS PARA MOSTRAR PRODUCTOS-->
-            <div>
+            <div id="listaProductos">
                 <div class="card mb-3" style="max-width: 540px;">
                     <div class="row no-gutters">
                       <div class="col-md-4">
@@ -69,20 +70,23 @@
                         <div class="card-body">
                           <h5 class="card-title">Bandeja para alimentos con diseño de conejo</h5>
                           <p class="card-text">$200.00 mxn</p>
+                          <div> <button type="button" id ="btn+" class="btn btn-light btn-sm">+</button>
+                            <i id="piezas">0</i>
+                          <button type="button" id ="btn-" class="btn btn-light btn-sm">-</div>
                         </div>
                       </div>
                     </div>
-                  </div>
+                </div>
             </div>
 
-        </div>
+        
          
 
     <!--SECCION DEL RESUMEN DEL PEDIDO-->
     </section>
 
         <div class="summary summary-cart">
-        <h4 class="summarytitle"> RESUMEN DE COMPRA</h4>
+        <h4 class="summarytitle"> Resumen del pedido</h4>
         <br>
             <table class="table table-summary">
                 <tbody>
@@ -91,18 +95,26 @@
                         <td>0</td>
                     </tr>
                     <tr class="summary-subtotal">
+                        <td>Sub-total:</td>
+                        <td>--</td>
+                    </tr>
+                    <tr class="summary-subtotal">
                         <td>Envío:</td>
                         <td>--</td>
                     </tr>
                     <tr class="summary-total">
                         <td>Total:</td>
                         <td>$0.00 MXN</td>
-                        </tr>
-                        <tr class="summary-vat">
-                        <td colspan="2">IVA Incluido</td>
                     </tr>
+                    
+                        
                 </tbody>
+                
             </table>
+            <div>
+                <button type="button"id="btnCompra" class="btn btn-dark" onclick="">Continuar con el pedido</button>
+                </div>
+            
         </div>
     </section>
 

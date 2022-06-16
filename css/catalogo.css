@@ -78,10 +78,7 @@ main {
     height: 200px;
 }
 
-.btnCategoriaCard{
-    display: flex;
-    justify-content: space-evenly;
-}
+
 
 .btn {
     border-color: black;
@@ -126,11 +123,11 @@ main {
 /*ESTILO DE TARJETAS DE PRODUCTOS*/
 .card{
     width: 90%;
-    height: 400px;
+    height: 390px;
     margin: 0px auto;
     align-self: center;
-    border-left: none;
-    border-right: none;
+    margin-bottom: 10%;
+    border: none;
 }
 
 /*ESTILO DE TEXTO DE PRODUCTOS*/
@@ -138,11 +135,15 @@ main {
     text-align: center;
     font-size: large;
 }
-.card-text-description{
-    text-align: center;
-    font-size: small;
-}
 .card-title{
     text-align: center;
     font-size: larger;
+}
+
+/* ESTILO BOTONES*/
+#btnDetalles{
+    width:120px;
+}
+#btnAgregar{
+    width: 150px;
 }
