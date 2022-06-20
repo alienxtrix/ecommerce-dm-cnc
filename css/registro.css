@@ -43,23 +43,51 @@ main {
 
 
 /*Inicio-formulario*/
+.containerTitulo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 5vh;
+}
+
 .tituloRegistro{
-    display: inline-block;
-    width: 250px;
+    color: white;
+    width: 40%;
     text-align: center;
-    background-color: rgba(74, 77, 71, 0.856);
-    color : white;
-    border-radius: 50px;
-    padding: 0.5%;
+    background-color: #858380;
+    border-radius: 10px;
+    padding: 1%;
     letter-spacing: 2px;
 }
+
 .formRegistro{
-    
+    display: flex;
+    justify-content: center;
+}
+
+.casillaForm{
+    display: inline-block;
+    padding: 4vh;
+    width: 40vmin;
+}
+/* Inicio de Botones*/
+.containerBtn{
     display: flex;
   justify-content: center;
 }
+.containerBtn link{
+    color: #000;
+}
 
-
+.btnForm{
+    background-color: #F0E0B5;
+    border-radius: 8px;
+    border: none ;
+    padding: 16px;
+    margin: 50px;
+    letter-spacing: 2px;
+}
+/* Final de Botones*/
 /*Final-formulario*/
 
 /*footer*/
