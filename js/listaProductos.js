@@ -66,14 +66,16 @@ function addItem(item, verificar) {
 } // function addItem(item)
 
 document.addEventListener('click', (event) => {
+    console.log(event.target.className);
     event.preventDefault();
-    if (event.target.className =="btnCategoria") {
+    if (event.target.className == "btnCategoria") {
+        // console.log("btnCategoria");
         // Muestra los productos de acuerdo a la categoría seleccionada
         let categorias = document.getElementsByClassName("btnCategoria");
         for (let i = 0; i < categorias.length; i++) {
             categorias[i].addEventListener("click", (event) => {
-                event.preventDefault();
-                let itemsContainer = document.getElementById("list-items").innerHTML = "";
+                // event.preventDefault();
+                document.getElementById("list-items").innerHTML = "";
                 let categoria = categorias[i].innerHTML;
                 for (let j = 0; j < productos.length; j++) {
                     let item = "" + productos[j].category + ""; 
@@ -84,9 +86,10 @@ document.addEventListener('click', (event) => {
                 } // for
             });
         } // for
-    } else {
+    } else if (event.target.className == "btn btn-light btnDetallesClass") {
+        // console.log("btnDesatlles");
         // Muestra el modal de acuerdo al producto seleccionado
-        let detalles = document.getElementsByClassName("btnDetallesClass");
+        let detalles = document.getElementsByClassName("btn btn-light btnDetallesClass");
         for (let i = 0; i < detalles.length; i++) {
             detalles[i].addEventListener("click", (event) => {
                 document.getElementById("nombreProducto").innerHTML =  "";
@@ -96,5 +99,29 @@ document.addEventListener('click', (event) => {
                 document.getElementById("descripcionProducto").innerHTML =  productos[detalles[i].id-1].description;
             });
         } // for
-    }
+    } else if (event.target.className == "btnAboutUs")  {
+        window.open("./aboutUs.html", "_self");        
+    } else if (event.target.className == "nav-link") {
+        let nav = document.getElementsByClassName("nav-link");
+        for (let i = 0; i < nav.length; i++) {
+            nav[i].addEventListener("click", (event) => {
+                switch (i) {
+                    case 0 :
+                        window.open("./index.html", "_self");        
+                        break;
+                    case 1 :
+                        window.open("./login.html", "_self");        
+                        break;
+                    case 2 :
+                        window.open("./catalogo.html", "_self");        
+                        break;
+                    case 3 :
+                        window.open("./aboutUs.html", "_self");        
+                        break;
+                } // switch
+            });
+        } // for
+    } else if (event.target.className == "float-right img-fluid") {
+        window.open("./carrito.html", "_self");        
+    } // if
 });
