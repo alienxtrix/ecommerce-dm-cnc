@@ -1,147 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin</title>
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="./css/font-awesome-4.7.0/css/font-awesome.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/font-awesome-4.7.0/css/font-awesome.css" />
     <link rel="stylesheet" type="text/css" href="./css/admin.css" />
-  </head>
-  <body>
+</head>
+
+<body>
     <main>
-      <section class="navigation">
-        <ul>
-          <li>
-            <a>
-              <span class="icon"><i class="fa fa-database" aria-hidden="true"></i></span>
-              <span class="title"><h2>Administrador</h2></span>
-            </a>
-          </li>
-          <li>
-            <a class="tablinks" onclick="openTab(event, 'vistaProductos')">
-              <span class="icon"
-                ><i class="fa fa-home" aria-hidden="true"></i
+        <section class="navigation">
+            <ul>
+                <li>
+                    <a>
+                        <span class="icon"><i class="fa fa-database" aria-hidden="true"></i></span>
+                        <span class="title"><h2>Administrador</h2></span>
+                    </a>
+                </li>
+                <li>
+                    <a class="tablinks" onclick="openTab(event, 'vistaProductos')">
+                        <span class="icon"><i class="fa fa-home" aria-hidden="true"></i
               ></span>
-              <span class="title">Productos</span>
-            </a>
-          </li>
-          <li>
-            <a class="tablinks" onclick="openTab(event, 'vistaListaProductos')">
-              <span class="icon"
-                ><i class="fa fa-book" aria-hidden="true"></i
+                        <span class="title">Productos</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="tablinks active" onclick="openTab(event, 'vistaListaProductos')">
+                        <span class="icon"><i class="fa fa-book" aria-hidden="true"></i
               ></span>
-              <span class="title">Lista productos</span>
-            </a>
-          </li>
-          <li>
-            <a class="tablinks" onclick="openTab(event, 'vistaFormProductos')">
-              <span class="icon"
-                ><i class="fa fa-plus" aria-hidden="true"></i
+                        <span class="title">Lista productos</span>
+
+                    </a>
+                </li>
+                <li>
+                    <a class="tablinks" onclick="openTab(event, 'vistaFormProductos')">
+                        <span class="icon"><i class="fa fa-plus" aria-hidden="true"></i
               ></span>
-              <span class="title">Agregar Productos</span>
-            </a>
-          </li> 
-        </ul>
-      </section>
-      <section class="main_content" id="vistaProductos">
-        <div class ="header_content">
-            <div class="toggle" onclick="toggleMenu(0)"></div>
-        </div>
-        <h1>Productos</h1>
-      </section>
-      <section class="main_content" id="vistaListaProductos">
-        <div class ="header_content">
-            <div class="toggle" onclick="toggleMenu(1)"></div>
-            <div class="search">
-                <label for="">
+                        <span class="title">Agregar Productos</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <section class="main_content" id="vistaProductos">
+            <div class="header_content">
+                <div class="toggle" onclick="toggleMenu(0)"></div>
+            </div>
+            <h1>Productos</h1>
+        </section>
+        <section class="main_content" id="vistaListaProductos" style="display: block;">
+            <div class="header_content">
+                <div class="toggle" onclick="toggleMenu(1)"></div>
+                <div class="search">
+                    <label for="">
                     <input type="text" placeholder="Busca aquí">
                     <i class="fa fa-search" aria-hidden="true"></i>
                 </label>
-              </div>
-              <div class="user">
-                  <img src="" alt="">
-              </div>
-      </div>
-      <h1>Lista de Productos</h1>
-      <div class="details">
-      <div class="viewTypes">
-      <table>
-          <thead>
-              <tr>
-                  <td>Id</td>
-                  <td>Nombre</td>
-                  <td>Cantidad</td>
-                  <td>Precio</td>
-                  <td>Status</td>
-              </tr>
-          </thead>
-          <tbody>
-              <tr>
-                  <td>1</td>
-                  <td>Mesa madera</td>
-                  <td>5</td>
-                  <td>$200.00</td>
-                  <td>Activo</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>Alien madera</td>
-                <td>20</td>
-                <td>$100.00</td>
-                <td>Activo</td>
-            </tr>
-          </tbody>
-        </div>
-    </div>
-      </table>
-      </section>
-      <section class="main_content" id="vistaFormProductos">
-        <div class ="header_content">
-          <div class="toggle" onclick="toggleMenu(2)"></div>
-          
-        </div>
-           <h1>Agregar productos</h1>
-      </section>
+                </div>
+                <div class="user">
+                    <img src="./img/Fotos/MarihanItzel.png" alt="Usurio foto">
+                </div>
+            </div>
+            <h1>Lista de Productos</h1>
+            <div class="details">
+                <div class="viewTypes">
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Id</td>
+                                <td>Nombre</td>
+                                <td>Cantidad</td>
+                                <td>Precio</td>
+                                <td>Status</td>
+                            </tr>
+                        </thead>
+                        <tbody id="listItemsAdmin">
+
+                        </tbody>
+                </div>
+            </div>
+            </table>
+        </section>
+        <section class="main_content" id="vistaFormProductos">
+            <div class="header_content">
+                <div class="toggle" onclick="toggleMenu(2)"></div>
+
+            </div>
+            <h1>Agregar productos</h1>
+        </section>
     </main>
-    <script  type="text/javascript">
-        function toggleMenu(view){
-        let toggle = document.querySelector('.toggle');
-        let navigation = document.querySelector('.navigation');
-        // let main_content = document.querySelector('.main_content');
-        let main_contentArray = document.getElementsByClassName("main_content");
-        // if (!navigation.classList.contains('active')) {
-        //   navigation.classList.toggle('active')
-        // }
-        toggle.classList.toggle('active');
-        navigation.classList.toggle('active')
-        main_contentArray[view].classList.toggle('active')
-       // console.log("main_content toggle", main_content);
-       // console.log("main_contentArrray toggle", main_contentArray[view]);
-       }
+    <script type="text/javascript">
+        function toggleMenu(view) {
+            let toggle = document.querySelector('.toggle');
+            let navigation = document.querySelector('.navigation');
+            // let main_content = document.querySelector('.main_content');
+            let main_contentArray = document.getElementsByClassName("main_content");
 
-      
-      function openTab(evt, description) {
-        var i, main_content, tablinks;
-        main_content = document.getElementsByClassName("main_content");
-        for (i = 0; i < main_content.length; i++) {
-          // console.log("main content i", main_content[i]);
+            toggle.classList.toggle('active');
+            navigation.classList.toggle('active');
+            //  main_contentArray[view].classList.toggle('active')
 
-          main_content[i].style.display = "none";
-          
-        }
-        tablinks = document.getElementsByClassName("tablinks");
-        for (i = 0; i < tablinks.length; i++) {
-          // console.log("tablinks i", tablinks[i]);
-          tablinks[i].className = tablinks[i].className.replace(" active", "");
-        }
-        // console.log("evento", evt);
-        document.getElementById(description).style.display = "block";
-        evt.currentTarget.className += " active";
-    }
+            if (navigation.classList.contains('active') && toggle.classList.contains('active')) {
+                for (let index = 0; index < main_contentArray.length; index++) {
+                    // console.log("main"+main_contentArray[index]);
+                    toggle.classList.toggle('active');
+                    navigation.classList.toggle('active')
+                    main_contentArray[index].classList.toggle('active')
+                } //for
+            } //if
+        } //Function toggle del boton de hamburgesa para contraer vista
+
+        function openTab(evt, description) {
+            //   console.log("event",evt+"Descri: ",description);
+            let i, main_content, tablinks;
+            main_content = document.getElementsByClassName("main_content");
+            // console.log("mainContent: ",main_content);
+            for (i = 0; i < main_content.length; i++) {
+                // console.log("main content i", main_content[i]);
+                main_content[i].style.display = "none";
+            } //for
+            tablinks = document.getElementsByClassName("tablinks");
+            // console.log("tab: " + tablinks);
+            for (i = 0; i < tablinks.length; i++) {
+                // console.log("tablinks i", tablinks[i]);
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            } //for
+            // console.log("evento", evt);
+            document.getElementById(description).style.display = "block";
+            evt.currentTarget.className += " active";
+        } //Function openTab del menu para cambiar de seccion las vistas
     </script>
-  </body>
+    <script src="./js/admin.js"></script>
+</body>
+
 </html>
