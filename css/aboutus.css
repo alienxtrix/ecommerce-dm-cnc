@@ -12,8 +12,10 @@ body {
 }
 
 main {
-    position: relative;
-    width: 100%;
+    margin: 0px auto;
+    width: 80%;
+    padding-top: 2%;
+    padding-bottom: 2%;
 }
 
 #carritoCompra {
@@ -62,7 +64,6 @@ main {
     height: 10vh;
     width: 20vmin;
     position: relative;
-    
     display: block;
 }
 
@@ -73,7 +74,7 @@ main {
 }/*final del footer*/
 
 p {
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .sobrenosotros {
@@ -87,17 +88,11 @@ p {
     width: 20%;
 }
 
-#textosn {
-    align-self: center;
-    width: 80%;
-}
-
 #titulosn {
     text-align: center;
     background-color: rgba(74, 77, 71, 0.856);
     color: white;
     border-radius: 50px;
-    padding: 0.5%;
     letter-spacing: 2px;
 }
 
@@ -105,7 +100,7 @@ p {
 .project {
     display: flex;
     text-align: center;
-    margin: 20px;
+    padding-bottom: 2%;
 }
 
 .project-left {
@@ -168,7 +163,6 @@ p {
     background-color: rgba(74, 77, 71, 0.856);
     color: white;
     border-radius: 50px;
-    padding: 0.5%;
     letter-spacing: 2px;
 }
 
