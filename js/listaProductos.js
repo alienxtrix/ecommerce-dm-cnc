@@ -71,8 +71,15 @@ for (let i = 0; i < categorias.length; i++) {
     categorias[i].addEventListener("click", (event) => {
         event.preventDefault();
         // event.preventDefault();
+        console.log(categorias[i].innerHTML);
         document.getElementById("list-items").innerHTML = "";
         let categoria = categorias[i].innerHTML;
+        if (categorias[i].innerHTML == "Todos") {
+            document.getElementById("list-items").innerHTML = "";
+            for (let i = 0; i < productos.length; i++) {
+                addItem(productos[i], 0);
+            } // for
+        }
         for (let j = 0; j < productos.length; j++) {
             let item = "" + productos[j].category + ""; 
             if (item == categoria) {
@@ -80,6 +87,7 @@ for (let i = 0; i < categorias.length; i++) {
                 addItem(productos[j], 0);
             } // if
         } // for
+
         modals();
     });
 } // for
