@@ -12,7 +12,7 @@ let producto10 = {'id':'10','name':'Tabla para picar alimentos','img':'http://dr
 let producto11 = {'id':'11','name':'Tabla para picar alimentos','img':'http://drive.google.com/uc?export=view&id=19qk_jxSjGv11P78-Ywm4c18H9wmfxPtl','category' : 'Cocina','cost' :'$190 mxn','description':'Diseño circular, 100% madera, medidas 30 cm diametro','rate':5};
 let producto12 = {'id' : '12','name':'Frutero','img':'http://drive.google.com/uc?export=view&id=1CyJtI2UZpuX1wzVen_ntCA4Pa_Tm5k7w','category' : 'Cocina','cost' :'$250 mxn','description':'Diseño circular, medidas 30 cm x 30 cm','rate':5};
 
-// Variable global de contador de prodcutos
+// Variable global de contador de prodcutos y array de productos
 let contador = 1;
 let productos = [];
 
@@ -65,63 +65,43 @@ function addItem(item, verificar) {
     } // if
 } // function addItem(item)
 
-document.addEventListener('click', (event) => {
-    console.log(event.target.className);
-    event.preventDefault();
-    if (event.target.className == "btnCategoria") {
-        // console.log("btnCategoria");
-        // Muestra los productos de acuerdo a la categoría seleccionada
-        let categorias = document.getElementsByClassName("btnCategoria");
-        for (let i = 0; i < categorias.length; i++) {
-            categorias[i].addEventListener("click", (event) => {
-                // event.preventDefault();
-                document.getElementById("list-items").innerHTML = "";
-                let categoria = categorias[i].innerHTML;
-                for (let j = 0; j < productos.length; j++) {
-                    let item = "" + productos[j].category + ""; 
-                    if (item == categoria) {
-                        // console.log(productos[j]);
-                        addItem(productos[j], 0);
-                    } // if
-                } // for
-            });
+// Muestra los productos de acuerdo a la categoría seleccionada
+let categorias = document.getElementsByClassName("btnCategoria");
+for (let i = 0; i < categorias.length; i++) {
+    categorias[i].addEventListener("click", (event) => {
+        event.preventDefault();
+        // event.preventDefault();
+        console.log(categorias[i].innerHTML);
+        document.getElementById("list-items").innerHTML = "";
+        let categoria = categorias[i].innerHTML;
+        if (categorias[i].innerHTML == "Todos") {
+            document.getElementById("list-items").innerHTML = "";
+            for (let i = 0; i < productos.length; i++) {
+                addItem(productos[i], 0);
+            } // for
+        }
+        for (let j = 0; j < productos.length; j++) {
+            let item = "" + productos[j].category + ""; 
+            if (item == categoria) {
+                // console.log(productos[j]);
+                addItem(productos[j], 0);
+            } // if
         } // for
-    } else if (event.target.className == "btn btn-light btnDetallesClass") {
-        // console.log("btnDesatlles");
-        // Muestra el modal de acuerdo al producto seleccionado
-        let detalles = document.getElementsByClassName("btn btn-light btnDetallesClass");
-        for (let i = 0; i < detalles.length; i++) {
-            detalles[i].addEventListener("click", (event) => {
-                document.getElementById("nombreProducto").innerHTML =  "";
-                document.getElementById("descripcionProducto").innerHTML =  "";
-                // Agregar datos
-                document.getElementById("nombreProducto").innerHTML =  productos[detalles[i].id-1].name;
-                document.getElementById("descripcionProducto").innerHTML =  productos[detalles[i].id-1].description;
-            });
-        } // for
-    } else if (event.target.className == "btnAboutUs")  {
-        window.open("./aboutUs.html", "_self");        
-    } else if (event.target.className == "nav-link") {
-        let nav = document.getElementsByClassName("nav-link");
-        for (let i = 0; i < nav.length; i++) {
-            nav[i].addEventListener("click", (event) => {
-                switch (i) {
-                    case 0 :
-                        window.open("./index.html", "_self");        
-                        break;
-                    case 1 :
-                        window.open("./login.html", "_self");        
-                        break;
-                    case 2 :
-                        window.open("./catalogo.html", "_self");        
-                        break;
-                    case 3 :
-                        window.open("./aboutUs.html", "_self");        
-                        break;
-                } // switch
-            });
-        } // for
-    } else if (event.target.className == "float-right img-fluid") {
-        window.open("./carrito.html", "_self");        
-    } // if
-});
+
+        modals();
+    });
+} // for
+
+// Muestra el modal de acuerdo al producto seleccionado
+let detalles = document.getElementsByClassName("btn btn-light btnDetallesClass");
+let modals = () => {
+    for (let i = 0; i < detalles.length; i++) {
+        detalles[i].addEventListener("click", (event) => {
+            // Agregar datos
+            document.getElementById("nombreProducto").innerHTML =  productos[detalles[i].id-1].name;
+            document.getElementById("descripcionProducto").innerHTML =  productos[detalles[i].id-1].description;
+        });
+    } // for
+} // función modals()
+
+modals();
