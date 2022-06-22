@@ -129,7 +129,6 @@ ul {
     background-color: rgba(220, 239, 195, 1);
     justify-content: space-around;
     align-items: center;
-    border-radius: 8px;
 }
 
 .footer-politicas {
@@ -143,7 +142,6 @@ ul {
     height: 10vh;
     width: 20vmin;
     position: relative;
-    
     display: block;
 }
 
