@@ -71,7 +71,10 @@ for (let i = 0; i < categorias.length; i++) {
     categorias[i].addEventListener("click", (event) => {
         event.preventDefault();
         // event.preventDefault();
-        console.log(categorias[i].innerHTML);
+        console.log(categorias);
+        removeStyle(categorias);
+        addStyle(categorias[i]);
+        console.log(categorias[i]);
         document.getElementById("list-items").innerHTML = "";
         let categoria = categorias[i].innerHTML;
         if (categorias[i].innerHTML == "Todos") {
@@ -103,5 +106,15 @@ let modals = () => {
         });
     } // for
 } // función modals()
+
+let addStyle = (element) => {
+    element.setAttribute("id", "active");
+} // function remove()
+
+let removeStyle = (elements) => {
+    for (let i = 0; i < elements.length; i++) {
+        elements[i].removeAttribute("id");
+    }
+} // function remove()
 
 modals();

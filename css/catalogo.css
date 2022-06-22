@@ -41,7 +41,6 @@ main {
 }
 
 #btnCategoriaCatalogo {
-    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -51,8 +50,9 @@ main {
     width: 90%;
 	height: auto;
 	background-color: #FFFFFF;
-    border-radius: 8px;
-    padding: 5px;
+    padding: 10px;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
 }
 
 #btnCategoriaCatalogo a {
@@ -79,7 +79,11 @@ main {
     height: 200px;
 }
 
-
+#active {
+    background: #F0E0B5;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+}
 
 .btn {
     border-color: black;
@@ -134,7 +138,8 @@ main {
     align-self: center;
     margin-bottom: 10%;
     border: none;
-    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1)
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 }
 
 /*ESTILO DE TEXTO DE PRODUCTOS*/
