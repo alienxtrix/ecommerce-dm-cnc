@@ -5,41 +5,35 @@
     box-sizing: border-box;
     font-family: 'Andika';
 }
-
 body {
     overflow-x: hidden;
 
 }
-
 main {
     position: relative;
     width: 100%;
+    background-color: #F6F2ED;
 }
-
 #carritoCompra {
     position: relative;
     margin-left: 150px;
     width: 40px;
 }
-
 .navbar-custom{/*Color de fondo para Navbar */
     border-radius: 8px;
     background-color: rgba(220, 239, 195, 1);
 }
-
 .logo {
     width: 12%; /*Se aumentó en un 7%*/
     height: 25%; /*Se estableció en 25%*/
     margin-right: 30px;
     margin-left: 10px;
 }
-
 .logo_2 {
     width: 60%;
     margin-left: -20px;
     padding-left: -20px;
 }
-
 /*footer*/
 .footer {
     bottom: 0px;
@@ -50,14 +44,12 @@ main {
     justify-content: space-around;
     align-items: center;
 }
-
 .footer-politicas {
     color: #000;
     text-align: center;
     font-size: 2vmin;
     position: flex;
 }
-
 .footer-lobo {
     height: 10vh;
     width: 20vmin;
@@ -65,47 +57,52 @@ main {
     
     display: block;
 }
-
-
 .footer-socialmedia {
     width: 6vmin;
     
 }/*final del footer*/
-
 /*Body*/
+.baner{
+    margin-top: 50px;
+}
 .descripcion{ /*Descripcion de la empresa*/
     display: flex;
     align-items: center;
     justify-content: center;
-
+    margin: 0px auto;
 }
 .textD{
     text-align: center;
     width: 50%;
     margin: 10px;
-    background: #F0E0B5;
-    border-radius: 50px;
+    background-color: #F0E0B5;
+    padding: 1%;
+    border-radius: 20px;
     margin-top: 50px;
     margin-bottom: 50px;
 }
-/*Mejor vendidos*/
+/*Cards*/
 #titulosn{
     display: flex;
     text-align: center;
     align-items: center;
     justify-content: center ;
     background-color: rgba(74, 77, 71, 0.856);
-    width: 25%;
+    width: 15%;
     color : white;
-    border-radius: 50px;
+    border-radius: 20px;
     padding: 1%;
     letter-spacing: 2px;
+    margin: 0px auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 .cards {
     display: flex;
     align-items: center;
     justify-content: center;
     max-width: 820px;
+    margin: 0px auto;
 }
 .card1 .cardImg, .card1 .cardImgHover {
     background-image: url('http://drive.google.com/uc?export=view&id=1A5Ff2TJLhYytAc7SlGdl1TUDbNN2jJfG');
@@ -115,6 +112,15 @@ main {
 }
 .card3 .cardImg, .card3 .cardImgHover {
     background-image: url('http://drive.google.com/uc?export=view&id=1CLr3ydKpRndh1AEL38007UnVQ4UYRCHP');
+}
+.card4 .cardImg, .card4 .cardImgHover {
+    background-image: url('http://drive.google.com/uc?export=view&id=1CyJtI2UZpuX1wzVen_ntCA4Pa_Tm5k7w');
+}
+.card5 .cardImg, .card5 .cardImgHover {
+    background-image: url('http://drive.google.com/uc?export=view&id=1BZtmYypgzRlKiicmtqGg2p97xdT3vuHy');
+}
+.card6 .cardImg, .card6 .cardImgHover {
+    background-image: url('http://drive.google.com/uc?export=view&id=1CliBjKmk-4CX2NuiRlD3zMqMBUY3T-Xa');
 }
 .cardClock {
     width: 15px;
@@ -133,7 +139,6 @@ main {
     height: 235px;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
-  
 }
 .cardInfoHover {
     position: absolute;
@@ -149,7 +154,7 @@ main {
     background-repeat: no-repeat;
     width: 100%;
     position: absolute;
-    height: 235px;
+    height: 250px;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
     top: 0;
@@ -176,8 +181,6 @@ main {
     padding: 16px 24px 24px 24px;
 }
 .cardCategory {
-    font-family: 'Raleway', sans-serif;
-    text-transform: uppercase;
     font-size: 13px;
     letter-spacing: 2px;
     font-weight: 500;
@@ -186,7 +189,9 @@ main {
 .cardTitle {
     margin-top: 5px;
     margin-bottom: 10px;
-    font-family: 'Roboto Slab', serif;
+}
+.btn{
+    background-color: #F6F2ED;
 }
 .card:hover .cardImgHover {
     height: 100%;

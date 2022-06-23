@@ -46,7 +46,7 @@
 <section class="contenedor">
         <!-- Formulario -->
         <section class="form">
-            <form class="formProducto" action="">
+            <form id ="myform" class="formProducto" action="">
               <h3 id="titulosn">Agregar nuevo producto</h3>
 
               <!--NOMBRE-->
@@ -123,12 +123,12 @@
                   </div>
                 
                   <div class="form-group col-md-6">
-                      <img id="imageFile" name="imageFile" src="" alt="Vista previa de la imagen" title="Vista previa" />
+                      <img id="imageFile" name="imageFile" src=" " alt="Vista previa de la imagen" title="Vista previa" />
                   </div>
                   <div class="col-md-6">
                     <!-- <textarea rows="20" class="form-control" data-toggle="tooltip" data-placement="bottom" id="inputFile" name="inputFile" value="" placehodler="Imagen del curso" title="Imagen" style="display:block"></textarea>                  -->
+                    <div class = "alert alert-danger" id="alertimg" style="display: none"></div>
                   </div>
-                  <div class = "alert alert-danger" id="alertimg" style="display: none"></div>
                   <br>
 
                 <button type="button" class="btn btn-outline" type="submit" id="enviar">Guardar</button>

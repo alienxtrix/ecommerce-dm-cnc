@@ -12,7 +12,7 @@ function addItem(item) {
         <div class="card">
             <img class = "ImgProdCat" src="${item.img}" alt="..." >
             <div id="puntuacion">
-                <p class="card-text-description">
+                <p class="card-text-description star">
                     ${rate}
                 </p>
             </div>
@@ -24,7 +24,7 @@ function addItem(item) {
 
             <div class="card-body">
                 <h5 class="card-title" id="nameProduct${item.id}">${item.name}</h5>
-                <p class="card-text-cost">${item.cost}</p>
+                <p class="card-text-cost">$ ${item.cost} mxn</p>
             </div>
         </div>
     </div>`;
