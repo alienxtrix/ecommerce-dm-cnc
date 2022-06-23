@@ -24,7 +24,7 @@ function addItem(item) {
 
             <div class="card-body">
                 <h5 class="card-title" id="nameProduct${item.id}">${item.name}</h5>
-                <p class="card-text-cost">${item.cost}</p>
+                <p class="card-text-cost">$ ${item.cost} mxn</p>
             </div>
         </div>
     </div>`;

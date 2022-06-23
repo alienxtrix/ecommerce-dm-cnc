@@ -75,9 +75,10 @@ main {
 #tarjetas img {
     display: block;
     margin: auto;
-    width: 200px;
-    height: 200px;
+    width: 80%;
+    height: 50%;
 }
+
 
 #active {
     background: #F0E0B5;
@@ -120,8 +121,8 @@ main {
 
 /*ESTILO DE IMAGENES DE PRODUCTOS*/
 .ImgProdCat{
-    width: 200px;
-    height: 200px;
+    width: 50% px;
+    height: 50%px;
     align-self: center;
 }
 
@@ -155,8 +156,10 @@ main {
 /* ESTILO BOTONES*/
 .btnDetallesClass {
     width:120px;
+    width: fit-content;
 }
 
 .btnAgregarClass {
     width: 150px;
+    width: fit-content;
 }
