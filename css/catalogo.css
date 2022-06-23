@@ -8,7 +8,7 @@
 
 body {
     overflow-x: hidden;
-
+    background-color: #F6F2ED;
 }
 
 main {
@@ -47,11 +47,12 @@ main {
     flex-wrap: wrap;
     margin: 20px auto;
 	position: static;
-	width: 50px auto;
+    width: 90%;
 	height: auto;
-	background-color: #F0D7C5;
-    border-radius: 8px;
-    padding: 5px;
+	background-color: #FFFFFF;
+    padding: 10px;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
 }
 
 #btnCategoriaCatalogo a {
@@ -68,7 +69,7 @@ main {
 }
 
 #btnCategoriaCatalogo a:hover {
-    background: #C5F0EA;
+    background: #F0E0B5;
 }
 
 #tarjetas img {
@@ -78,7 +79,11 @@ main {
     height: 200px;
 }
 
-
+#active {
+    background: #F0E0B5;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+}
 
 .btn {
     border-color: black;
@@ -120,6 +125,11 @@ main {
     align-self: center;
 }
 
+#tarjetas {
+    background-color: #F6F2ED;
+    width: 90%;
+}
+
 /*ESTILO DE TARJETAS DE PRODUCTOS*/
 .card{
     width: 90%;
@@ -128,6 +138,8 @@ main {
     align-self: center;
     margin-bottom: 10%;
     border: none;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 }
 
 /*ESTILO DE TEXTO DE PRODUCTOS*/
