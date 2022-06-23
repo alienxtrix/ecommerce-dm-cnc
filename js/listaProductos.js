@@ -1,37 +1,8 @@
-// Productos agregados
-let producto1 = {'id':'1','name':'Bandeja para alimentos diseño de conejo','img':'http://drive.google.com/uc?export=view&id=1AR8JwB550-WC_rvKv0SH7HPICBcujJ12','category' : 'Cocina','cost' :'$250 mxn','description':'100% de madera, medidas 30 cm x 30 cm','rate':4};
-let producto2 = {'id':'2','name':'Bandeja para alimentos diseño de pato','img':'http://drive.google.com/uc?export=view&id=1AnYqbyLJ2Mo9l4ncyEGkpFmHWcZsz5so','category' : 'Cocina','cost' :'$250 mxn','description':'100% de madera, medidas 30 cm x 30 cm','rate':2};
-let producto3 = {'id':'3','name':'Bandeja para alimentos diseño de rana','img':'http://drive.google.com/uc?export=view&id=1AjsRsfP7NjgjIF7AfrErk4SqVVr-mWId','category' : 'Cocina','cost' :'$250 mxn','description':'100% de madera, medidas 30 cm x 30 cm','rate':5};
-let producto4 = {'id':'4','name':'Porta Cervezas','img':'http://drive.google.com/uc?export=view&id=1CLr3ydKpRndh1AEL38007UnVQ4UYRCHP','category' : 'Varios','cost' :'$200 mxn','description':'100% de madera','rate':5};
-let producto5 = {'id':'5','name':'Estante de almacenamiento','img':'http://drive.google.com/uc?export=view&id=1BZtmYypgzRlKiicmtqGg2p97xdT3vuHy','category' : 'Decoración','cost' :'$450 mxn','description':'Estante para artículos varios, medidas 70 cm x 150 cm','rate':2};
-let producto6 = {'id':'6','name':'Base para audífonos','img':'http://drive.google.com/uc?export=view&id=19cgOR5I0x26Qxra0f3EbVsvacpdEm9dw','category' : 'Decoración','cost' :'$500 mxn','description':'100% madera, medidas 25 cm x 15 cm','rate':1};
-let producto7 = {'id':'7','name':'Bandeja para despicar hierbas','img':'http://drive.google.com/uc?export=view&id=1BKNTj5hICy-YmiveV4_7TTALPwlvCB70','category' : 'Cocina','cost' :'$350 mxn','description':'Bandeja con varios compartimientos,100% madera, medidas 30 cm x 20 cm','rate':3};
-let producto8 = {'id':'8','name':'Base para cuchillos','img':'http://drive.google.com/uc?export=view&id=1DKn4Q-CbJ2CV0Csu8L2qpaQxTcwJoXx2','category' : 'Cocina','cost' :'$250 mxn','description':'Base con varios compartimientos, medidas 20 cm x 15 cm','rate':4};
-let producto9 = {'id':'9','name':'Porta vasos en forma de rompezabezas','img':'http://drive.google.com/uc?export=view&id=1CliBjKmk-4CX2NuiRlD3zMqMBUY3T-Xa','category' : 'Cocina','cost' :'$200 mxn','description':'Juego de 4 piezas, medidas 10 cm x 10 cm','rate':4};
-let producto10 = {'id':'10','name':'Tabla para picar alimentos','img':'http://drive.google.com/uc?export=view&id=1A5Ff2TJLhYytAc7SlGdl1TUDbNN2jJfG','category' : 'Cocina','cost' :'$190 mxn','description':'Diseño rectangular, 100% madera, medidas 30 cm x 35 cm','rate':2};
-let producto11 = {'id':'11','name':'Tabla para picar alimentos','img':'http://drive.google.com/uc?export=view&id=19qk_jxSjGv11P78-Ywm4c18H9wmfxPtl','category' : 'Cocina','cost' :'$190 mxn','description':'Diseño circular, 100% madera, medidas 30 cm diametro','rate':5};
-let producto12 = {'id' : '12','name':'Frutero','img':'http://drive.google.com/uc?export=view&id=1CyJtI2UZpuX1wzVen_ntCA4Pa_Tm5k7w','category' : 'Cocina','cost' :'$250 mxn','description':'Diseño circular, medidas 30 cm x 30 cm','rate':5};
-
-// Variable global de contador de prodcutos y array de productos
-let contador = 1;
+// Arreglo en dodne se almacenan todos los productos
 let productos = [];
 
-// Uso de la función addItem()
-addItem(producto1);
-addItem(producto2);
-addItem(producto3);
-addItem(producto4);
-addItem(producto5);
-addItem(producto6);
-addItem(producto7);
-addItem(producto8);
-addItem(producto9);
-addItem(producto10);
-addItem(producto11);
-addItem(producto12);
-
 // Función para mostrar el producto con su card
-function addItem(item, verificar) {
+function addItem(item) {
     let rate = "";
     for (let i = 1; i <= item.rate; i++) {
         rate += `<i class="fa fa-star" aria-hidden="true"></i>`
@@ -59,10 +30,6 @@ function addItem(item, verificar) {
     </div>`;
     const itemsContainer = document.getElementById("list-items");
     itemsContainer.innerHTML += itemHTML;
-    if (verificar != 0) {
-        contador++;
-        productos.push(item);
-    } // if
 } // function addItem(item)
 
 // Muestra los productos de acuerdo a la categoría seleccionada
@@ -70,27 +37,23 @@ let categorias = document.getElementsByClassName("btnCategoria");
 for (let i = 0; i < categorias.length; i++) {
     categorias[i].addEventListener("click", (event) => {
         event.preventDefault();
-        // event.preventDefault();
-        console.log(categorias);
         removeStyle(categorias);
         addStyle(categorias[i]);
-        console.log(categorias[i]);
         document.getElementById("list-items").innerHTML = "";
         let categoria = categorias[i].innerHTML;
         if (categorias[i].innerHTML == "Todos") {
             document.getElementById("list-items").innerHTML = "";
             for (let i = 0; i < productos.length; i++) {
-                addItem(productos[i], 0);
+                addItem(productos[i]);
             } // for
-        }
+        } // if
         for (let j = 0; j < productos.length; j++) {
             let item = "" + productos[j].category + ""; 
             if (item == categoria) {
                 // console.log(productos[j]);
-                addItem(productos[j], 0);
+                addItem(productos[j]);
             } // if
         } // for
-
         modals();
     });
 } // for
@@ -100,21 +63,31 @@ let detalles = document.getElementsByClassName("btn btn-light btnDetallesClass")
 let modals = () => {
     for (let i = 0; i < detalles.length; i++) {
         detalles[i].addEventListener("click", (event) => {
-            // Agregar datos
-            document.getElementById("nombreProducto").innerHTML =  productos[detalles[i].id-1].name;
-            document.getElementById("descripcionProducto").innerHTML =  productos[detalles[i].id-1].description;
+            document.getElementById("nombreProducto").innerHTML =  productos[detalles[i].id].name;
+            document.getElementById("descripcionProducto").innerHTML =  productos[detalles[i].id].description;
         });
     } // for
 } // función modals()
 
+// Función para agregar la clase "active" a la categoría seleccionada (botón)
 let addStyle = (element) => {
     element.setAttribute("id", "active");
 } // function remove()
 
+// Función para eliminar la clase "active" de todas las categorías categoría (botones)
 let removeStyle = (elements) => {
     for (let i = 0; i < elements.length; i++) {
         elements[i].removeAttribute("id");
-    }
+    } // for
 } // function remove()
 
-modals();
+// Función para traer los productos
+window.addEventListener("load", function() {
+    if (localStorage.getItem("productos") != null) {
+        productos = JSON.parse(localStorage.getItem("productos"));
+        productos.forEach(element => {
+            addItem(element);
+        }); // for-each
+        modals();
+    } // if
+});
