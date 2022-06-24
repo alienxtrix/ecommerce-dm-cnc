@@ -8,9 +8,9 @@ let confirPassContact = document.getElementById("confirPassContact")
 
 
 function validarNombre () {
-    if(nameContact.value.length<5){
+    if(nameContact.value.length<3){
         nameContact.style.border = "red thin solid";
-        document.getElementById("alertnombre").innerHTML = "Dato inválido, tu nombre debe contener más de 5 caracteres";
+        document.getElementById("alertnombre").innerHTML = "Dato inválido, tu nombre debe contener más de 3 caracteres";
         document.getElementById("alertnombre").style="display: block; margin-bottom: -10px;";
         return false;
     }else{
@@ -21,9 +21,9 @@ function validarNombre () {
 }
 
 function validarApellidoP () {
-    if(ApellidoPContact.value.length<5){
+    if(ApellidoPContact.value.length<3){
         ApellidoPContact.style.border = "red thin solid";
-        document.getElementById("alertnombreP").innerHTML = "Dato inválido, tu apellido debe contener más de 5 caracteres";
+        document.getElementById("alertnombreP").innerHTML = "Dato inválido, tu apellido debe contener más de 3 caracteres";
         document.getElementById("alertnombreP").style="display: block; margin-bottom: -10px;";
         return false;
     }else{
@@ -34,9 +34,9 @@ function validarApellidoP () {
 }
 
 function validarApellidoM () {
-    if(ApellidoMContact.value.length<5){
+    if(ApellidoMContact.value.length<3){
         ApellidoMContact.style.border = "red thin solid";
-        document.getElementById("alertnombreM").innerHTML = "Dato inválido, tu apellido debe contener más de 5 caracteres";
+        document.getElementById("alertnombreM").innerHTML = "Dato inválido, tu apellido debe contener más de 3 caracteres";
         document.getElementById("alertnombreM").style="display: block; margin-bottom: -10px;";
         return false;
     }else{
@@ -166,6 +166,115 @@ enviar.addEventListener("click", (event)=> {
      return false;
     }
     
-
-
 });
+
+
+//============================== Guardar en el local storage ====================
+//Comentada una segundo opcion!
+
+
+
+
+document.querySelector(`#enviar`).addEventListener(`click`, guardarRegistro);
+
+let usuarios = [];
+
+function obtener_localstorage() {
+    
+    let newUsuario = localStorage.getItem("Usuario");
+    console.log(newUsuario);
+
+
+}
+
+
+function guardarRegistro() {
+    /*
+    let nombre = document.querySelector(`#nameContact`).value;
+    let apellidoP = document.querySelector(`#ApellidoPContact`).value;
+    let apellidoM = document.querySelector(`#ApellidoMContact`).value;
+    let contrasena = document.querySelector(`#passwordContact`).value;
+    let numero = document.querySelector(`#numberContact`).value;
+    let email = document.querySelector(`#mailContact`).value;
+
+    let newUsuario = `{ 
+        "nombre": "${nombre}",
+        "apellidoP": "${apellidoP}",
+        "apellidoM": "${apellidoM}",
+        "contrasena" : "${contrasena}",
+        "numero": "${numero}",
+        "email" : "${email}"
+    }`;
+*/
+
+
+let newUsuario =  {
+    Nombre : document.querySelector(`#nameContact`).value,
+    ApellidoP : document.querySelector(`#ApellidoPContact`).value,
+    ApellidoM : document.querySelector(`#ApellidoMContact`).value,
+    Contrasena : document.querySelector(`#passwordContact`).value,
+    Numero : document.querySelector(`#numberContact`).value,
+    Email : document.querySelector(`#mailContact`).value
+    };
+
+    //console.log(newUsuario);
+
+    usuarios.push(newUsuario);
+    
+    localStorage.setItem("Usuario", JSON.stringify (usuarios));
+
+    //console.log(usuarios);
+
+    window.addEventListener("load", function() {
+        if (localStorage.getItem("Usuario") != null) {
+            usuarios = JSON.parse(localStorage.getItem("Usuario"));
+        } // if
+    });
+    
+//addUsuarios(sNombre, sApellidoP, sApellidoM, sContraseña, sNumero, sEmail);
+
+}
+
+
+
+
+
+
+/*
+let usuarios = [];
+
+
+function addUsuarios(pnombre, papellidoP, papellidoM, pcontraseña, pnumero, pemail ) {
+    
+    let newUsuario ={
+nombre : pnombre,
+apellidoP: papellidoP,
+apellidoM: papellidoM,
+contraseña : pcontraseña,
+numero : pnumero,
+email : pemail
+};
+console.log(newUsuario);
+ usuarios.push(newUsuario);
+}
+*/
+//localStorage.setItem(`NUEVO USUARIO`, JSON.stringify (newUsuario));
+//localStorage.setItem(`contraseña`, JSON.stringify (passwordContact));
+//localStorage.setItem(`numero`, JSON.stringify (numberContact));
+//localStorage.setItem(`email`, JSON.stringify (mailContact));
+
+
+
+
+/*
+
+    let usuario = {
+        nombre: nameContact + ApellidoPContact + ApellidoMContact ,
+        email: mailContact,
+        telefono: numberContact,
+        contraseña: passwordContact,
+    }
+
+localStorage.setItem (JSON.stringify(usuario)   );
+*/
+
