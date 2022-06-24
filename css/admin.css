@@ -15,6 +15,17 @@ main {
     width: 100%;
 }
 
+
+/* h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+} */
+
 .navigation {
     position: fixed;
     width: 270px;
@@ -56,6 +67,14 @@ main {
     display: flex;
     text-decoration: none;
     color: #DDE2FF;
+}
+
+.navigation ul li a h2 {
+    text-decoration: none;
+    color: #DDE2FF;
+    font-size: 24px;
+    line-height: 2.2;
+    /* font-weight: 0; */
 }
 
 .navigation ul li a .icon {
@@ -224,4 +243,77 @@ main {
 .details .viewTypes table tbody tr:hover {
     background: #03a9f4;
     color: #fff;
+}
+
+.contenedor {
+    /* border: 1px red solid; */
+    position: relative;
+    margin: 2% auto;
+}
+
+.form {
+    /* border: 1px red solid; */
+    align-self: center;
+    background-color: #faf9f6;
+    border-radius: 8px 8px 0px 0px;
+}
+
+
+/* HASTA AQUI */
+
+.formProducto {
+    /*centrado del formulario*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#titulosn {
+    text-align: center;
+    background-color: rgba(74, 77, 71, 0.856);
+    color: white;
+    border-radius: 50px;
+    padding: 1%;
+    letter-spacing: 2px;
+    width: 50%;
+}
+
+.alertContact {
+    color: red;
+}
+
+.alert {
+    color: red;
+    font-size: 11px;
+}
+
+.btn {
+    background-color: #0e0d0d;
+    color: white;
+    width: 20%;
+}
+
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: rgb(58, 45, 231);
+    color: white;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 10px;
+    font-size: 90%;
+    width: 10%;
+    max-height: 57px;
+    text-align: center;
+    justify-content: center;
+}
+
+#myBtn:hover {
+    background-color: rgb(114, 150, 31);
 }

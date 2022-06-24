@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin</title>
     <link rel="stylesheet" type="text/css" href="./css/font-awesome-4.7.0/css/font-awesome.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./css/admin.css" />
 </head>
 
@@ -71,7 +72,7 @@
                             <tr>
                                 <td>Id</td>
                                 <td>Nombre</td>
-                                <td>Cantidad</td>
+                                <td>Valoracion</td>
                                 <td>Precio</td>
                                 <td>Status</td>
                             </tr>
@@ -88,7 +89,117 @@
                 <div class="toggle" onclick="toggleMenu(2)"></div>
 
             </div>
-            <h1>Agregar productos</h1>
+            <section class="contenedor">
+                <!-- Formulario -->
+                <section class="form">
+                    <form class="formProducto" action="">
+                        <h3 id="titulosn">Agregar nuevo producto</h3>
+
+                        <!--NOMBRE-->
+                        <div class="form-group col-md-6">
+                            <label for="nombre">Nombre del producto: </label>
+                            <input type="text" class="form-control" id="nombre">
+                            <div class="alert alert-danger" id="alertnombre" style="display: none"></div>
+                        </div>
+
+                        <!--DESCRIPCION-->
+                        <div class="form-group col-md-6">
+                            <label for="descripcion">Descripción del producto : </label>
+                            <input type="text" class="form-control" id="descripcion">
+                            <div class="alert alert-danger" id="alertdes" style="display: none"></div>
+                        </div>
+
+                        <!--CATEGORIA-->
+                        <div class="form-group col-md-6">
+                            <label for="categoria">Categoría : </label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="Almacenamiento">
+                                <label class="form-check-label" for="gridRadios1">
+                              Almacenamiento
+                            </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="Cocina">
+                                <label class="form-check-label" for="gridRadios2">
+                              Cocina
+                            </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="Decoración">
+                                <label class="form-check-label" for="gridRadios3">
+                              Decoración 
+                            </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios4" value="Varios">
+                                <label class="form-check-label" for="gridRadios4">
+                              Varios 
+                            </label>
+                            </div>
+                            <div class="alert alert-danger" id="alertcat" style="display: none"></div>
+                        </div>
+
+                        <br>
+                        <!--RATE-->
+                        <div class="form-group col-md-6">
+                            <label for="rate">Calificación (0-5) : </label>
+                            <input type="range" min="0" max="5" step="any" class="form-control" id="calificacion" list="tickmarks">
+                            <datalist id="tickmarks">
+                            <option value="0">
+                            <option value="1">
+                            <option value="2">
+                            <option value="3">
+                            <option value="4">
+                            <option value="5">
+                          </datalist>
+                            <div class="alert alert-danger col-md-6" id="alertrange" style="display: none"></div>
+                        </div>
+                        <!--Status-->
+                        <div class="form-group col-md-6">
+                            <label for="status">Status : </label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gridRadiosS" id="gridRadiosSA" value="activo">
+                                <label class="form-check-label" for="gridRadiosSA">
+                               Activo
+                             </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gridRadiosS" id="gridRadiosSI" value="inactivo">
+                                <label class="form-check-label" for="gridRadiosSI">
+                               Inactivo
+                             </label>
+                            </div>
+                            <div class="alert alert-danger" id="alertcat" style="display: none"></div>
+                        </div>
+                        <!--Costo-->
+                        <div class="form-group col-md-6">
+                            <label for="cost">Costo : </label>
+                            <input type="text" class="form-control" id="costo">
+                            <div class="alert alert-danger" id="alertcost" style="display: none"></div>
+                        </div>
+
+                        <!--IMAGEN-->
+                        <div class="form-group col-md-6">
+                            <label for="fileImage">Selecciona una imagen:</label>
+                            <input type="button" class="form-control btn-info" value="Subir imagen" id="btnFake">
+                            <input type="file" class="form-control-file" id="fileImage" style="display:none">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <img id="imageFile" name="imageFile" src="" alt="Vista previa de la imagen" title="Vista previa" />
+                        </div>
+                        <div class="col-md-6">
+                            <!-- <textarea rows="20" class="form-control" data-toggle="tooltip" data-placement="bottom" id="inputFile" name="inputFile" value="" placehodler="Imagen del curso" title="Imagen" style="display:block"></textarea>                  -->
+                        </div>
+                        <div class="alert alert-danger" id="alertimg" style="display: none"></div>
+                        <br>
+
+                        <button type="button" class="btn btn-outline" type="submit" id="enviar">Guardar</button>
+                    </form>
+                </section>
+                <!-- Formulario-->
+            </section>
+
         </section>
     </main>
     <script type="text/javascript">
@@ -132,7 +243,11 @@
             evt.currentTarget.className += " active";
         } //Function openTab del menu para cambiar de seccion las vistas
     </script>
-    <script src="./js/admin.js"></script>
+    <script type="text/javascript" src="./js/admin.js"></script>
+    <script type="text/javascript" src="./js/formproducto.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 </body>
 
 </html>
