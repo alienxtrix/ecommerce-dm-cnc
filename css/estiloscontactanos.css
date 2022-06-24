@@ -71,14 +71,18 @@ main {
 .right {
     /* border: 1px red solid; */
     align-self: center;
-    /* width: 100%; */
+    box-shadow: inset 0 0 6px rgba(174, 182, 176, 0.568);
+    /* background-color: rgba(202, 212, 204, 0.281); */
+    width: 95%;
+    margin-left: 2%;
 }
 
 .left {
     /* border: 1px red solid; */
     /* align-self: center; */
     width: 30%;
-    background-color: #F0E0B5;
+    background-color: #f0e0b5de;
+    box-shadow: inset 0 0 6px rgba(174, 182, 176, 0.568);
     border-radius: 20px;
     padding: 20px 10px;
     display: flex;
@@ -125,8 +129,8 @@ ul {
 
 #titulosn {
     text-align: center;
-    background-color: rgba(74, 77, 71, 0.856);
-    color: white;
+    /* background-color: rgba(74, 77, 71, 0.856); */
+    color: rgb(5, 5, 5);
     border-radius: 50px;
     /* padding: 1%; */
     letter-spacing: 2px;

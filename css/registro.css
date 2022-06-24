@@ -6,6 +6,8 @@
     font-family: 'Andika';
 }
 
+
+
 body {
     overflow-x: hidden;
 
@@ -48,6 +50,17 @@ main {
     display: flex;
     justify-content: center;
     margin-top: 5vh;
+}
+
+
+#contenedor{
+  display: grid;
+  margin: 1rem;
+  padding-block: 2rem;
+  max-width: 70%;
+  align-self: center;
+  border-style: ridge;
+  box-shadow: rgba(130, 177, 138, 0.12) 3px 3px 3px 3px, rgba(130, 177, 138, 0.12) 3px 3px 3px 3px;
 }
 
 .tituloRegistro{
