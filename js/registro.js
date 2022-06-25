@@ -60,7 +60,7 @@ function validarContraseña () {
 }
 
 function validarConfirContraseña () {
-    if(confirPassContact.value != passwordContact.value){
+    if((confirPassContact.value != passwordContact.value)){
         confirPassContact.style.border = "red thin solid";
         document.getElementById("alertConfirPassword").innerHTML = "Dato inválido, la contraseña no coincide";
         document.getElementById("alertConfirPassword").style="display: block; margin-bottom: -10px;";
@@ -165,26 +165,30 @@ enviar.addEventListener("click", (event)=> {
           })
      return false;
     }
-    
-});
 
 
-//============================== Guardar en el local storage ====================
+    // Si no falla validaciones, se muestra alerta de que se registró correctamente
+    Swal.fire({
+        icon: 'success',
+        title: 'Correcto',
+        text: 'Se ha registrado exitosamente',
+        showConfirmButton: false,
+        timer: 1500
+    })
+
+
+    //============================== Guardar en el local storage ====================
 //Comentada una segundo opcion!
-
-
-
 
 document.querySelector(`#enviar`).addEventListener(`click`, guardarRegistro);
 
 let usuarios = [];
+obtener_localstorage();
+guardarRegistro();
 
 function obtener_localstorage() {
-    
     let newUsuario = localStorage.getItem("Usuario");
     console.log(newUsuario);
-
-
 }
 
 
@@ -277,4 +281,9 @@ console.log(newUsuario);
 
 localStorage.setItem (JSON.stringify(usuario)   );
 */
+
+document.getElementById('formRe').reset();
+});
+
+
 

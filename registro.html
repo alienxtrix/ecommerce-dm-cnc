@@ -44,74 +44,77 @@
     <!--Finaliza Navbar-->
 
      <!-- Formulario -->
-     <div  id="contenedor">
-     <div class="containerTitulo">
-     <h3 class="tituloRegistro">Registrarse</h3>
-    </div>
-<form>
-    
-    <div class="formRegistro">
-            <div class="casillaForm"><!--Campo para Nombre-->
-              <label for="nameContact">Nombre</label>
-              <input type="text" class="form-control" id="nameContact" placeholder="Ingresa tu Nombre">
-               <div class = "alert" id="alertnombre" style="display: none"></div>
-            </div>
-            <div class="casillaForm"><!--Campo para Apellido-->
-                <label for="ApellidoPContact">Apellido Paterno</label>
-                <input type="text" class="form-control" id="ApellidoPContact" placeholder="Ingresa tu Apellido Paterno">
-                 <div class = "alert" id="alertnombreP" style="display: none"></div>
-              </div>
-    </div> 
+<section  class="contenedor">
+
+    <section class="form">
+    <form class="formregistro" id="formRe">
+        <h2 class="tituloRegistro">Regístrate</h2>
+        <p>Completa el formulario correctamente</p>
 
         <div class="formRegistro">
-            <div class="casillaForm"><!--Campo para Apellido-->
-              <label for="ApellidoMContact">Apellido Materno</label>
-              <input type="text" class="form-control" id="ApellidoMContact" placeholder="Ingresa tu Apellido Materno" required>
-               <div class = "alert" id="alertnombreM" style="display: none"></div>
-            </div>
-            <div class="casillaForm"><!--Campo para Fecha de Nacimiento-->
-                <label for="nameContact">Fecha de Nacimiento</label>
-                <input type="date" class="form-control" id="nameContac" placeholder="Ingresa tu Fecha de Nacimiento">
-                 <div class = "alert" id="alertnombre" style="display: none"></div>
-              </div>
-    </div>
+                <div class="casillaForm"><!--Campo para Nombre-->
+                <label for="nameContact">Nombre</label>
+                <input type="text" class="form-control" id="nameContact" placeholder="Ingresa tu nombre">
+                <div class = "alert alert-danger" id="alertnombre" style="display: none"></div>
+                </div>
+                <div class="casillaForm"><!--Campo para Apellido-->
+                    <label for="ApellidoPContact">Apellido Paterno</label>
+                    <input type="text" class="form-control" id="ApellidoPContact" placeholder="Ingresa tu apellido paterno">
+                    <div class = "alert alert-danger" id="alertnombreP" style="display: none"></div>
+                </div>
+        </div> 
 
-    <div class="formRegistro">
+        <div class="formRegistro">
+                <div class="casillaForm"><!--Campo para Apellido-->
+                <label for="ApellidoMContact">Apellido Materno</label>
+                <input type="text" class="form-control" id="ApellidoMContact" placeholder="Ingresa tu apellido materno" required>
+                <div class = "alert alert-danger" id="alertnombreM" style="display: none"></div>
+                </div>
+                <div class="casillaForm"><!--Campo para Fecha de Nacimiento-->
+                    <label for="nameContact">Fecha de Nacimiento</label>
+                    <input type="date" class="form-control" id="nameContac" placeholder="Ingresa tu fecha de nacimiento">
+                    <div class = "alert alert-danger" id="alertnombre" style="display: none"></div>
+                </div>
+        </div>
 
-            <div class="casillaForm"><!--Campo para Telefono-->
-                <label for="numberContact">Teléfono</label>
-                <input class="form-control" type="text" id="numberContact" placeholder="+52 5555555555">
-                <div class = "alert" id="alertnum" style="display: none"></div>
-            </div>
-            <div class="casillaForm"><!--Campo para Correo-->
-                <label for="mailContact">Correo electrónico</label>
-                <input type="email" class="form-control" id="mailContact" placeholder="name@example.com" >
-                <div class = "alert" id="alertmail" style="display: none"></div>
-              </div>
-    </div>
+        <div class="formRegistro">
 
-    <div class="formRegistro">
-        
-            <div class="casillaForm"><!--Campo para Contraseña-->
-              <label for="passwordContact">Contraseña</label>
-              <input type="password" class="form-control" id="passwordContact" placeholder="Ingresa tu Contraseña">
-               <div class = "alert" id="alertPassword" style="display: none"></div>
-            </div>
-            <div class="casillaForm"><!--Campo para Confirmar Contraseña-->
-                <label for="confirPassContact">Confirmar Contraseña</label>
-                <input type="password" class="form-control" id="confirPassContact" placeholder="Confirmar Contraseña">
-                 <div class = "alert" id="alertConfirPassword" style="display: none"></div>
-              </div>
-    </div>
-<!--Incio de Boton-->
-    <div class="containerBtn">
-        <button type="button" class="btnForm" type="submit" id="enviar">Registrar</button>
-        <button type="reset" class="btnForm">Limpiar Formulario</button>
-        <button type="button" class="btnForm" type="submit"> <a href="/registro.html">Regresar</a></button>
-    </div>
-</form>
-<!--Fin de Boton-->
-</div>
+                <div class="casillaForm"><!--Campo para Telefono-->
+                    <label for="numberContact">Teléfono</label>
+                    <input class="form-control" type="text" id="numberContact" placeholder="+52 5555555555">
+                    <div class = "alert alert-danger" id="alertnum" style="display: none"></div>
+                </div>
+                <div class="casillaForm"><!--Campo para Correo-->
+                    <label for="mailContact">Correo electrónico</label>
+                    <input type="email" class="form-control" id="mailContact" placeholder="name@example.com" >
+                    <div class = "alert alert-danger" id="alertmail" style="display: none"></div>
+                </div>
+        </div>
+
+        <div class="formRegistro">
+            
+                <div class="casillaForm"><!--Campo para Contraseña-->
+                <label for="passwordContact">Contraseña</label>
+                <input type="password" class="form-control" id="passwordContact" placeholder="Ingresa tu contraseña">
+                <div class = "alert alert-danger" id="alertPassword" style="display: none"></div>
+                </div>
+                <div class="casillaForm"><!--Campo para Confirmar Contraseña-->
+                    <label for="confirPassContact">Confirmar Contraseña</label>
+                    <input type="password" class="form-control" id="confirPassContact" placeholder="Confirmar contraseña">
+                    <div class = "alert alert-danger" id="alertConfirPassword" style="display: none"></div>
+                </div>
+        </div>
+
+    <!--Incio de Boton-->
+        <div class="containerBtn">
+            <button type="button" class="btnForm" type="submit" id="enviar">Registrar</button>
+            <button type="reset" class="btnForm">Limpiar Formulario</button>
+            <button type="button" class="btnForm" type="submit"> <a href="/registro.html" >Regresar</a></button>
+        </div>
+    </form>
+    <!--Fin de Boton-->
+    </section>
+</section>
    
     <!--Fin Formulario-->
 
