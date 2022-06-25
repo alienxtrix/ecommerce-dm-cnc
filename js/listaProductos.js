@@ -12,7 +12,7 @@ function addItem(item) {
         <div class="card">
             <img class = "ImgProdCat" src="${item.img}" alt="..." >
             <div id="puntuacion">
-                <p class="card-text-description">
+                <p class="card-text-description star">
                     ${rate}
                 </p>
             </div>
@@ -24,7 +24,7 @@ function addItem(item) {
 
             <div class="card-body">
                 <h5 class="card-title" id="nameProduct${item.id}">${item.name}</h5>
-                <p class="card-text-cost">${item.cost}</p>
+                <p class="card-text-cost">$ ${item.cost} mxn</p>
             </div>
         </div>
     </div>`;
@@ -48,7 +48,7 @@ for (let i = 0; i < categorias.length; i++) {
             } // for
         } // if
         for (let j = 0; j < productos.length; j++) {
-            let item = "" + productos[j].category + ""; 
+            let item = "" + productos[j].category + "";
             if (item == categoria) {
                 // console.log(productos[j]);
                 addItem(productos[j]);
@@ -61,25 +61,25 @@ for (let i = 0; i < categorias.length; i++) {
 // Muestra el modal de acuerdo al producto seleccionado
 let detalles = document.getElementsByClassName("btn btn-light btnDetallesClass");
 let modals = () => {
-    for (let i = 0; i < detalles.length; i++) {
-        detalles[i].addEventListener("click", (event) => {
-            document.getElementById("nombreProducto").innerHTML =  productos[detalles[i].id].name;
-            document.getElementById("descripcionProducto").innerHTML =  productos[detalles[i].id].description;
-        });
-    } // for
-} // función modals()
+        for (let i = 0; i < detalles.length; i++) {
+            detalles[i].addEventListener("click", (event) => {
+                document.getElementById("nombreProducto").innerHTML = productos[detalles[i].id].name;
+                document.getElementById("descripcionProducto").innerHTML = productos[detalles[i].id].description;
+            });
+        } // for
+    } // función modals()
 
 // Función para agregar la clase "active" a la categoría seleccionada (botón)
 let addStyle = (element) => {
-    element.setAttribute("id", "active");
-} // function remove()
+        element.setAttribute("id", "active");
+    } // function remove()
 
 // Función para eliminar la clase "active" de todas las categorías categoría (botones)
 let removeStyle = (elements) => {
-    for (let i = 0; i < elements.length; i++) {
-        elements[i].removeAttribute("id");
-    } // for
-} // function remove()
+        for (let i = 0; i < elements.length; i++) {
+            elements[i].removeAttribute("id");
+        } // for
+    } // function remove()
 
 // Función para traer los productos
 window.addEventListener("load", function() {

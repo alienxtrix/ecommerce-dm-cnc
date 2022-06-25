@@ -22,14 +22,17 @@ main {
     width: 40px;
 }
 
-.navbar-custom{/*Color de fondo para Navbar */
+.navbar-custom {
+    /*Color de fondo para Navbar */
     border-radius: 8px;
     background-color: rgba(220, 239, 195, 1);
 }
 
 .logo {
-    width: 12%; /*Se aumentó en un 7%*/
-    height: 25%; /*Se estableció en 25%*/
+    width: 12%;
+    /*Se aumentó en un 7%*/
+    height: 25%;
+    /*Se estableció en 25%*/
     margin-right: 30px;
     margin-left: 10px;
 }
@@ -46,26 +49,26 @@ main {
     align-items: center;
     flex-wrap: wrap;
     margin: 20px auto;
-	position: static;
+    position: static;
     width: 90%;
-	height: auto;
-	background-color: #FFFFFF;
+    height: auto;
+    background-color: #FFFFFF;
     padding: 10px;
     box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
 }
 
 #btnCategoriaCatalogo a {
-	border-radius: 15px;
+    border-radius: 15px;
     padding: 10px 20px;
-	display: inline-block;
-	position: relative;
-	z-index: 1;
-	text-decoration: none;
-	text-transform:capitalize;
-	text-align: center;
-	color: black;
-	cursor: pointer;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    text-decoration: none;
+    text-transform: capitalize;
+    text-align: center;
+    color: black;
+    cursor: pointer;
 }
 
 #btnCategoriaCatalogo a:hover {
@@ -75,8 +78,8 @@ main {
 #tarjetas img {
     display: block;
     margin: auto;
-    width: 200px;
-    height: 200px;
+    width: 80%;
+    height: 50%;
 }
 
 #active {
@@ -89,12 +92,14 @@ main {
     border-color: black;
 }
 
+
 /*footer*/
+
 .footer {
     bottom: 0px;
     height: 13vh;
     width: 100%;
-    display:inline-flex;
+    display: inline-flex;
     background-color: rgba(220, 239, 195, 1);
     justify-content: space-around;
     align-items: center;
@@ -116,12 +121,17 @@ main {
 
 .footer-socialmedia {
     width: 6vmin;
-}/*final del footer*/
+}
+
+
+/*final del footer*/
+
 
 /*ESTILO DE IMAGENES DE PRODUCTOS*/
-.ImgProdCat{
-    width: 200px;
-    height: 200px;
+
+.ImgProdCat {
+    width: 50% px;
+    height: 50%px;
     align-self: center;
 }
 
@@ -130,33 +140,47 @@ main {
     width: 90%;
 }
 
+
 /*ESTILO DE TARJETAS DE PRODUCTOS*/
-.card{
+
+.card {
     width: 90%;
-    height: 390px;
+    height: 450px;
     margin: 0px auto;
     align-self: center;
     margin-bottom: 10%;
     border: none;
     box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+    padding-top: 20px;
 }
 
+
 /*ESTILO DE TEXTO DE PRODUCTOS*/
-.card-text-cost{
+
+.card-text-cost {
     text-align: center;
     font-size: large;
 }
-.card-title{
+
+.card-title {
     text-align: center;
-    font-size: larger;
+    font-size: calc(0.75em+1vmin);
 }
 
+
 /* ESTILO BOTONES*/
+
 .btnDetallesClass {
-    width:120px;
+    width: 120px;
+    width: fit-content;
 }
 
 .btnAgregarClass {
     width: 150px;
+    width: fit-content;
+}
+
+.star {
+    padding-top: 10px;
 }
