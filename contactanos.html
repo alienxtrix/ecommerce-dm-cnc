@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="css/estiloscontactanos.css">
+    <script src="//code.jquery.com/jquery.min.js"></script>
     <title>Contactanos</title>
 </head>
 
@@ -14,39 +15,43 @@
 
 <body>
 <main>
-<!--Inicio Navbar-->
-<nav class="navbar navbar-light navbar-expand-lg navbar navbar-custom bg-faded justify-content-center">
-  <span class="nav navbar-nav ml-auto w-100 justify-content-right">
-          <img src="./img/LoboMejorado.png" id="logo" class=" align-top img-fluid  navbar-brand d-none d-lg-block  rounded float-left" alt="Responsive image"></img>
-          <img src="./img/Logo.png" id="logo_2" class="d-inline-block align-top logo_2 navbar-brand d-flex rounded float-left img-fluid" alt="Responsive image"></img>
-  </span>
-            <div class="navbar-collapse collapse w-100 sMenu" id="navbarSupportedContent">
-                <ul class="navbar-nav w-100 justify-content-center">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/index.html">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/login.html">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/catalogo.html">Catálogo</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/contactanos.html">Contáctanos</a>
-                    </li>
-                </ul>
-            </div>
-            <span class="nav navbar-nav ml-auto w-100 justify-content-end float-right">
-    <a href="carrito.html"><img src="./img/carritoCompra.png" id="carritoCompra" class="float-right img-fluid " alt="Responsive image"></a>
-    <button id="burguer_1" class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-      </button>
-  </span>
-            <button id="burguer_1" class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-  <span class="navbar-toggler-icon"></span>
-  </button>
-        </nav>
+<!-- Inicio Navbar -->
 
+<nav>
+    <div class="row row-cols-3 navbar-custom ">
+        <div class="col">
+            <img src="./img/LoboMejorado.png" id="logo" class=" align-top img-fluid  navbar-brand d-none d-xl-block  rounded float-left" alt="Responsive image"></img>
+            <img src="./img/Logo.png" id="logo_2" class="d-inline-block align-top logo_2 navbar-brand d-flex rounded float-left img-fluid" alt="Responsive image"></img>
+        </div>
+        <div class="col-md-4 justify-content-end nav navbar-expand-xl nabvar-collapse"  >
+            <ul class="nav navbar-nav navbar-expand-xl collapse navbar-collapse list-group-horizontal w-100" id="navbarText" >
+                <li class="nav-item " >
+                    <a class="nav-link" href="/index.html">Inicio</a>
+                </li>
+                <li class="nav-item " >
+                    <a class="nav-link" href="/login.html">Login</a>
+                </li>
+                <li class="nav-item "  >
+                    <a class="nav-link" href="/catalogo.html">Catálogo</a>
+                </li>
+                <li class="nav-item "  >
+                    <a class="nav-link" href="/contactanos.html">Contáctanos</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col order-last">
+            <button class="navbar-toggler ms-auto d-xl-none" id="btnC"  type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="nvc" aria-expanded="false" aria-label="Toggle navigation">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-down" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M3.5 10a.5.5 0 0 1-.5-.5v-8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 0 0 1h2A1.5 1.5 0 0 0 14 9.5v-8A1.5 1.5 0 0 0 12.5 0h-9A1.5 1.5 0 0 0 2 1.5v8A1.5 1.5 0 0 0 3.5 11h2a.5.5 0 0 0 0-1h-2z"/>
+                    <path fill-rule="evenodd" d="M7.646 15.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 14.293V5.5a.5.5 0 0 0-1 0v8.793l-2.146-2.147a.5.5 0 0 0-.708.708l3 3z"/>
+                </svg>
+            </button> 
+            <a href="carrito.html"><img src="./img/carritoCompra.png" id="carritoCompra" class="float-right img-fluid " alt="Responsive image"></a>
+        </div>
+    </div>
+</nav>
+
+<!-- Fin Navbar -->
         <article class="contenedor">
 
             <!-- Contenido de información y mapa -->
@@ -90,7 +95,7 @@
                     </div>
                     <div class="form-group col-md-6">
                         <label for="numberContact">Teléfono</label>
-                        <input class="form-control" type="text" id="numberContact" placeholder="+52 5555555555">
+                        <input class="form-control" type="text" id="numberContact" placeholder="5555555555">
                         <div class="alert" id="alertnum" style="display: none"></div>
                     </div>
                     <div class="form-group col-md-6">
