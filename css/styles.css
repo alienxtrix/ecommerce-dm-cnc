@@ -1,13 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    
     font-family: 'Andika';
-    width: 100%;
 }
 
-/* Navbar elements */
 .navbar-nav {
     flex-flow: row nowrap;
   }
@@ -32,18 +29,27 @@ li a{
     border-radius: 0.25rem;
 }
 
+/* 
+body {
+    overflow-x: hidden;
+    background-color: #F6F2ED;
+} */
+
 #carritoCompra {
     position: relative;
-    position: relative;
     margin: 17px 15px 10px 0px;
-    margin-right: 3%;
-    width: auto;
-    height: auto;
     width: 11.26%;
+    height: vh; 
     max-width: 42px;
     max-height: 40px;
     min-height: 30px;
     min-width: 32px;
+}
+
+.navbar-custom {
+    /*Color de fondo para Navbar */
+    border-radius: 8px;
+    background-color: rgba(220, 239, 195, 1);
 }
 
 #logo {
@@ -69,24 +75,6 @@ li a{
 ul li{
     margin: 10px auto;
     padding: 0px;
-}
-
-/* Navbar Elements */
-
-body {
-    overflow-x: hidden;
-    background-color: #F6F2ED;
-}
-
-main {
-    position: relative;
-    /* width: 100%; */
-}
-
-.navbar-custom {
-    /*Color de fondo para Navbar */
-    border-radius: 8px;
-    background-color: rgba(220, 239, 195, 1);
 }
 
 .contenedor {
@@ -316,7 +304,6 @@ ul {
         width: 80%;
     }
 }
-
 
 /* Botón "Ir Arriba" */
 
