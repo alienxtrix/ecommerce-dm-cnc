@@ -1,3 +1,4 @@
+//Trae los inputs del formulario
 let nameContact = document.getElementById("nameContact");
 let ApellidoPContact = document.getElementById("ApellidoPContact");
 let ApellidoMContact = document.getElementById("ApellidoMContact");
@@ -7,6 +8,7 @@ let passwordContact = document.getElementById("passwordContact")
 let confirPassContact = document.getElementById("confirPassContact")
 
 
+//------------------------> F U N C I O N E S    D E   V A L I D A C I O N E S <--------------------------------
 function validarNombre () {
     if(nameContact.value.length<3){
         nameContact.style.border = "red thin solid";
@@ -18,7 +20,7 @@ function validarNombre () {
         document.getElementById("alertnombre").style.display="none";
         return true;
     }
-}
+} //Validacion nombre
 
 function validarApellidoP () {
     if(ApellidoPContact.value.length<3){
@@ -31,7 +33,7 @@ function validarApellidoP () {
         document.getElementById("alertnombreP").style.display="none";
         return true;
     }
-}
+} // Validacion apellido paterno
 
 function validarApellidoM () {
     if(ApellidoMContact.value.length<3){
@@ -44,7 +46,7 @@ function validarApellidoM () {
         document.getElementById("alertnombreM").style.display="none";
         return true;
     }
-}
+} // Validacion apellido materno
 
 function validarContraseña () {
     if(passwordContact.value.length<5){
@@ -57,7 +59,7 @@ function validarContraseña () {
         document.getElementById("alertPassword").style.display="none";
         return true;
     }
-}
+} // Validacion contraseña
 
 function validarConfirContraseña () {
     if((confirPassContact.value != passwordContact.value)){
@@ -70,7 +72,7 @@ function validarConfirContraseña () {
         document.getElementById("alertConfirPassword").style.display="none";
         return true;
     }
-}
+} //Validacion confirmacion de contraseña
 
 
 let validacionCel = /^[0-9]{10}$/;  
@@ -86,7 +88,7 @@ function validarNumero (){
         document.getElementById("alertnum").style.display="none";
         return true;
     }
-}
+} // Validacion de celular
 
 let validacionEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
 
@@ -101,54 +103,79 @@ function validarEmail (){
        document.getElementById("alertmail").style.display="none";
        return true;
     }
-}
+} // Validacion de email
+
+function validarPoliticas(){
+    let politicas = document.getElementById("politicas");
+    if (!politicas.checked) {
+        document.getElementById("alertpoliticas").innerHTML = "Por favor, acepta las políticas de privacidad";
+        document.getElementById("alertpoliticas").style="display: block; margin-bottom: -10px;";
+        return false;
+    }else{
+        document.getElementById("alertpoliticas").style.display="none";
+        return true;
+    }
+} // Validacion de aceptar politicas de privacidad
 
 
+//--------------------------> E V E N T O S   I N P U T S   Y   C H E C K B O X <--------------------------------
+
+const checkbox = document.querySelector("input[name=checkbox]");
+checkbox.addEventListener("change", (e) => {
+    if (e.target.checked) {
+       document.getElementById("alertpoliticas").style.display="none";
+    }
+    else{
+        document.getElementById("alertpoliticas").innerHTML = "Por favor, acepta las políticas de privacidad";
+        document.getElementById("alertpoliticas").style="display: block; margin-bottom: -10px;";
+    }
+}); //Politicas
 
 nameContact.addEventListener("blur",(e)=>{
     e.target.value = e.target.value.trim();
     validarNombre();
-})
+}) //Nombre
 
 ApellidoPContact.addEventListener("blur",(e)=>{
     e.target.value = e.target.value.trim();
     validarApellidoP();
-})
+}) //Apellido P
 
 ApellidoMContact.addEventListener("blur",(e)=>{
     e.target.value = e.target.value.trim();
     validarApellidoM();
-})
+}) //Apellido M
 
 
 numberContact.addEventListener("blur",(e)=>{
     e.target.value = e.target.value.trim();
     validarNumero();
-})
+}) //Numero
 
 mailContact.addEventListener("blur",(e)=>{
     e.target.value = e.target.value.trim();
     validarEmail();
-})
+}) // Email
 
 passwordContact.addEventListener("blur",(e)=>{
     e.target.value = e.target.value.trim();
     validarContraseña();
-})
+}) // Contraseña
 
 confirPassContact.addEventListener("blur",(e)=>{
     e.target.value = e.target.value.trim();
     validarConfirContraseña();
-})
+}) // Confirmar contraseña
 
 
 
 
-
+// -------------------------------> E N V I A R   F O R M U L A R I O <----------------------------------------
 let enviar = document.getElementById("enviar");
 enviar.addEventListener("click", (event)=> {
     event.preventDefault();  
 
+    // Se hacen validaciones
     validarNombre();
     validarApellidoP();
     validarApellidoM();
@@ -156,8 +183,10 @@ enviar.addEventListener("click", (event)=> {
     validarConfirContraseña();
     validarNumero();
     validarEmail();
+    validarPoliticas();
 
-    if ((!validarNombre()) || (!validarContraseña()) || (!validarApellidoM()) || (!validarNumero()) || (!validarConfirContraseña()) || (!validarApellidoP()) || (!validarEmail()) ){
+    //Si falla alguna validacion, se muestra alerta de error 
+    if ((!validarNombre()) || (!validarContraseña()) || (!validarApellidoM()) || (!validarNumero()) || (!validarConfirContraseña()) || (!validarApellidoP()) || (!validarEmail()) || (!validarPoliticas())){
         Swal.fire({
             icon: 'error',
             title: 'Error',
@@ -165,6 +194,7 @@ enviar.addEventListener("click", (event)=> {
           })
      return false;
     }
+    
 
 
     // Si no falla validaciones, se muestra alerta de que se registró correctamente
@@ -175,6 +205,7 @@ enviar.addEventListener("click", (event)=> {
         showConfirmButton: false,
         timer: 1500
     })
+
 
 
     //============================== Guardar en el local storage ====================
@@ -221,13 +252,10 @@ let newUsuario =  {
     Email : document.querySelector(`#mailContact`).value
     };
 
-    //console.log(newUsuario);
-
     usuarios.push(newUsuario);
     
     localStorage.setItem("Usuario", JSON.stringify (usuarios));
 
-    //console.log(usuarios);
 
     window.addEventListener("load", function() {
         if (localStorage.getItem("Usuario") != null) {
@@ -282,6 +310,7 @@ console.log(newUsuario);
 localStorage.setItem (JSON.stringify(usuario)   );
 */
 
+// Se limpia formulario
 document.getElementById('formRe').reset();
 });
 

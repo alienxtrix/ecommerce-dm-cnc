@@ -10,6 +10,7 @@ let btnFake = document.getElementById('btnFake');
 let imageFile = document.getElementById('imageFile');
 
 
+//------------------------> F U N C I O N E S    D E   V A L I D A C I O N E S <--------------------------------
 function validarDescripcion() {
     if (descripcion.value.length < 11) {
         descripcion.style.border = "red thin solid";
@@ -94,8 +95,8 @@ function validarImagen() {
 } // Validar imagen
 
 
+//--------------------------> E V E N T O S   I N P U T S   Y   C H E C K B O X <--------------------------------
 
-//Eventos para validar cuando salga de los campos del formulario
 nombre.addEventListener("blur", (e) => {
     e.target.value = e.target.value.trim();
     validarNombre();
@@ -145,7 +146,9 @@ function previewFile(img, inputFile, input) {
 let productos = [];
 let contador = 0;
 
-//Evento se hace click en el boton enviar
+
+
+// -------------------------------> E N V I A R   F O R M U L A R I O <----------------------------------------
 let enviar = document.getElementById("enviar");
 enviar.addEventListener("click", (event) => {
     event.preventDefault();
