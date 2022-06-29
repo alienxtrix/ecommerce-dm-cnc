@@ -1,20 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@320&display=swap");
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Andika';
+    font-family: 'Oswald';
 }
 
 body {
     overflow-x: hidden;
-
+    background-image: url('http://drive.google.com/uc?export=view&id=1u-G6tdC5FLt6FA9L_1B5ox7AA4ZZUFxu');
+    /* https://drive.google.com/file/d/1nLjTo7dwrbl3VK3k6IAg9Dj6_dOqHTzv/view?usp=sharing */
+    background-position: right;
+    background-size: cover;
 }
 
-main {
-    position: relative;
-    width: 100%;
-}
 
 #carritoCompra {
     position: relative;
@@ -82,10 +78,12 @@ main {
 }
 
 #login{
-    border-radius: 20%;
+    margin-right: 10px;
+    border-radius: 4%;
 }
 #invitado{
-    border-radius: 20%;
+    margin-right: 10px;
+    border-radius: 4%;
 }
 
 
@@ -104,12 +102,9 @@ main {
 
 #tproductos{
     text-align: center;
-    background-color: rgba(74, 77, 71, 0.856);
-    color: white;
-    border-radius: 50px;
+    color: rgb(0, 0, 0);
     padding: 0.5%;
     letter-spacing: 2px;
-
 }
 .Imgprod{
     width: 170px;
@@ -123,8 +118,7 @@ main {
 
 .summarytitle{
     text-align: center;
-    background-color: rgba(74, 77, 71, 0.856);
-    color: white;
+    color: rgb(0, 0, 0);
     padding: 0.5%;
     letter-spacing: 2px;
 }

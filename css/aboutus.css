@@ -1,9 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@320&display=swap");
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Andika';
+    font-family: 'Oswald';
 }
 
 body {
@@ -74,7 +71,7 @@ main {
 }/*final del footer*/
 
 p {
-    font-size: 15px;
+    font-size: 17px;
 }
 
 .sobrenosotros {
@@ -88,14 +85,9 @@ p {
     width: 20%;
 }
 
-#titulosn {
-    text-align: center;
-    background-color: rgba(74, 77, 71, 0.856);
-    color: white;
-    border-radius: 50px;
-    letter-spacing: 2px;
+.bi{
+    font-size: 20px;
 }
-
 
 .project {
     display: flex;
@@ -103,6 +95,9 @@ p {
     padding-bottom: 2%;
 }
 
+.bi{
+    color: #000;
+}
 .project-left {
     justify-content: center;
     align-items: center;
@@ -160,10 +155,11 @@ p {
 
 .prinTitulo {
     text-align: center;
-    background-color: rgba(74, 77, 71, 0.856);
-    color: white;
+    text-shadow: 2px 2px #6ec2e425;
+    color: rgb(0, 0, 0);
     border-radius: 50px;
-    letter-spacing: 2px;
+    letter-spacing: 5px;
+    font-weight: bold;
 }
 
 .footer {
@@ -352,6 +348,7 @@ p.awesome_line {
     -webkit-transition: all .5s ease 0;
     transition: all .5s ease 0;
     transition: all 0.5s ease 0s;
+
 }
 
 .item:hover .item,
@@ -362,6 +359,10 @@ p.awesome_line {
     -webkit-transition: all .5s ease 0;
     transition: all .5s ease 0;
     transition: all 0.5s ease 0s;
+}
+
+.item:hover .bi{
+    color: rgb(255, 255, 255);
 }
 
 .item:hover h6,
@@ -520,7 +521,7 @@ p.awesome_line {
     z-index: 99; 
     border: none;
     outline: none;
-    background-color: rgb(58, 45, 231);
+    background-color: rgb(0, 0, 0);
     color: white;
     cursor: pointer;
     padding: 15px;

@@ -1,9 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@320&display=swap");
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Andika';
+    font-family: 'Oswald';
 }
 
 
@@ -21,13 +18,13 @@ body {
 }
 
 .navbar-custom{/*Color de fondo para Navbar */
-    background:linear-gradient( rgba(220, 239, 195, 0.7), rgba(220, 239, 195, 0.5),  rgba(220, 239, 195, 0.7));
-    box-shadow: rgba(0, 0, 0, 0.178) 0px 0px 10px 0px;
+    background-color:  #c1e5e1e1;
+    box-shadow:  rgba(125, 126, 123, 0.712)0px 0px 3px 0px;
 }
 
 .navbar .navbar-nav .nav-item .nav-link {
     font-size: medium;
-    color: rgba(0, 0, 0, 0.507);
+    color: rgba(0, 0, 0, 0.795);
     letter-spacing: 2%;
 }
 
@@ -50,41 +47,34 @@ body {
 
 /*Inicio-formulario*/
 
-/* #op{
-    background-image:url('http://drive.google.com/uc?export=view&id=1CWUvKC-GmKbOlj8MkwzpkQJzVEI1jTFg'); */
-    /* background-repeat:no-repeat; */
-    /* background-position-y:center; */
-    /* background-size: cover; */
-/* } */
+#fondo{
+    background-image: url('http://drive.google.com/uc?export=view&id=1v-r2nx_WTtSh4c10fZT2ZaLWWS0Utvgg');
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ } 
 .contenedor{
     padding: 3%;
-    width: 90%;
-    margin: auto;
     width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.form{
-    width: fit-content;
-
-}
 
 .formregistro{
     display: flex;
     width: 110%;
-    background-color: rgba(225, 228, 225, 0.055);
     flex-direction: column;
     align-items: center;
-    box-shadow: inset 0 0 6px rgba(58, 59, 59, 0.233);
-    background-image:url("https://fondosmil.com/fondo/17538.jpg");
-    /* /* background-repeat:no-repeat; */
-    background-position-y:center;
-    background-size: 50rem;
-    opacity: 1;
+    justify-content: center;
+    box-shadow: inset 0 0 3px rgba(58, 59, 59, 0.233);
+    background-color: rgb(255, 255, 255);
 }
 
 .tituloRegistro{
     text-align: center;
-    color: rgb(10, 10, 10);
     font-weight: bold;
     width: 40%;
     margin-top: 3%;
@@ -96,8 +86,8 @@ input::placeholder {
   }
 
 .alert {
-    color: red;
-    font-size: 9px;
+    color: rgb(255, 0, 0);
+    font-size: 11px;
 }
 
 .casillaForm{
@@ -122,18 +112,25 @@ input::placeholder {
 
 .containerBtn a{
     color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+a:active {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+
 }
 
 .btnForm{
-    background-color: #406d5e98;
+    background-color:#000000d7;
     border-radius: 6%;
     border: none ;
     padding: 2% 5% 2% 5%;
     margin: 9%;
     line-height: 110%;
-    color: white;
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-    font-weight: bold;
+    color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.233) 0px 1px 3px, rgba(0, 0, 0, 0.267) 0px 1px 2px;
+    
 }
 /* Final de Botones*/
 
@@ -152,7 +149,7 @@ input::placeholder {
     height: 20%;
     width: 100%;
     display:inline-flex;
-    background:linear-gradient( rgba(220, 239, 195, 0.7), rgba(220, 239, 195, 0.5),  rgba(220, 239, 195, 0.7));
+    background-color: #27272723;
     justify-content: space-around;
     align-items: center;
 }
@@ -178,9 +175,10 @@ input::placeholder {
 
 @media (max-width: 991px) {
 
-    .navbar-nav .nav-item {
-        margin-right: 5%;
-        margin-left: 5%;
+    .casillaForm{
+        display: block;
+        padding: 4vh;
+        width: 70vmin;
     }
 
     .containerBtn{
@@ -204,10 +202,19 @@ input::placeholder {
       text-align: center;
     }
 
+
+
+
     .footer-lobo {
         height: 4vh;
         width: 9vmin;
     }
+
+    .navbar-nav .nav-item {
+        margin-right: 5%;
+        margin-left: 5%;
+    }
+
 
     #socialmedia i{
         align-items: center;
@@ -217,10 +224,12 @@ input::placeholder {
 
     .logo_2 {
         position: absolute;
-        left: 30%;
         width: 50%;
         max-height: 50px ;
+        margin: 0%;
+        padding: 0%;
     }
+
 
     #carritoCompra {
         position: absolute;
@@ -228,6 +237,7 @@ input::placeholder {
         top: 25%;
         width: 35px;
     }
+
 
     .navbar-toggler{
         position: relative;

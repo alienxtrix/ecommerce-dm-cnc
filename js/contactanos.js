@@ -107,7 +107,17 @@ enviar.addEventListener("click", (event)=> {
      return false;
     }
     
+    // Si no falla validaciones, se muestra alerta de que se registró correctamente
+    Swal.fire({
+        icon: 'success',
+        title: 'Correcto',
+        text: 'Nos pondremos en contacto contigo',
+        showConfirmButton: false,
+        timer: 1500
+    })
 
+    // Se limpia formulario
+document.getElementById('formC').reset();
 
 });
 

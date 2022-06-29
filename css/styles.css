@@ -1,8 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@320&display=swap");
 * {
-    
-    font-family: 'Andika';
+    font-family: 'Oswald';
 }
 
 .navbar-nav {
@@ -315,7 +313,7 @@ ul {
     z-index: 99;
     border: none;
     outline: none;
-    background-color: rgb(58, 45, 231);
+    background-color: rgb(0, 0, 0);
     color: white;
     cursor: pointer;
     padding: 8px;
