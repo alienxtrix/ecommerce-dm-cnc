@@ -24,11 +24,11 @@ function addItem(item) {
     modals();
 } // function addItem(item)
 
-let clasB;
-let statussB;
 // Muestra el modal de acuerdo al producto seleccionado
 let detalles = document.getElementsByClassName("fa fa-pencil-square-o btnEditarClass");
 let btn_id;
+let clasB;
+let statussB;
 let modals = () => {
     for (let i = 0; i < detalles.length; i++) {
         detalles[i].addEventListener("click", (event) => {

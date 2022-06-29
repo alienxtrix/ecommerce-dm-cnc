@@ -282,8 +282,21 @@ let enviarEd = document.getElementById("enviarEd");
             productos[btn_id].description = document.getElementById("descripcionEd").value;
             productos[btn_id].rate = document.getElementById("calificacionEd").value;
             productos[btn_id].cost = document.getElementById("costoEd").value;
-            productos[btn_id].category = clasB;
-            productos[btn_id].status = statussB;
+            if (document.getElementById("gridRadios1Ed").checked == true) {
+                productos[btn_id].category = "Almacenamiento";
+            } else if (document.getElementById("gridRadios2Ed").checked == true) {
+                productos[btn_id].category = "Cocina";
+            } else if (document.getElementById("gridRadios3Ed").checked == true) {
+                productos[btn_id].category = "Decoración";
+            } else if (document.getElementById("gridRadios4Ed").checked == true) {
+                productos[btn_id].category = "Varios";
+            }
+            if (document.getElementById("gridRadiosSAEd").checked == true) {
+                productos[btn_id].status = "activo";
+            } else if (document.getElementById("gridRadiosSIEd").checked = true) {
+                productos[btn_id].status = "inactivo";
+            }
+
             if (v == true) {
                 productos[btn_id].img = reader.result;
             }
