@@ -144,6 +144,14 @@ main {
     color: #111;
 }
 
+#imageFile {
+    width: 100%;
+}
+
+#imageFileEd {
+    width: 100%;
+}
+
 .search {
     position: relative;
     margin: 0 10px;
