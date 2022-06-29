@@ -84,6 +84,141 @@
             </div>
             </table>
         </section>
+
+
+
+        <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="nombreProducto"></h5>
+                    </button>
+                    </div>
+                    <div class="modal-body" id="descripcionProducto">
+                        
+
+                        <form class="formProducto" action="" id="myFormEd">
+                            <h3 id="titulosn">Editar un producto</h3>
+    
+                            <!--NOMBRE-->
+                            <div class="form-group col-md-6">
+                                <label for="nombreEd">Nombre del producto: </label>
+                                <input type="text" class="form-control" id="nombreEd">
+                                <div class="alert alert-danger" id="alertnombreEd" style="display: none"></div>
+                            </div>
+    
+                            <!--DESCRIPCION-->
+                            <div class="form-group col-md-6">
+                                <label for="descripcionEd">Descripción del producto : </label>
+                                <input type="text" class="form-control" id="descripcionEd">
+                                <div class="alert alert-danger" id="alertdesEd" style="display: none"></div>
+                            </div>
+    
+                            <!--CATEGORIA-->
+                            <div class="form-group col-md-6">
+                                <label for="categoriaEd">Categoría : </label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gridRadiosEd" id="gridRadios1Ed" value="Almacenamiento">
+                                    <label class="form-check-label" for="gridRadios1Ed">
+                                  Almacenamiento
+                                </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gridRadiosEd" id="gridRadios2Ed" value="Cocina">
+                                    <label class="form-check-label" for="gridRadios2Ed">
+                                  Cocina
+                                </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gridRadiosEd" id="gridRadios3Ed" value="Decoración">
+                                    <label class="form-check-label" for="gridRadios3Ed">
+                                  Decoración 
+                                </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gridRadiosEd" id="gridRadios4Ed" value="Varios">
+                                    <label class="form-check-label" for="gridRadios4Ed">
+                                  Varios 
+                                </label>
+                                </div>
+                                <div class="alert alert-danger" id="alertcatEd" style="display: none"></div>
+                            </div>
+    
+                            <br>
+                            <!--RATE-->
+                            <div class="form-group col-md-6">
+                                <label for="rateEd">Calificación (0-5) : </label>
+                                <input type="range" min="0" max="5" step="any" class="form-control" id="calificacionEd" list="tickmarks">
+                                <datalist id="tickmarks">
+                                <option value="0">
+                                <option value="1">
+                                <option value="2">
+                                <option value="3">
+                                <option value="4">
+                                <option value="5">
+                              </datalist>
+                                <div class="alert alert-danger col-md-6" id="alertrangeEd" style="display: none"></div>
+                            </div>
+
+                            <!--Status-->
+                            <div class="form-group col-md-6">
+                                <label for="status">Status : </label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gridRadiosSEd" id="gridRadiosSAEd" value="activo">
+                                    <label class="form-check-label" for="gridRadiosSAEd">
+                                   Activo
+                                 </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gridRadiosSEd" id="gridRadiosSIEd" value="inactivo">
+                                    <label class="form-check-label" for="gridRadiosSIEd">
+                                   Inactivo
+                                 </label>
+                                </div>
+                                <div class="alert alert-danger" id="alertcat1Ed" style="display: none"></div>
+                            </div>
+
+                            <!--Costo-->
+                            <div class="form-group col-md-6">
+                                <label for="costEd">Costo : </label>
+                                <input type="text" class="form-control" id="costoEd">
+                                <div class="alert alert-danger" id="alertcostEd" style="display: none"></div>
+                            </div>
+    
+                            <!--IMAGEN-->
+                            <div class="form-group col-md-6">
+                                <label for="fileImageEd">Selecciona una imagen:</label>
+                                <input type="button" class="form-control btn-info" value="Subir imagen" id="btnFakeEd">
+                                <input type="file" class="form-control-file" id="fileImageEd" style="display:none">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <img id="imageFileEd" name="imageFileEd" src="" alt="" title="Vista previa" />
+                            </div>
+
+                            <div class="col-md-6">
+                                <!-- <textarea rows="20" class="form-control" data-toggle="tooltip" data-placement="bottom" id="inputFile" name="inputFile" value="" placehodler="Imagen del curso" title="Imagen" style="display:block"></textarea>                  -->
+                            </div>
+                            <div class="alert alert-danger" id="alertimgEd" style="display: none"></div>
+                            <br>
+    
+                            <button type="button" class="btn btn-outline" type="submit" id="enviarEd">Guardar</button>
+                        </form>
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    </div> 
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
         <section class="main_content" id="vistaFormProductos">
             <div class="header_content">
                 <div class="toggle" onclick="toggleMenu(2)"></div>
@@ -91,8 +226,8 @@
             </div>
             <section class="contenedor">
                 <!-- Formulario -->
-                <section class="form">
-                    <form class="formProducto" action="">
+                <section class="form" id="formFirst">
+                    <form class="formProducto" action="" id="myForm">
                         <h3 id="titulosn">Agregar nuevo producto</h3>
 
                         <!--NOMBRE-->
@@ -136,8 +271,8 @@
                               Varios 
                             </label>
                             </div>
-                            <div class="alert alert-danger" id="alertcat" style="display: none"></div>
                         </div>
+                        <div class="alert alert-danger" id="alertcat" style="display: none"></div>
 
                         <br>
                         <!--RATE-->
@@ -154,6 +289,7 @@
                           </datalist>
                             <div class="alert alert-danger col-md-6" id="alertrange" style="display: none"></div>
                         </div>
+
                         <!--Status-->
                         <div class="form-group col-md-6">
                             <label for="status">Status : </label>
@@ -169,8 +305,9 @@
                                Inactivo
                              </label>
                             </div>
-                            <div class="alert alert-danger" id="alertcat" style="display: none"></div>
+                            <div class="alert alert-danger" id="alertcat1" style="display: none"></div>
                         </div>
+
                         <!--Costo-->
                         <div class="form-group col-md-6">
                             <label for="cost">Costo : </label>
@@ -186,7 +323,7 @@
                         </div>
 
                         <div class="form-group col-md-6">
-                            <img id="imageFile" name="imageFile" src="" alt="Vista previa de la imagen" title="Vista previa" />
+                            <img id="imageFile" name="imageFile" src="" alt="" title="Vista previa" />
                         </div>
                         <div class="col-md-6">
                             <!-- <textarea rows="20" class="form-control" data-toggle="tooltip" data-placement="bottom" id="inputFile" name="inputFile" value="" placehodler="Imagen del curso" title="Imagen" style="display:block"></textarea>                  -->
@@ -246,8 +383,9 @@
     <script type="text/javascript" src="./js/admin.js"></script>
     <script type="text/javascript" src="./js/formproducto.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 </body>
 
 </html>
