@@ -15,7 +15,7 @@ function addItem(item) {
         <td>$ ${item.cost}</td>
         <td>${item.status}</td>
         <td>
-            <button type="button" class="btn btn-light btnEditarClass" data-toggle=modal data-target="#staticBackdrop" id="${item.id}">Editar</button>
+            <i class="fa fa-pencil-square-o btnEditarClass" aria-hidden="true" data-toggle=modal data-target="#staticBackdrop" id="${item.id}"></i>
         </td>
     </tr>`;
 
@@ -27,7 +27,7 @@ function addItem(item) {
 let clasB;
 let statussB;
 // Muestra el modal de acuerdo al producto seleccionado
-let detalles = document.getElementsByClassName("btn btn-light btnEditarClass");
+let detalles = document.getElementsByClassName("fa fa-pencil-square-o btnEditarClass");
 let btn_id;
 let modals = () => {
     for (let i = 0; i < detalles.length; i++) {
