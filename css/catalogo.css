@@ -1,8 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@320&display=swap");
 
 * {
-    margin: 0px auto;
-    padding: 0;
     box-sizing: border-box;
     font-family: 'Oswald';
 }
@@ -76,6 +74,8 @@ main {
 }
 
 #tarjetas {
+    margin: 0px auto;
+    padding: 0;
     background-color: white;
     width: 90%;
 }
@@ -123,4 +123,11 @@ main {
 
 .star {
     padding-top: 10px;
+    text-align: center;
+}
+
+
+.btnsCard{
+   display: flex;
+   justify-content: center;
 }
