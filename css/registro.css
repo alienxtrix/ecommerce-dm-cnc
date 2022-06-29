@@ -24,6 +24,12 @@ body {
 .nav a{
     color: black;
 }
+
+.btnForm a:hover {
+    text-decoration: none;
+    color: white;
+}
+
 .formregistro{
     display: flex;
     width: 110%;

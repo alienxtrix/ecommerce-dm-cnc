@@ -26,6 +26,11 @@ body {
     justify-content: center;
 }
 
+.btnForm a:hover {
+    text-decoration: none;
+    color: white;
+}
+
 .formregistro{
     margin-top: 20px;
     width: 120%;

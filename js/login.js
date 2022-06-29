@@ -7,9 +7,9 @@ let passwordContact = document.getElementById("passwordContact")
 
 
 function validarContraseña () {
-    if(passwordContact.value.length<5){
+    if((confirPassContact.value != passwordContact.value) || confirPassContact.value.length==0) {
         passwordContact.style.border = "red thin solid";
-        document.getElementById("alertPassword").innerHTML = "Tu contraseña debe contener más de 5 caracteres";
+        document.getElementById("alertPassword").innerHTML = "Inválido, tu contraseña debe contener más de 5 caracteres";
         document.getElementById("alertPassword").style="display: block; margin-bottom: -10px;";
         return false;
     }else{
