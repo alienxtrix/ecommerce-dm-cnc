@@ -14,14 +14,15 @@ body {
 main {
     position: relative;
     /* width: 100%; */
+    
 }
 
 .contenedor {
-    /* border: 1px red solid; */
     position: relative;
-    /* width: 90%; */
     display: flex;
-    margin: 2% auto 2% 5%;
+    background-image: url('http://drive.google.com/uc?export=view&id=1u-G6tdC5FLt6FA9L_1B5ox7AA4ZZUFxu');
+    background-position: right;
+    background-size: cover;
 }
 
 .right {
@@ -40,6 +41,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    margin: 3% 5%;
 }
 
 .llamact {
@@ -223,3 +225,28 @@ ul {
 
 
 /* Botón "Ir Arriba" */
+
+
+@media (max-width: 900px) {
+    .contenedor {
+        flex-direction: column;
+        background-image: none;
+    }
+    .left {
+        width: 90%;
+        margin: 5%;
+    }
+    .right {
+        width: 100%;
+    }
+    .btn {
+        width: 50%;
+        margin-left: 0%;
+    }
+    #titulosn {
+        text-align: center;
+        letter-spacing: 2px;
+        width: 80%;
+    }
+}
+
