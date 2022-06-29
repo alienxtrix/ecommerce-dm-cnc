@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@320&display=swap");
 * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: 'Oswald';
 }
 
@@ -15,62 +18,7 @@ main {
     padding-bottom: 2%;
 }
 
-#carritoCompra {
-    position: relative;
-    width: 40px;
-    margin-right: 3%;;
-}
-
-.navbar-custom{/*Color de fondo para Navbar */
-    border-radius: 8px;
-    background-color: rgba(220, 239, 195, 1);
-}
-
-.logo {
-    width: 12%; /*Se aumentó en un 7%*/
-    height: 25%; /*Se estableció en 25%*/
-    margin-right: 30px;
-    margin-left: 10px;
-}
-
-.logo_2 {
-    width: 60%;
-    margin-left: -20px;
-    padding-left: -20px;
-}
-
-/*footer*/
-.footer {
-    bottom: 0px;
-    height: 13vh;
-    width: 100%;
-    display:inline-flex;
-    background-color: rgba(220, 239, 195, 1);
-    justify-content: space-around;
-    align-items: center;
-}
-
-.footer-politicas {
-    color: #000;
-    text-align: center;
-    font-size: 2vmin;
-    position: flex;
-}
-
-.footer-lobo {
-    height: 10vh;
-    width: 20vmin;
-    position: relative;
-    display: block;
-}
-
-
-.footer-socialmedia {
-    width: 6vmin;
-    
-}/*final del footer*/
-
-p {
+main p {
     font-size: 17px;
 }
 
@@ -93,6 +41,7 @@ p {
     display: flex;
     text-align: center;
     padding-bottom: 2%;
+
 }
 
 .bi{
@@ -151,6 +100,7 @@ p {
     .img-sec {
         display: none;
     }
+
 }
 
 .prinTitulo {
@@ -161,47 +111,6 @@ p {
     letter-spacing: 5px;
     font-weight: bold;
 }
-
-.footer {
-    bottom: 0px;
-    width: 100%;
-    display: inline-flex;
-    background-color: rgba(220, 239, 195, 1);
-    height: 10vw;
-    justify-content: space-around;
-}
-
-.footer-politicas {
-    color: #000;
-    text-align: center;
-    font-size: 30px;
-    position: flex;
-    padding-top: 20px;
-
-}
-
-.footer-lobo {
-    height: 6vw;
-    position: relative;
-    top: 10px;
-}
-
-.footer-socialmedia {
-    height: 4vw;
-    position: relative;
-    float: inline-end;
-    top: 15px;
-}
-
-
-
-
-
-
-
-
-
-
 
 
 /* acerca de */
@@ -233,9 +142,8 @@ a:focus {
 }
 
 ul {
-    margin: 0;
-    padding: 0;
     list-style: none;
+    margin: 0 0 0 1%;
 }
 
 img {

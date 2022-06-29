@@ -49,7 +49,7 @@ body {
 
 
 input::placeholder {
-    font-size: 81%;
+    font-size: 90%;
   }
 
 .alert {
@@ -77,7 +77,7 @@ input::placeholder {
 .formRegistro a{
     font-size: 13px;
     text-decoration: underline;
-    color: rgba(0, 0, 0, 0.726);
+    color: rgba(0, 0, 0, 0.884);
 }
 
 .containerBtn{
@@ -109,5 +109,45 @@ a:active {
 }
 
 /* Final de Botones*/
+
+
+@media (max-width: 991px) {
+
+    .casillaForm{
+        display: block;
+        padding: 4vh;
+        width: 70vmin;
+    }
+
+    .containerBtn{
+        display: flex;
+        flex-direction: column;
+       }
+
+    .tituloRegistro{
+        color: rgb(10, 10, 10);
+        font-weight: bold;
+        margin-top: 3%;
+        letter-spacing: 0cm;
+        font-size: x-large;
+        text-align: center;
+    }
+    #contenedor{
+        width: 70%;
+    }
+
+    .formregistro{
+        width: fit-content;
+        background-color: white;
+    }
+
+    a{
+        text-align: center;
+    }
+
+    p{
+      text-align: center;
+    }
+}
 /*Final-formulario*/
 
