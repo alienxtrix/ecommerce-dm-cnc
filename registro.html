@@ -7,43 +7,28 @@
     <title>Diseño en madera & CNC</title>
     
     <link rel="stylesheet" href="/css/registro.css">
+    <link rel="stylesheet" href="/css/bars.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <script src="//code.jquery.com/jquery.min.js"></script>
 </head>
 <body>
     <main>
-    <!--Inicia Navbar-->
-    <!--Inicio Navbar-->
-    <nav class="navbar navbar-light navbar-expand-lg navbar navbar-custom bg-faded justify-content-center">
-        <span class="nav navbar-nav ml-auto w-100 justify-content-right">
-                <img src="./img/LoboMejorado.png" class="d-none d-lg-block align-top img-fluid logo navbar-brand  rounded" alt="Responsive image"></img>
-                <img src="./img/Logo.png" class="d-inline-block align-top logo_2 navbar-brand d-flex rounded float-left img-fluid" alt="Responsive image"></img>
-        </span>
-        <button class="navbar-toggler collapsed justify-content-right " type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="navbar-collapse collapse w-100" id="navbarSupportedContent">
-            <ul class="navbar-nav w-100 justify-content-center list-group-horizontal">
-                <li class="nav-item">
-                    <a class="nav-link" href="/index.html">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/login.html">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/catalogo.html">Catálogo</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/contactanos.html">Contáctanos</a>
-                </li>
-            </ul>
-        </div>
-        <span class="nav navbar-nav ml-auto w-100 justify-content-end float-right">
-          <a href="carrito.html"><img src="./img/cart.png" id="carritoCompra" class="float-right img-fluid" alt="Responsive image"></a>
-        </span>
-        
-      </nav>
-    <!--Finaliza Navbar-->
+
+<!-- Inicio Navbar -->
+
+<div id="nav-placeholder">
+
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script>
+        $.get("./navbar.html", function(data){
+        $("#nav-placeholder").replaceWith(data);
+        });
+    </script>
+
+</div>
+
+<!-- Fin Navbar -->
 
      <!-- Formulario -->
 <section id="op">
@@ -130,60 +115,32 @@
    
     <!--Fin Formulario-->
 
-    <footer><!--Inicio footer-->
-        <div class="footer">
-            <div class="footer-logo">
-               <a href="./index.html"><img class="footer-lobo" src="./img/logoFooter.png"></a>
-            </div>
-            <div class="footer-politicas">
-                <p><a href="http://"><strong>Política de privacidad -</a>
-                    <a href="http://">Política de cookies</strong></a>
-                    <br>
-                    <a href="./aboutUs.html"><strong>Sobre nosotros</strong></a></p>
-            </div>
-            <div id="socialmedia">
-                <a href="http://Facebook.com" target="_blank"><i class="bi bi-facebook"> </i></a>
-                <a href="http://Instagram.com" target="_blank"><i class="bi bi-instagram"> </i></a>
-                <a href="http://Twitter.com" target="_blank"><i class="bi bi-whatsapp"></i></a>
-                <a href="http://Twitter.com" target="_blank"><i class="bi bi-pinterest"></i></a>
-           
+<!--Inicio footer-->
+        
 
-                
-            </div> 
-    </footer>
+    <div id="foot-placeholder">
+
+        <script src="//code.jquery.com/jquery.min.js"></script>
+        <script>
+            $.get("./footer.html", function(data){
+            $("#foot-placeholder").replaceWith(data);
+            });
+        </script>
+    
+    </div>
+
     <!--Final de Footer-->
 
-</main>
+    </main>
 
-    <linkstylesheet"href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
-    crossorigin="anonymous">
-
-
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="/js/registro.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
-<script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/js/registro.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
 </body>
 </html>
 
 
 
 
-<!--
-    <div>
-    <label for="mailContact">Correo electrónico</label>
-    <input type="email" class="form-control" id="mailContact" placeholder="name@example.com" >
-    <div class = "alert" id="alertmail" style="display: none"></div>
-  </div>
-  <div>
-      <label for="numberContact">Teléfono</label>
-      <input class="form-control" type="text" id="numberContact" placeholder="+52 5555555555">
-      <div class = "alert" id="alertnum" style="display: none"></div>
-  </div>
-  <div>
-    <label for="descriptionContact">¿Cómo podemos ayudarte?</label>
-    <textarea style="resize: none;" class="form-control" id="descriptionContact" rows="3"></textarea>
-    <div class = "alert" id="alertdes" style="display: none"></div>
-  </div>
--->
