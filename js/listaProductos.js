@@ -63,8 +63,8 @@ let detalles = document.getElementsByClassName("btn btn-light btnDetallesClass")
 let modals = () => {
         for (let i = 0; i < detalles.length; i++) {
             detalles[i].addEventListener("click", (event) => {
-                document.getElementById("nombreProducto").innerHTML = productos[detalles[i].id].name;
-                document.getElementById("descripcionProducto").innerHTML = productos[detalles[i].id].description;
+                document.getElementById("nombreProducto").innerHTML = productos[detalles[i].id-1].name;
+                document.getElementById("descripcionProducto").innerHTML = productos[detalles[i].id-1].description;
             });
         } // for
     } // función modals()
