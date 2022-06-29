@@ -5,51 +5,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/estiloscontactanos.css">
+    <link rel="stylesheet" href="/css/bars.css">
     <script src="//code.jquery.com/jquery.min.js"></script>
+
     <title>Contactanos</title>
 </head>
 
 <!-- Inicio del body -->
 
 <body>
+
 <main>
 <!-- Inicio Navbar -->
 
-<nav>
-    <div class="row row-cols-3 navbar-custom ">
-        <div class="col">
-            <img src="./img/LoboMejorado.png" id="logo" class=" align-top img-fluid  navbar-brand d-none d-xl-block  rounded float-left" alt="Responsive image"></img>
-            <img src="./img/Logo.png" id="logo_2" class="d-inline-block align-top logo_2 navbar-brand d-flex rounded float-left img-fluid" alt="Responsive image"></img>
-        </div>
-        <div class="col-md-4 justify-content-end nav navbar-expand-xl nabvar-collapse"  >
-            <ul class="nav navbar-nav navbar-expand-xl collapse navbar-collapse list-group-horizontal w-100" id="navbarText" >
-                <li class="nav-item " >
-                    <a class="nav-link" href="/index.html">Inicio</a>
-                </li>
-                <li class="nav-item " >
-                    <a class="nav-link" href="/login.html">Login</a>
-                </li>
-                <li class="nav-item "  >
-                    <a class="nav-link" href="/catalogo.html">Catálogo</a>
-                </li>
-                <li class="nav-item "  >
-                    <a class="nav-link" href="/contactanos.html">Contáctanos</a>
-                </li>
-            </ul>
-        </div>
-        <div class="col order-last">
-            <button class="navbar-toggler ms-auto d-xl-none" id="btnC"  type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="nvc" aria-expanded="false" aria-label="Toggle navigation">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-down" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M3.5 10a.5.5 0 0 1-.5-.5v-8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 0 0 1h2A1.5 1.5 0 0 0 14 9.5v-8A1.5 1.5 0 0 0 12.5 0h-9A1.5 1.5 0 0 0 2 1.5v8A1.5 1.5 0 0 0 3.5 11h2a.5.5 0 0 0 0-1h-2z"/>
-                    <path fill-rule="evenodd" d="M7.646 15.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 14.293V5.5a.5.5 0 0 0-1 0v8.793l-2.146-2.147a.5.5 0 0 0-.708.708l3 3z"/>
-                </svg>
-            </button> 
-            <a href="carrito.html"><img src="./img/carritoCompra.png" id="carritoCompra" class="float-right img-fluid " alt="Responsive image"></a>
-        </div>
-    </div>
-</nav>
+<div id="nav-placeholder">
+    <script src="//code.jquery.com/jquery.min.js"></script>
+<script>
+$.get("./navbar.html", function(data){
+    $("#nav-placeholder").replaceWith(data);
+});
+</script>
+</div>
 
 <!-- Fin Navbar -->
         <article class="contenedor">
@@ -66,40 +47,40 @@
                     <ul>
                         <li class="iconMail"><i class="bi bi-envelope">  </i><a href="mailto:cncstudiogm@gmail.com">cncstudiogm@gmail.com</a></li>
                         <li class="iconTel"><i class="bi bi-telephone">  </i><a href="tel:+524521916467">+52 452 191 6467</a></li>
-                        <li class="iconDire"><i class="bi bi-shop"></i> Hnos. Flores Magon 390, Uruapan, Michoacán</li>
+                        <li class="iconDire"><i class="bi bi-shop"></i> Hnos. Flores Magon 390</li>
                         <li class="iconReloj"><i class="bi bi-clock">  </i> Lunes - Viernes, 10:00 a.m - 5:00 p.m</li>
                     </ul>
                 </div>
                 <div class="mapResponsive">
                     <!--Mapa-->
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.1344332434855!2d-102.04656958509365!3d19.406596686899128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842de3ab96aeb30d%3A0x6f7340bc1d9b1926!2sDise%C3%B1os%20en%20Madera%20%26%20CNC!5e0!3m2!1ses!2smx!4v1656443790135!5m2!1ses!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2286.091348665992!2d-99.20424938416691!3d19.44060835309022!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d2021a6e3a3d09%3A0x9372e2224c033cb3!2sMuseo%20Soumaya!5e0!3m2!1ses!2smx!4v1654703274611!5m2!1ses!2smx"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </aside>
             <!-- -->
             <!-- Formulario -->
             <section class="right">
-                <form class="formC" id="formC" action="">
+                <form class="formC" action="">
                     <h3 id="titulosn">Contáctanos</h3>
                     <h4 style="text-align: center;">¡Queremos escucharte!</h4>
                     <div class="form-group col-md-6">
-                        <i class="bi bi-file-person-fill"></i>
-                        <label for="nameContact">Nombre Completo : </label>
+                        <label for="nameContact">Nombre Completo</label>
                         <input type="text" class="form-control" id="nameContact" placeholder="Ingresa tu Nombre">
                         <div class="alert" id="alertnombre" style="display: none"></div>
                     </div>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="mailContact">Correo electrónico :</label>
+                        <label for="mailContact">Correo electrónico</label>
                         <input type="email" class="form-control" id="mailContact" placeholder="name@example.com">
                         <div class="alert" id="alertmail" style="display: none"></div>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="numberContact">Teléfono :</label>
+                        <label for="numberContact">Teléfono</label>
                         <input class="form-control" type="text" id="numberContact" placeholder="5555555555">
                         <div class="alert" id="alertnum" style="display: none"></div>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="descriptionContact">¿Cómo podemos ayudarte? </label>
+                        <label for="descriptionContact">¿Cómo podemos ayudarte?</label>
                         <textarea style="resize: none;" class="form-control" id="descriptionContact" rows="3"></textarea>
                         <div class="alert" id="alertdes" style="display: none"></div>
                     </div>
@@ -110,30 +91,25 @@
         </article>
 
 
-        <footer>
-            <!--Inicio footer-->
-            <div class="footer">
-                <div class="footer-logo">
-                    <a href="./index.html"><img class="footer-lobo" src="./img/logoFooter.png" alt="" srcset=""></a>
-                </div>
-                <div class="footer-politicas">
-                    <p><a href="http://"><strong>Política de privacidad -</a>
-                        <a href="http://">Política de cookies</strong></a>
-                        <br>
-                        <a href="./aboutUs.html"><strong>Sobre nosotros</strong></a></p>
-                </div>
-                <div>
-                    <a href="http://Facebook.com" target="_blank"><img class="footer-socialmedia" src="./img/redes/facebook-icon.png" alt="" srcset=""></a>
-                    <a href="http://Instagram.com" target="_blank"><img class="footer-socialmedia" src="./img/redes/instagram-icon.png" alt="" srcset=""></a>
-                    <a href="http://Twitter.com" target="_blank"><img class="footer-socialmedia" src="./img/redes/twitter-icon.png" alt="" srcset=""></a>
-                </div>
-        </footer>
-        <!--Final de Footer-->
+<!--Inicio footer-->
+        
+
+<div id="foot-placeholder">
+
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script>
+        $.get("./footer.html", function(data){
+        $("#foot-placeholder").replaceWith(data);
+        });
+    </script>
+
+</div>
+
+<!--Final de Footer-->
 
     </main>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="./js/contactanos.js">
-    </script>
+    <script src="./js/contactanos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
