@@ -15,6 +15,10 @@ main {
     width: 100%;
 }
 
+.btnEditarClass {
+    cursor: pointer;
+}
+
 
 /* h2 {
     display: block;

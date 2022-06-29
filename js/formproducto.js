@@ -202,7 +202,7 @@ function previewFile(img, inputFile, input) {
 
 // Donde se guardan los productos
 let productos = [];
-let contador = 0;
+let contador = 1;
 
 // -------------------------------> E N V I A R   F O R M U L A R I O <----------------------------------------
 let enviar = document.getElementById("enviar");

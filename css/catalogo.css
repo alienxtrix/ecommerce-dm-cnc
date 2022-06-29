@@ -1,46 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import 
+url("https://fonts.googleapis.com/css2?family=Oswald:wght@320&display=swap");
 * {
     margin: 0px auto;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Andika';
+    font-family: 'Oswald';
 }
 
 body {
     overflow-x: hidden;
-    background-color: #F6F2ED;
+    background-color: white;
 }
 
 main {
     position: relative;
     width: 100%;
-}
-
-#carritoCompra {
-    position: relative;
-    margin-left: 150px;
-    width: 40px;
-}
-
-.navbar-custom {
-    /*Color de fondo para Navbar */
-    border-radius: 8px;
-    background-color: rgba(220, 239, 195, 1);
-}
-
-.logo {
-    width: 12%;
-    /*Se aumentó en un 7%*/
-    height: 25%;
-    /*Se estableció en 25%*/
-    margin-right: 30px;
-    margin-left: 10px;
-}
-
-.logo_2 {
-    width: 60%;
-    margin-left: -20px;
-    padding-left: -20px;
 }
 
 #btnCategoriaCatalogo {
@@ -54,7 +28,7 @@ main {
     height: auto;
     background-color: #FFFFFF;
     padding: 10px;
-    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 1px 10px rgb(208, 201, 201);
     border-radius: 4px;
 }
 
@@ -72,7 +46,8 @@ main {
 }
 
 #btnCategoriaCatalogo a:hover {
-    background: #F0E0B5;
+    border-bottom: 5px solid #c1e5e1e1;
+    border-radius: 0px;
 }
 
 #tarjetas img {
@@ -83,7 +58,7 @@ main {
 }
 
 #active {
-    background: #F0E0B5;
+    background: #c1e5e1e1;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
 }
@@ -91,41 +66,6 @@ main {
 .btn {
     border-color: black;
 }
-
-
-/*footer*/
-
-.footer {
-    bottom: 0px;
-    height: 13vh;
-    width: 100%;
-    display: inline-flex;
-    background-color: rgba(220, 239, 195, 1);
-    justify-content: space-around;
-    align-items: center;
-}
-
-.footer-politicas {
-    color: #000;
-    text-align: center;
-    font-size: 2vmin;
-    position: flex;
-}
-
-.footer-lobo {
-    height: 10vh;
-    width: 20vmin;
-    position: relative;
-    display: block;
-}
-
-.footer-socialmedia {
-    width: 6vmin;
-}
-
-
-/*final del footer*/
-
 
 /*ESTILO DE IMAGENES DE PRODUCTOS*/
 
@@ -136,7 +76,7 @@ main {
 }
 
 #tarjetas {
-    background-color: #F6F2ED;
+    background-color: white;
     width: 90%;
 }
 
