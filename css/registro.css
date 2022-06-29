@@ -5,8 +5,6 @@
 
 body {
     overflow-x: hidden;
-
-
 }
 
 /*Inicio-formulario*/
@@ -21,9 +19,6 @@ body {
 .contenedor{
     padding: 3%;
     width: fit-content;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 

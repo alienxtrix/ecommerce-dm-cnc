@@ -18,6 +18,9 @@
     color: rgba(0, 0, 0, 0.507);
     letter-spacing: 2%;
 }
+a{
+    color: #000;
+}
 
 
 .logo {

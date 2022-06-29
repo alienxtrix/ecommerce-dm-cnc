@@ -7,39 +7,24 @@
     <link rel="stylesheet" href="/css/login.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/bars.css">
+    <script src="//code.jquery.com/jquery.min.js"></script>
     <title>Login</title>
 </head>
 <body>
    <main>
         <!--Inicio Navbar-->
-    <nav class="navbar navbar-light navbar-expand-lg navbar navbar-custom bg-faded justify-content-center">
-        <span class="nav navbar-nav ml-auto w-100 justify-content-right">
-                <img src="./img/LoboMejorado.png" class="d-inline-block align-top img-fluid logo navbar-brand d-flex rounded float-left" alt="Responsive image"></img>
-                <img src="./img/Logo.png" class="d-inline-block align-top logo_2 navbar-brand d-flex rounded float-left img-fluid" alt="Responsive image"></img>
-        </span>
-        <div class="navbar-collapse collapse w-100" id="navbarSupportedContent">
-            <ul class="navbar-nav w-100 justify-content-center">
-                <li class="nav-item">
-                    <a class="nav-link" href="/index.html">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/login.html">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/catalogo.html">Catálogo</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/contactanos.html">Contáctanos</a>
-                </li>
-            </ul>
-        </div>
-        <span class="nav navbar-nav ml-auto w-100 justify-content-end float-right">
-          <a href="carrito.html"><img src="./img/carritoCompra.png" id="carritoCompra" class="float-right img-fluid" alt="Responsive image"></a>
-        </span>
-        <button class="navbar-toggler collapsed justify-content-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-      </nav>
+    <div id="nav-placeholder">
+        <script src="//code.jquery.com/jquery.min.js"></script>
+        <script>
+            $.get("./navbar.html", function(data){
+            $("#nav-placeholder").replaceWith(data);
+            });
+        </script>
+    
+    </div>
+
+
     <!--Finaliza Navbar-->
 <section id="fondo">
     <section id="contenedor">
@@ -80,25 +65,18 @@
     </section>
 </section>
 
-        <footer><!--Inicio footer-->
-            <div class="footer">
-                <div class="footer-logo">
-                   <a href="./index.html"><img class="footer-lobo" src="./img/logoFooter.png"></a>
-                </div>
-                <div class="footer-politicas">
-                    <p><a href="http://"><strong>Política de privacidad -</a>
-                        <a href="http://">Política de cookies</strong></a>
-                        <br>
-                        <a href="./aboutUs.html"><strong>Sobre nosotros</strong></a></p>
-                </div>
-                <div id="socialmedia">
-                    <a href="http://Facebook.com" target="_blank"><i class="bi bi-facebook"> </i></a>
-                    <a href="http://Instagram.com" target="_blank"><i class="bi bi-instagram"> </i></a>
-                    <a href="http://Twitter.com" target="_blank"><i class="bi bi-whatsapp"></i></a>
-                    <a href="http://Twitter.com" target="_blank"><i class="bi bi-pinterest"></i></a>
-                    
-                </div> 
-        </footer>
+
+         <!--Inicio de Footer-->
+        <div id="foot-placeholder">
+
+            <script src="//code.jquery.com/jquery.min.js"></script>
+            <script>
+                $.get("./footer.html", function(data){
+                $("#foot-placeholder").replaceWith(data);
+                });
+            </script>
+
+        </div>
         <!--Final de Footer-->
     
 

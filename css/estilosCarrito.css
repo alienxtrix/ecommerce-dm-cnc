@@ -5,71 +5,15 @@
 
 body {
     overflow-x: hidden;
-    background-image: url('http://drive.google.com/uc?export=view&id=1u-G6tdC5FLt6FA9L_1B5ox7AA4ZZUFxu');
-    /* https://drive.google.com/file/d/1nLjTo7dwrbl3VK3k6IAg9Dj6_dOqHTzv/view?usp=sharing */
-    background-position: right;
-    background-size: cover;
 }
-
-
-#carritoCompra {
-    position: relative;
-    margin-left: 150px;
-    width: 40px;
-}
-
-.navbar-custom{/*Color de fondo para Navbar */
-    border-radius: 8px;
-    background-color: rgba(220, 239, 195, 1);
-}
-
-.logo {
-    width: 12%; /*Se aumentó en un 7%*/
-    height: 25%; /*Se estableció en 25%*/
-    margin-right: 30px;
-    margin-left: 10px;
-}
-
-.logo_2 {
-    width: 60%;
-    margin-left: -20px;
-    padding-left: -20px;
-}
-
-/*footer*/
-.footer {
-    bottom: 0px;
-    height: 13vh;
-    width: 100%;
-    display:inline-flex;
-    background-color: rgba(220, 239, 195, 1);
-    justify-content: space-around;
-    align-items: center;
-}
-
-.footer-politicas {
-    color: #000;
-    text-align: center;
-    font-size: 2vmin;
-    position: flex;
-}
-
-.footer-lobo {
-    height: 10vh;
-    width: 20vmin;
-    position: relative;
-    
-    display: block;
-}
-
-
-.footer-socialmedia {
-    width: 6vmin;
-    
-}/*final del footer*/
-
 
 /*PAGINA*/
+
+/* #Fondo{
+    background-image: url('http://drive.google.com/uc?export=view&id=1u-G6tdC5FLt6FA9L_1B5ox7AA4ZZUFxu');
+    background-position: right;
+    background-size: cover;
+} */
 
 /*SECTION INGRESO*/
 #ingreso{
