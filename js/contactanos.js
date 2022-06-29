@@ -107,7 +107,17 @@ enviar.addEventListener("click", (event)=> {
      return false;
     }
     
+    // Si no falla validaciones, se muestra alerta de que se registró correctamente
+    Swal.fire({
+        icon: 'success',
+        title: 'Correcto',
+        text: 'Nos pondremos en contacto contigo',
+        showConfirmButton: false,
+        timer: 1500
+    })
 
+    // Se limpia formulario
+document.getElementById('formC').reset();
 
 });
 
@@ -115,20 +125,6 @@ enviar.addEventListener("click", (event)=> {
 
 mybutton = document.getElementById("myBtn");
 
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
-}
-
-function topFunction() {
-  document.body.scrollTop = 0; 
-  document.documentElement.scrollTop = 0; 
-}
 
 /* Botón "Ir Arriba" */
 

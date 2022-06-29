@@ -1,94 +1,113 @@
-@import url('https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@320&display=swap");
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Andika';
+    font-family: 'Oswald';
 }
 
 body {
     overflow-x: hidden;
-
 }
 
-main {
-    position: relative;
-    width: 100%;
-}
-
-#carritoCompra {
-    position: relative;
-    margin-left: 150px;
-    width: 40px;
-}
-
-.navbar-custom{/*Color de fondo para Navbar */
-    border-radius: 8px;
-    background-color: rgba(220, 239, 195, 1);
-}
-
-.logo {
-    width: 12%; /*Se aumentó en un 7%*/
-    height: 25%; /*Se estableció en 25%*/
-    margin-right: 30px;
-    margin-left: 10px;
-}
-
-.logo_2 {
-    width: 60%;
-    margin-left: -20px;
-    padding-left: -20px;
-}
 
 /*Inicio-formulario*/
-.tituloRegistro{
-    display: inline-block;
-    width: 250px;
-    text-align: center;
-    background-color: rgba(74, 77, 71, 0.856);
-    color : white;
-    border-radius: 50px;
-    padding: 0.5%;
-    letter-spacing: 2px;
-}
-.formRegistro{
-    
+
+#fondo{
+    background-image: url('http://drive.google.com/uc?export=view&id=1v-r2nx_WTtSh4c10fZT2ZaLWWS0Utvgg');
+    background-size: cover;
     display: flex;
-  justify-content: center;
+    align-items: center;
+    justify-content: center;
+ } 
+
+ #contenedor{
+    padding: 3%;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.formregistro{
+    margin-top: 20px;
+    width: 120%;
+    margin-bottom: 20px;
+    display: flex;
+    justify-self: center;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: inset 0 0 3px rgba(58, 59, 59, 0.233);
+    background-color: rgba(99, 99, 99, 0.01);
+ }
+ 
+
+.tituloRegistro{
+    text-align: center;
+    font-weight: bold;
+    width: 58%;
+    margin-top: 3%;
+    letter-spacing: 4px;
 }
 
 
+input::placeholder {
+    font-size: 81%;
+  }
+
+.alert {
+    color: rgb(255, 0, 0);
+    font-size: 12px;
+}
+
+.casillaForm{
+    display: inline-block;
+    padding: 3%;
+    width: 50vmin;
+}
+
+
+
+/* Inicio de Botones*/
+
+.formFinal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+}
+
+.formRegistro a{
+    font-size: 13px;
+    text-decoration: underline;
+    color: rgba(0, 0, 0, 0.726);
+}
+
+.containerBtn{
+ display: flex;
+ justify-content: center;
+}
+
+.containerBtn a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 16px;
+}
+
+a:active {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+
+}
+.btnForm{
+    background-color:#000000d7;
+    border-radius: 6%;
+    border: none ;
+    padding: 2% 5% 2% 5%;
+    margin: 9%;
+    line-height: 110%;
+    color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.233) 0px 1px 3px, rgba(0, 0, 0, 0.267) 0px 1px 2px;
+    
+}
+
+/* Final de Botones*/
 /*Final-formulario*/
 
-
-/*footer*/
-.footer {
-    bottom: 0px;
-    height: 13vh;
-    width: 100%;
-    display:inline-flex;
-    background-color: rgba(220, 239, 195, 1);
-    justify-content: space-around;
-    align-items: center;
-}
-
-.footer-politicas {
-    color: #000;
-    text-align: center;
-    font-size: 2vmin;
-    position: flex;
-}
-
-.footer-lobo {
-    height: 10vh;
-    width: 20vmin;
-    position: relative;
-    
-    display: block;
-}
-
-
-.footer-socialmedia {
-    width: 6vmin;
-    
-}/*final del footer*/

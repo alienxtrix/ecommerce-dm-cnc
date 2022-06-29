@@ -6,37 +6,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Diseño en madera & CNC</title>
         <link rel="stylesheet" href="/css/index.css">
+        <link rel="stylesheet" href="/css/bars.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     </head>
 <body>
     <main>
     <!--Inicio Navbar-->
-    <nav class="navbar navbar-light navbar-expand-lg navbar navbar-custom bg-faded justify-content-center">
-        <span class="nav navbar-nav ml-auto w-100 justify-content-right">
-                <img src="./img/LoboMejorado.png" class="d-inline-block align-top img-fluid logo navbar-brand d-flex rounded float-left" alt="Responsive image"></img>
-                <img src="./img/Logo.png" class="d-inline-block align-top logo_2 navbar-brand d-flex rounded float-left img-fluid" alt="Responsive image"></img>
-        </span>
-        <div class="navbar-collapse collapse w-100" id="navbarSupportedContent">
-            <ul class="navbar-nav w-100 justify-content-center">
-                <li class="nav-item">
-                    <a class="nav-link" href="/index.html">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/login.html">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/catalogo.html">Catálogo</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/contactanos.html">Contáctanos</a>
-                </li>
-            </ul>
-        </div>
-        <span class="nav navbar-nav ml-auto w-100 justify-content-end float-right"><a href="carrito.html"><img src="./img/carritoCompra.png" id="carritoCompra" class="float-right img-fluid" alt="Responsive image"></a></span>
-        <button class="navbar-toggler collapsed justify-content-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-    </nav>
+    <div id="nav-placeholder">
+      <script src="//code.jquery.com/jquery.min.js"></script>
+  <script>
+  $.get("./navbar.html", function(data){
+      $("#nav-placeholder").replaceWith(data);
+  });
+  </script>
+  </div>
     <!--Finaliza Navbar-->
     <section><!--Banner Publicidad-->
         <div id="carouselExampleIndicators" class="carousel slide baner container-xl" data-ride="carousel">
@@ -72,6 +56,7 @@
             </div>
         </section>
 <section>  <!-- Mejor vendidos -->
+<<<<<<< HEAD
     <h3 id="titulosn">Mejor Vendidos</h3>
     <section class="cards">
         <article class="card card1">
@@ -92,6 +77,44 @@
         </article>
         <article class="card card2">
           <div class="cardInfoHover">
+=======
+  <h3 id="titulosn">Mejor Vendidos</h3>
+  <section class="cards">
+      <article class="card card1">
+          <div class="cardInfoHover">
+                <div class="cardVendidasInfo">
+                  <svg class="cardVendidas"  viewBox="0 0 24 24"><path/>
+                  </svg><span class="cardTime">Vendidas 5748</span>
+                </div>
+            </div>
+        <div class="cardImg"></div>
+           <div class="cardImgHover"></div>
+         </a>
+        <div class="cardInfo">
+          <span class="cardCategory"> Cocina</span>
+          <h3 class="cardTitle">Tabla para picar alimentos</h3>
+          <a class="btn btn-secondary" href="/catalogo.html" role="button">Ver</a>
+        </div>
+      </article>
+      <article class="card card2">
+        <div class="cardInfoHover">
+            <div class="cardVendidasInfo">
+              <svg class="cardVendidas"  viewBox="0 0 24 24"><path/>
+              </svg><span class="cardTime">Vendidas 5748</span>
+            </div>
+        </div>
+        <div class="cardImg"></div>
+           <div class="cardImgHover"></div>
+         </a>
+        <div class="cardInfo">
+          <span class="cardCategory"> Cocina</span>
+          <h3 class="cardTitle">Bandeja para despicar hierbas</h3>
+          <a class="btn btn-secondary" href="/catalogo.html" role="button">Ver</a>
+        </div>
+      </article>  
+      <article class="card card3">
+          <div class="cardInfoHover">
+>>>>>>> 1c1f42a7531326e0b400b2dbe3f4127f4fb2caf2
               <div class="cardVendidasInfo">
                 <svg class="cardVendidas"  viewBox="0 0 24 24"><path/>
                 </svg><span class="cardTime">Vendidas 5748</span>
@@ -101,6 +124,7 @@
              <div class="cardImgHover"></div>
            </a>
           <div class="cardInfo">
+<<<<<<< HEAD
             <span class="cardCategory"> Cocina</span>
             <h3 class="cardTitle">Bandeja para despicar hierbas</h3>
             <a class="btn btn-secondary" href="/catalogo.html" role="button">Ver</a>
@@ -149,11 +173,25 @@
                     <svg class="cardVendidas"  viewBox="0 0 24 24"><path/>
                     </svg><span class="cardTime">NEW!!!</span>
                   </div>
+=======
+            <span class="cardCategory"> Varios</span>
+            <h3 class="cardTitle">Porta Cervezas</h3>
+            <a class="btn btn-secondary" href="/catalogo.html" role="button">Ver</a>
+          </div>
+        </article>  
+        <article class="card card4">
+          <div class="cardInfoHover">
+              <div class="cardVendidasInfo">
+                <svg class="cardVendidas"  viewBox="0 0 24 24"><path/>
+                </svg><span class="cardTime">Vendidas 5748</span>
+>>>>>>> 1c1f42a7531326e0b400b2dbe3f4127f4fb2caf2
               </div>
+          </div>
           <div class="cardImg"></div>
              <div class="cardImgHover"></div>
            </a>
           <div class="cardInfo">
+<<<<<<< HEAD
             <span class="cardCategory"> Cocina</span>
             <h3 class="cardTitle">Frutero</h3>
             <a class="btn btn-secondary" href="/catalogo.html" role="button">Ver</a>
@@ -161,6 +199,52 @@
         </article>
         <article class="card card6">
           <div class="cardInfoHover">
+=======
+            <span class="cardCategory"> Varios</span>
+            <h3 class="cardTitle">Soporte para celular</h3>
+            <a class="btn btn-secondary" href="/catalogo.html" role="button">Ver</a>
+          </div>
+        </article> 
+        </section>
+</section>  <!-- Finaliza Mejor Vendidos -->
+<section>  <!-- Nuevos productos -->
+  <h3 id="titulosn">Nuevos Productos</h3>
+  <section class="cards">
+      <article class="card card5">
+          <div class="cardInfoHover">
+                <div class="cardVendidasInfo">
+                  <svg class="cardVendidas"  viewBox="0 0 24 24"><path/>
+                  </svg><span class="cardTime">NEW!!!</span>
+                </div>
+            </div>
+        <div class="cardImg"></div>
+           <div class="cardImgHover"></div>
+         </a>
+        <div class="cardInfo">
+          <span class="cardCategory"> Cocina</span>
+          <h3 class="cardTitle">Frutero</h3>
+          <a class="btn btn-secondary" href="/catalogo.html" role="button">Ver</a>
+        </div>
+      </article>
+      <article class="card card6">
+        <div class="cardInfoHover">
+            <div class="cardVendidasInfo">
+              <svg class="cardVendidas"  viewBox="0 0 24 24"><path/>
+              </svg><span class="cardTime">NEW!!!</span>
+            </div>
+        </div>
+        <div class="cardImg"></div>
+           <div class="cardImgHover"></div>
+         </a>
+        <div class="cardInfo">
+          <span class="cardCategory"> Almacenamiento </span>
+          <h3 class="cardTitle">Estante de madera</h3>
+          <a class="btn btn-secondary" href="/catalogo.html" role="button">Ver</a>
+        </div>
+      </article>  
+      <article class="card card7">
+          <div class="cardInfoHover">
+>>>>>>> 1c1f42a7531326e0b400b2dbe3f4127f4fb2caf2
               <div class="cardVendidasInfo">
                 <svg class="cardVendidas"  viewBox="0 0 24 24"><path/>
                 </svg><span class="cardTime">NEW!!!</span>
@@ -170,6 +254,7 @@
              <div class="cardImgHover"></div>
            </a>
           <div class="cardInfo">
+<<<<<<< HEAD
             <span class="cardCategory"> Almacenamiento </span>
             <h3 class="cardTitle">Estante de madera</h3>
             <a class="btn btn-secondary" href="/catalogo.html" role="button">Ver</a>
@@ -208,24 +293,40 @@
             </div>
           </article> 
           </section>
+=======
+            <span class="cardCategory">Cocina</span>
+            <h3 class="cardTitle">Porta vasos en forma de rompezabezas</h3>
+            <a class="btn btn-secondary" href="/catalogo.html" role="button">Ver</a>
+          </div>
+        </article>  
+        <article class="card card8">
+          <div class="cardInfoHover">
+              <div class="cardVendidasInfo">
+                <svg class="cardVendidas"  viewBox="0 0 24 24"><path/>
+                </svg><span class="cardTime">NEW!!!</span>
+              </div>
+          </div>
+          <div class="cardImg"></div>
+             <div class="cardImgHover"></div>
+           </a>
+          <div class="cardInfo">
+            <span class="cardCategory">Cocina</span>
+            <h3 class="cardTitle">Porta vasos en forma de rompezabezas</h3>
+            <a class="btn btn-secondary" href="/catalogo.html" role="button">Ver</a>
+          </div>
+        </article> 
+        </section>
+>>>>>>> 1c1f42a7531326e0b400b2dbe3f4127f4fb2caf2
 </section>  <!-- Finaliza Mejor Vendidos -->
             <footer><!--Inicio footer-->
-                <div class="footer">
-                    <div class="footer-logo">
-                       <a href="./index.html"><img class="footer-lobo" src="./img/logoFooter.png" alt="" srcset=""></a>
-                    </div>
-                    <div class="footer-politicas">
-                        <p><a href="http://"><strong>Política de privacidad -</a>
-                            <a href="http://">Política de cookies</strong></a>
-                            <br>
-                            <a href="./aboutUs.html"><strong>Sobre nosotros</strong></a></p>
-                    </div>
-                    <div>
-                        <a href="http://Facebook.com" target="_blank"><img class="footer-socialmedia" src="./img/redes/facebook-icon.png" alt="" srcset=""></a>
-                        <a href="http://Instagram.com" target="_blank"><img class="footer-socialmedia" src="./img/redes/instagram-icon.png" alt="" srcset=""></a>
-                        <a href="http://Twitter.com" target="_blank"><img class="footer-socialmedia" src="./img/redes/twitter-icon.png" alt="" srcset=""></a>
-                    </div>
-                  </div>
+              <div id="foot-placeholder">
+                <script src="//code.jquery.com/jquery.min.js"></script>
+                <script>
+                    $.get("./footer.html", function(data){
+                    $("#foot-placeholder").replaceWith(data);
+                    });
+                </script>
+            </div>
             </footer>
             <!--Final de Footer-->
     </main>

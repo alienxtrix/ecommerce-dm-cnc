@@ -1,9 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@320&display=swap");
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Andika';
+    font-family: 'Oswald';
 }
 
 body {
@@ -13,6 +10,10 @@ body {
 main {
     position: relative;
     width: 100%;
+}
+
+.btnEditarClass {
+    cursor: pointer;
 }
 
 
@@ -142,6 +143,14 @@ main {
     font-size: 24px;
     text-align: center;
     color: #111;
+}
+
+#imageFile {
+    width: 100%;
+}
+
+#imageFileEd {
+    width: 100%;
 }
 
 .search {

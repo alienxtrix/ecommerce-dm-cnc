@@ -5,64 +5,78 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/bars.css">
+    <script src="//code.jquery.com/jquery.min.js"></script>
     <title>Login</title>
 </head>
 <body>
-    
-    <main>
+   <main>
         <!--Inicio Navbar-->
-    <nav class="navbar navbar-light navbar-expand-lg navbar navbar-custom bg-faded justify-content-center">
-        <span class="nav navbar-nav ml-auto w-100 justify-content-right">
-                <img src="./img/LoboMejorado.png" class="d-inline-block align-top img-fluid logo navbar-brand d-flex rounded float-left" alt="Responsive image"></img>
-                <img src="./img/Logo.png" class="d-inline-block align-top logo_2 navbar-brand d-flex rounded float-left img-fluid" alt="Responsive image"></img>
-        </span>
-        <div class="navbar-collapse collapse w-100" id="navbarSupportedContent">
-            <ul class="navbar-nav w-100 justify-content-center">
-                <li class="nav-item">
-                    <a class="nav-link" href="/index.html">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/login.html">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/catalogo.html">Catálogo</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/contactanos.html">Contáctanos</a>
-                </li>
-            </ul>
-        </div>
-        <span class="nav navbar-nav ml-auto w-100 justify-content-end float-right">
-          <a href="carrito.html"><img src="./img/carritoCompra.png" id="carritoCompra" class="float-right img-fluid" alt="Responsive image"></a>
-        </span>
-        <button class="navbar-toggler collapsed justify-content-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-      </nav>
+    <div id="nav-placeholder">
+        <script src="//code.jquery.com/jquery.min.js"></script>
+        <script>
+            $.get("./navbar.html", function(data){
+            $("#nav-placeholder").replaceWith(data);
+            });
+        </script>
+    
+    </div>
+
+
     <!--Finaliza Navbar-->
-        <h1>PAGINA LOGIN</h1>
-        <a href="admin.html">Admin</a> 
-
+<section id="fondo">
+    <section id="contenedor">
+        <section id="formulario">
+            <form class="formregistro" id="formIn">
+                <h2 class="tituloRegistro">Inicia Sesión</h2>
+                <p>¡Nos da gusto tenerte de vuelta!</p>
+               <br>
+                <div class="formRegistro">
+                        <div class="casillaForm"><!--Campo para Correo-->
+                            <label for="mailContact">Correo electrónico :</label>
+                            <input type="email" class="form-control" id="mailContact" placeholder="name@example.com" >
+                            <div class = "alert" id="alertmail" style="display: none"></div>
+                        </div>
+                </div>
         
+                <div class="formRegistro">
+                        <div class="casillaForm"><!--Campo para Contraseña-->
+                        <label for="passwordContact">Contraseña :</label>
+                        <input type="password" class="form-control" id="passwordContact" placeholder="Ingresa tu contraseña">
+                        <div class = "alert" id="alertPassword" style="display: none"></div>
+                </div>
 
-        <footer><!--Inicio footer-->
-            <div class="footer">
-                <div class="footer-logo">
-                   <a href="./index.html"><img class="footer-lobo" src="./img/logoFooter.png" alt="" srcset=""></a>
+                <div class="formFinal">
+                    <a href=""> ¿Has olvidado la contraseña? Haz click aquí </a>
                 </div>
-                <div class="footer-politicas">
-                    <p><a href="http://"><strong>Política de privacidad -</a>
-                        <a href="http://">Política de cookies</strong></a>
-                        <br>
-                        <a href="./aboutUs.html"><strong>Sobre nosotros</strong></a></p>
+            <br>
+                    
+            <!--Incio de Boton-->
+                <div class="containerBtn">
+                    <button type="button" class="btnForm" type="submit" id="IniciarSesion">Iniciar Sesión</button>
+                    <button type="button" class="btnForm" type="submit"> <a href="/registro.html" >Registrarse</a></button>
                 </div>
-                <div>
-                    <a href="http://Facebook.com" target="_blank"><img class="footer-socialmedia" src="./img/redes/facebook-icon.png" alt="" srcset=""></a>
-                    <a href="http://Instagram.com" target="_blank"><img class="footer-socialmedia" src="./img/redes/instagram-icon.png" alt="" srcset=""></a>
-                    <a href="http://Twitter.com" target="_blank"><img class="footer-socialmedia" src="./img/redes/twitter-icon.png" alt="" srcset=""></a>
-                </div>
-        </footer>
+        
+                
+            </form>
+        </section>
+    </section>
+</section>
+
+
+         <!--Inicio de Footer-->
+        <div id="foot-placeholder">
+
+            <script src="//code.jquery.com/jquery.min.js"></script>
+            <script>
+                $.get("./footer.html", function(data){
+                $("#foot-placeholder").replaceWith(data);
+                });
+            </script>
+
+        </div>
         <!--Final de Footer-->
     
 
@@ -73,7 +87,7 @@
 
 
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="./js/contactanos.js"> </script>
+<script src="./js/login.js"> </script>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 <script src="https://smtpjs.com/v3/smtp.js"></script>
