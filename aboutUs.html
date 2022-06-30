@@ -18,6 +18,10 @@
         <script>
         $.get("./navbar.html", function(data){
             $("#nav-placeholder").replaceWith(data);
+            if (localStorage.getItem ("statusSesion")) {
+                document.getElementById("sesion").style.display = "none";
+                document.getElementById("sesionActive").style.display = "flex";
+      }
         });
         </script>
         </div>
