@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,61 +11,66 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <title>Sobre nosotros</title>
 </head>
+
 <body>
-    
-        <!--Inicio Navbar-->
-        <div id="nav-placeholder">
-            <script src="//code.jquery.com/jquery.min.js"></script>
+
+    <!--Inicio Navbar-->
+    <div id="nav-placeholder">
+        <script src="//code.jquery.com/jquery.min.js"></script>
         <script>
-        $.get("./navbar.html", function(data){
-            $("#nav-placeholder").replaceWith(data);
-        });
+            $.get("./navbar.html", function(data) {
+                $("#nav-placeholder").replaceWith(data);
+                if (localStorage.getItem("statusSesion")) {
+                    document.getElementById("sesion").style.display = "none";
+                    document.getElementById("sesionActive").style.display = "flex";
+                }
+            });
         </script>
-        </div>
+    </div>
     <!--Finaliza Navbar-->
-    
+
     <main>
-        <section class="project"> <!-- Inicio de Sobre nosotros-->
+        <section class="project">
+            <!-- Inicio de Sobre nosotros-->
             <div class="project-right">
-                <img src="img/Group 2.png" style="width: 90%;"/>
+                <img src="img/Group 2.png" style="width: 90%;" />
             </div>
             <div class="project-left">
                 <h3 class="prinTitulo">Sobre Nosotros</h3>
                 <br>
                 <p>
-                    <strong>NO-DOUBTS</strong>
-                    es un equipo de desarrollo web capacitado para atender a las diferentes necesidades en la creciente
-                    industria tecnológica. Nos caracterizamos por una notable eficiencia y compromiso con todos nuestros
-                    clientes. Somos un equipo desarrollador 100% mexicano.
+                    <strong>NO-DOUBTS</strong> es un equipo de desarrollo web capacitado para atender a las diferentes necesidades en la creciente industria tecnológica. Nos caracterizamos por una notable eficiencia y compromiso con todos nuestros clientes.
+                    Somos un equipo desarrollador 100% mexicano.
                 </p>
             </div>
-            
-        </section><!-- Finaliza seccion sobre nosotros-->
-        
-        <section class="project"><!-- Inicia "Nuestro proyecto" -->
+
+        </section>
+        <!-- Finaliza seccion sobre nosotros-->
+
+        <section class="project">
+            <!-- Inicia "Nuestro proyecto" -->
             <div class="project-right img-sec">
-                <img src="img/project.png" style="width: 100%;"/>
+                <img src="img/project.png" style="width: 100%;" />
             </div>
             <div class="project-left">
                 <h3 class="prinTitulo">Nuestro Proyecto</h3>
                 <br>
                 <p>Como parte de nuestro portafolio, los miembros de
-                    <strong>NO-DOUBTS</strong>
-                    colaboramos de manera conjunta para desarrollar la página web
-                    <strong>DISEÑOS EN MADERA & CNC</strong> desde cero. El sitio web permite llevar un inventario de
-                    productos disponibles como vendedor, la administración de un carrito de compras como parte del cliente a su
-                    vez como el proceso de pagos dentro del propio sitio.
+                    <strong>NO-DOUBTS</strong> colaboramos de manera conjunta para desarrollar la página web
+                    <strong>DISEÑOS EN MADERA & CNC</strong> desde cero. El sitio web permite llevar un inventario de productos disponibles como vendedor, la administración de un carrito de compras como parte del cliente a su vez como el proceso de pagos
+                    dentro del propio sitio.
                 </p>
                 </br>
-                <p>Se plantea tanto la planeación y diseño así como el desarrollo y la puesta en marcha del e-commerce
-                garantizando la funcionalidad del mismo sin dejar aún lado todas las especifícaciones demandadas por el cliente.</p>
+                <p>Se plantea tanto la planeación y diseño así como el desarrollo y la puesta en marcha del e-commerce garantizando la funcionalidad del mismo sin dejar aún lado todas las especifícaciones demandadas por el cliente.</p>
             </div>
             <div class="project-right img-prin">
-                <img src="img/project.png" style="width: 100%;"/>
+                <img src="img/project.png" style="width: 100%;" />
             </div>
-        </section><!--Termina sección "Nuestro proyecto" -->
+        </section>
+        <!--Termina sección "Nuestro proyecto" -->
 
-        <section><!-- Inicia Nuestro equipo-->
+        <section>
+            <!-- Inicia Nuestro equipo-->
             <h3 class="prinTitulo">Nuestro Equipo</h3>
             <div class="container_aboutus">
                 <div class="col-lg-4 col-sm-6">
@@ -73,10 +79,9 @@
                         <h6>
                             <b>Jorge Rodrigo Román Beltrán</b>
                         </h6>
-                        <p>Soy un militar retirado, entusiasta en el aérea de las tecnologías informáticas con
-                            conocimiento de Java, JavaScript, así como en otras herramientas útiles.</p>
-                            <a href="https://www.linkedin.com/in/jrromanb/" target="_blank"><i class="bi bi-linkedin"></i></a>
-                            <a href="https://github.com/JorgeRRomanB" target="_blank"><i class="bi bi-github"></i></a>
+                        <p>Soy un militar retirado, entusiasta en el aérea de las tecnologías informáticas con conocimiento de Java, JavaScript, así como en otras herramientas útiles.</p>
+                        <a href="https://www.linkedin.com/in/jrromanb/" target="_blank"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://github.com/JorgeRRomanB" target="_blank"><i class="bi bi-github"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6">
@@ -86,10 +91,9 @@
                         <h6>
                             <b>Marihan Itzel Bernal Flores</b>
                         </h6>
-                        <p>Soy una ingeniera biomédica con gusto por el desarrollo de tecnologías. Me motiva aplicar mis
-                            habilidades para la solución de problemas.</p>
-                            <a href="https://www.linkedin.com/in/marihan-bernal" target="_blank"><i class="bi bi-linkedin"></i></a>
-                            <a href="https://github.com/marihanitz" target="_blank"><i class="bi bi-github"></i></a>
+                        <p>Soy una ingeniera biomédica con gusto por el desarrollo de tecnologías. Me motiva aplicar mis habilidades para la solución de problemas.</p>
+                        <a href="https://www.linkedin.com/in/marihan-bernal" target="_blank"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://github.com/marihanitz" target="_blank"><i class="bi bi-github"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6">
@@ -99,10 +103,9 @@
                         <h6>
                             <b>Isaac Fuentes</b>
                         </h6>
-                        <p>Soy un desarrollador full-stack que me gusta conectar con la tecnología y construir proyectos
-                            con las mejores tecnologías web.</p>
-                            <a href="https://www.linkedin.com/in/josuefm/" target="_blank"><i class="bi bi-linkedin"></i></a>
-                            <a href="https://github.com/alienxtrix" target="_blank"><i class="bi bi-github"></i></a>
+                        <p>Soy un desarrollador full-stack que me gusta conectar con la tecnología y construir proyectos con las mejores tecnologías web.</p>
+                        <a href="https://www.linkedin.com/in/josuefm/" target="_blank"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://github.com/alienxtrix" target="_blank"><i class="bi bi-github"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6">
@@ -112,12 +115,9 @@
                         <h6>
                             <b>Armando Elizalde Santillán</b>
                         </h6>
-                        <p>Desarrollador Java Fullstack Junior con afinidad por el backend. Me gusta tomar nuevos retos
-                            y
-                            aspiro
-                            a ser desarrollador Senior en un futuro próximo</p>
-                            <a href="https://www.linkedin.com/in/elisanti-armando" target="_blank"><i class="bi bi-linkedin"></i></a>
-                            <a href="https://github.com/Kaminoou" target="_blank"><i class="bi bi-github"></i></a>
+                        <p>Desarrollador Java Fullstack Junior con afinidad por el backend. Me gusta tomar nuevos retos y aspiro a ser desarrollador Senior en un futuro próximo</p>
+                        <a href="https://www.linkedin.com/in/elisanti-armando" target="_blank"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://github.com/Kaminoou" target="_blank"><i class="bi bi-github"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6">
@@ -127,10 +127,9 @@
                         <h6>
                             <b>Eduardo Miguel Victoria Sánchez</b>
                         </h6>
-                        <p>Ingeniero en sistemas computacionales enfocado en el ámbito de desarrollo web. Apasionado por
-                            la música y practicante el deporte.</p>
-                            <a href="https://www.linkedin.com/in/eduardovisa/" target="_blank"><i class="bi bi-linkedin"></i></a>
-                            <a href="https://github.com/eduardovisa" target="_blank"><i class="bi bi-github"></i></a>
+                        <p>Ingeniero en sistemas computacionales enfocado en el ámbito de desarrollo web. Apasionado por la música y practicante el deporte.</p>
+                        <a href="https://www.linkedin.com/in/eduardovisa/" target="_blank"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://github.com/eduardovisa" target="_blank"><i class="bi bi-github"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6">
@@ -140,10 +139,9 @@
                         <h6>
                             <b>José Luis Vaca Negrete</b>
                         </h6>
-                        <p>Soy un ingeniero con fascinación por el desarrollo web. Procurando la orientación al detalle
-                            y la persistencia.</p>
-                            <a href="https://www.linkedin.com/in/jluisvacan/" target="_blank"><i class="bi bi-linkedin"></i></a>
-                            <a href="https://github.com/jluisvacan" target="_blank"><i class="bi bi-github"></i></a>
+                        <p>Soy un ingeniero con fascinación por el desarrollo web. Procurando la orientación al detalle y la persistencia.</p>
+                        <a href="https://www.linkedin.com/in/jluisvacan/" target="_blank"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://github.com/jluisvacan" target="_blank"><i class="bi bi-github"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6">
@@ -154,32 +152,32 @@
                             <b>Uziel Muñoz Flores</b>
                         </h6>
                         <p>
-                            Soy un joven curioso y entusiasta por la tecnlogía, lo que más me gusta de la programación
-                            es dar soluciones a los problemas aparentemente complicados.</p>
-                            <a href="https://www.linkedin.com/in/uziel-munozf" target="_blank"><i class="bi bi-linkedin"></i></a>
-                            <a href="https://github.com/Uzielmf" target="_blank"><i class="bi bi-github"></i></a>
+                            Soy un joven curioso y entusiasta por la tecnlogía, lo que más me gusta de la programación es dar soluciones a los problemas aparentemente complicados.</p>
+                        <a href="https://www.linkedin.com/in/uziel-munozf" target="_blank"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://github.com/Uzielmf" target="_blank"><i class="bi bi-github"></i></a>
                     </div>
                 </div>
             </div>
             <button onclick="topFunction()" id="myBtn" title="Go to top">Ir Arriba</button>
         </section>
     </main>
-        <!--Inicio footer-->
-            <div id="foot-placeholder">
+    <!--Inicio footer-->
+    <div id="foot-placeholder">
 
-                <script src="//code.jquery.com/jquery.min.js"></script>
-                <script>
-                    $.get("./footer.html", function(data){
-                    $("#foot-placeholder").replaceWith(data);
-                    });
-                </script>
-            
-            </div>
-        <!--Final de Footer-->
-    
+        <script src="//code.jquery.com/jquery.min.js"></script>
+        <script>
+            $.get("./footer.html", function(data) {
+                $("#foot-placeholder").replaceWith(data);
+            });
+        </script>
+
+    </div>
+    <!--Final de Footer-->
+
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./js/aboutUs.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 </body>
+
 </html>
