@@ -62,7 +62,7 @@ function validarContraseña () {
 } // Validacion contraseña
 
 function validarConfirContraseña () {
-    if((confirPassContact.value != passwordContact.value) || confirPassContact.value.length==0){
+    if((confirPassContact.value != passwordContact.value)){
         confirPassContact.style.border = "red thin solid";
         document.getElementById("alertConfirPassword").innerHTML = "Dato inválido, la contraseña no coincide";
         document.getElementById("alertConfirPassword").style="display: block; margin-bottom: -10px;";

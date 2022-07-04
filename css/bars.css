@@ -22,6 +22,11 @@ a{
     color: #000;
 }
 
+a:hover {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
 
 .logo {
     width: 38px;
