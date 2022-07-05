@@ -132,3 +132,15 @@ main {
    display: flex;
    justify-content: center;
 }
+
+/*Estilo de ver detalles*/
+.carousel-inner{
+    margin: 0px auto;
+    width: 50%;
+}
+.modal-header{
+    justify-content: center;
+}
+.modal-body{
+    text-align: center;
+}
