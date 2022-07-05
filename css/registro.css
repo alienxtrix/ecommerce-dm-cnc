@@ -21,6 +21,14 @@ body {
     width: fit-content;
 }
 
+.nav a{
+    color: black;
+}
+
+.btnForm a:hover {
+    text-decoration: none;
+    color: white;
+}
 
 .formregistro{
     display: flex;
@@ -41,7 +49,7 @@ body {
 }
 
 input::placeholder {
-    font-size: 78%;
+    font-size: 90%;
   }
 
 .alert {
@@ -56,8 +64,8 @@ input::placeholder {
 }
 
 #checkbox{
-    font-size :smaller;
-    color: rgba(78, 85, 83, 0.767);
+    font-size :90%;
+    color: rgb(0, 0, 0);
     text-align: left;
 
 }

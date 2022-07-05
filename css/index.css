@@ -26,12 +26,18 @@ main {
 .textD{
     text-align: center;
     width: 50%;
+    font-size: x-large;
     margin: 10px;
-    background-color: #C1E6C9;
-    padding: 1%;
-    border-radius: 20px;
+    background-color: #c1e6c9a6;
+    padding: 3%;
+    border-radius: 10px;
     margin-top: 50px;
     margin-bottom: 50px;
+    letter-spacing: 1%;
+}
+
+.nav a{
+    color: black;
 }
 /*Cards*/
 #titulosn{
