@@ -105,19 +105,25 @@ function validarEmail (){
     }
 } // Validacion de email
 
-emailExistente();
+
 function emailExistente() {
-    let storageUsuario = localStorage.getItem("Usuario");
-    let check = JSON.parse(storageUsuario);
-        for (let i = 0; i < check.length; i++) {
-        let checkEmail = check[i].Email;
-        if (checkEmail == document.getElementById("mailContact").value){
-            document.getElementById("alertmail").innerHTML = "Correo electrónico ya registrado, favor de utilizar otro";
-            document.getElementById("alertmail").style="display: block; margin-bottom: -10px;";
-            return false;
-        } else;
+        for (let i = 0; i < usuarios.length; i++) {
+        let checkEmail = usuarios[i].Email;
+        console.log(checkEmail);
+       console.log(document.getElementById("mailContact").value)
+            if (checkEmail == document.getElementById("mailContact").value){
+                console.log(i);
+                mailContact.style.border = "red thin solid";
+                document.getElementById("alertmail").innerHTML = "Correo electrónico ya registrado, favor de utilizar otro";
+                document.getElementById("alertmail").style="display: block; margin-bottom: -10px;";
+                return false;
+            }
+        }  
+        mailContact.style.border = "green thin solid";
+        document.getElementById("alertmail").style.display="none";
+        return true;  
     }
-}//Correo ya registrado
+//Correo ya registrado
 
 function validarPoliticas(){
     let politicas = document.getElementById("politicas");
@@ -168,7 +174,10 @@ numberContact.addEventListener("blur",(e)=>{
 
 mailContact.addEventListener("blur",(e)=>{
     e.target.value = e.target.value.trim();
-    validarEmail();
+    if( validarEmail()){
+        emailExistente();
+    }
+   
 }) // Email
 
 passwordContact.addEventListener("blur",(e)=>{
@@ -198,8 +207,9 @@ enviar.addEventListener("click", (event)=> {
     validarNumero();
     validarEmail();
     validarPoliticas();
-
+    123
     //Si falla alguna validacion, se muestra alerta de error 
+
     if ((!validarNombre()) || (!validarContraseña()) || (!validarApellidoM()) || (!validarNumero()) || (!validarConfirContraseña()) || (!validarApellidoP()) || (!validarEmail()) || (!validarPoliticas())){
         Swal.fire({
             icon: 'error',
@@ -207,6 +217,16 @@ enviar.addEventListener("click", (event)=> {
             text:'Por favor completa correctamente el formulario',
           })
      return false;
+    }
+
+    emailExistente();
+    if(!emailExistente()){
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text:'Este email ya está registrado',
+          })
+        return false;
     }
     
     // Si no falla validaciones, se muestra alerta de que se registró correctamente
