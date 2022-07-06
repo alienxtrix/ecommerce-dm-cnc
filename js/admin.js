@@ -1,5 +1,6 @@
 // Arreglo en dodne se almacenan todos los productos
 let productosGrid = [];
+let imgT = 0;
 
 // Función para agregar la lista de los productos agregados
 function addItem(item) {
@@ -22,7 +23,7 @@ function addItem(item) {
         </td>
     </tr>
     <tr class="tablaImagenesClass" id="tablaImagen${item.id}">
-
+        <!-- Aquí va la nueva tabla de imágenes -->
     </tr>`;  
     const itemsGrid = document.getElementById("listItemsAdmin");
     itemsGrid.innerHTML += itemHTML;
@@ -40,7 +41,7 @@ let modals = () => {
         detalles[i].addEventListener("click", (event) => {
             btn_id = "tablaImagen" + detalles[i].getAttribute("id");
             document.getElementById(btn_id).innerHTML = "";
-            imgT--;
+            imgT = 0;
             localStorage.setItem("imgT", JSON.stringify(imgT));
 
             btn_id = detalles[i].getAttribute("id")-1;
@@ -65,12 +66,12 @@ let modals = () => {
             document.getElementById("calificacionEd").value = productosGrid[detalles[i].getAttribute("id")-1].rate;
             document.getElementById("costoEd").value = productosGrid[detalles[i].getAttribute("id")-1].cost;
             document.getElementById("imageFileEd").setAttribute("src", productosGrid[detalles[i].getAttribute("id")-1].img);
+            imgT = 0;
         });
     } // for
 } // función modals()
 
-let imgT = 0;
-
+// Función en donde se muestra la tabla de las imágenes del producto resgistrado
 let imagenesT = document.getElementsByClassName("fa fa-picture-o btnImagenesClass");
 let imgView = () => {
     for (let i = 0; i < imagenesT.length; i++) {
@@ -80,27 +81,37 @@ let imgView = () => {
                 <td colspan="6">
                     <table class="table-dark" width="100%" cellpadding="0" cellspacing="0">
                         <tbody>
-                            <tr>
+                            <tr class="imgT">
                                 <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
+                                <td>Img ${imagenesT[i].getAttribute("id")}.1</td>
+                                <td>Visualizar <i class="fa fa-eye" aria-hidden="true"></i>
+                                </td>
+                                <td><button type="button" class="btn btn-danger btnEliminar">Eliminar</button>
+                                </td>
                             </tr>
-                            <tr>
+                            <tr class="imgT">
                                 <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
+                                <td>Img ${imagenesT[i].getAttribute("id")}.2</td>
+                                <td>Visualizar <i class="fa fa-eye" aria-hidden="true"></i>
+                                </td>
+                                <td><button type="button" class="btn btn-danger btnEliminar">Eliminar</button>
+                                </td>
                             </tr>
-                            <tr>
+                            <tr class="imgT">
                                 <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
+                                <td>Img ${imagenesT[i].getAttribute("id")}.3</td>
+                                <td>Visualizar <i class="fa fa-eye" aria-hidden="true"></i>
+                                </td>
+                                <td><button type="button" class="btn btn-danger btnEliminar">Eliminar</button>
+                                </td>
                             </tr>
-                            <tr>
-                                <td colspan="4" style="text-align: center; cursor: pointer">
-                                    <button id="btnImgCerrar" class=${imagenesT[i].getAttribute("id")}>Cerrar</button>
+                            <tr class="imgO">
+                                <td colspan="2"></td>
+                                <td colspan="1" style="text-align: center;">
+                                    <button type="button" id="${imagenesT[i].getAttribute("id")}" class="btn btn-outline-info btnImgAgregar">Agregar</button>
+                                </td> 
+                                <td colspan="1" style="text-align: center;">
+                                <button type="button" id="${imagenesT[i].getAttribute("id")}" class="btn btn-outline-secondary btnImgCerrar">Cerrar</button>
                                 </td>
                             </tr>
                         </tbody>
@@ -111,26 +122,60 @@ let imgView = () => {
                 document.getElementById(btn_id).innerHTML = tablaImagen;
                 imgCerrar();
                 imgT++;
-                localStorage.setItem("imgT", JSON.stringify(imgT));
             }
+            imgEliminar();
+            imgAgregar();
         });
     } // for
 } // función imgView()
 
+// Función para eliminar una imágen de un producto ++
+let imgEliminar = () => {
+    let btnImgAgregar = document.getElementsByClassName("btn btn-danger btnEliminar");
+    for (let index = 0; index < btnImgAgregar.length; index++) {
+        btnImgAgregar[index].addEventListener("click", (event) => {
+            // Función para eliminar ---
+            // console.log(btnImgAgregar[index]);
+            Swal.fire({
+                icon: 'success',
+                title: 'Correcto',
+                text: 'La imágen se eliminó correctamente',
+                showConfirmButton: false,
+                timer: 1500
+            })
+        });
+    } // for
+} // función imgEliminar()
+
+// Función para agregar una imágen a un producto ++
+let imgAgregar = () => {
+    let btnImgAgregar = document.getElementsByClassName("btn btn-outline-info btnImgAgregar");
+    btnImgAgregar[0].addEventListener("click", (event) => {
+        // console.log(btnImgAgregar[index]);
+        Swal.fire({
+            icon: 'success',
+            title: 'Correcto',
+            text: 'La imágen se subió correctamente',
+            showConfirmButton: false,
+            timer: 1500
+        })
+    });
+} // función imgView()
+
+// Función para ocultar la tabla de las imágenes del producto
 let imgCerrar = () => {
-    let btnImgCerrar = document.getElementById("btnImgCerrar");
-    btnImgCerrar.addEventListener("click", (event) => {
-        btn_id = "tablaImagen" + btnImgCerrar.getAttribute("class");
+    let btnImgCerrar = document.getElementsByClassName("btn btn-outline-secondary btnImgCerrar");
+    btnImgCerrar[0].addEventListener("click", (event) => {
+        btn_id = "tablaImagen" + btnImgCerrar[0].getAttribute("id");
         document.getElementById(btn_id).innerHTML = "";
-        imgT--;
-        localStorage.setItem("imgT", JSON.stringify(imgT));
+        imgT = 0;
     });
 } // función imgView()
 
 // Función para traer los productos
 window.addEventListener('load', function() {
-    if (localStorage.getItem("imgT") != null) {
-        imgT = JSON.parse(localStorage.getItem("imgT"));
+    if (localStorage.getItem("contador") != null) {
+        contador = JSON.parse(localStorage.getItem("contador"));
     } // if
     if (localStorage.getItem("productos") != null) {
         productosGrid = JSON.parse(localStorage.getItem("productos"));
