@@ -180,7 +180,7 @@ main {
 .search label .fa {
     position: absolute;
     left: 15px;
-    top: 4px;
+    top: 12px;
 }
 
 .user {
@@ -333,7 +333,6 @@ main {
 #myBtn:hover {
     background-color: rgb(114, 150, 31);
 }
-
 
 table.tabla1 thead tr td {
     background-color: black;
