@@ -6,7 +6,7 @@ let numberContact = document.getElementById("numberContact")
 let mailContact = document.getElementById("mailContact")
 let passwordContact = document.getElementById("passwordContact")
 let confirPassContact = document.getElementById("confirPassContact")
-
+let usuarios = [];
 
 //------------------------> F U N C I O N E S    D E   V A L I D A C I O N E S <--------------------------------
 function validarNombre () {
@@ -51,7 +51,7 @@ function validarApellidoM () {
 function validarContraseña () {
     if(passwordContact.value.length<5){
         passwordContact.style.border = "red thin solid";
-        document.getElementById("alertPassword").innerHTML = "Dato inválido, tu contraseña debe contener más de 5 caracteres";
+        document.getElementById("alertPassword").innerHTML = "Inválido, tu contraseña debe contener más de 5 caracteres";
         document.getElementById("alertPassword").style="display: block; margin-bottom: -10px;";
         return false;
     }else{
@@ -62,7 +62,7 @@ function validarContraseña () {
 } // Validacion contraseña
 
 function validarConfirContraseña () {
-    if((confirPassContact.value != passwordContact.value)){
+    if((confirPassContact.value != passwordContact.value || confirPassContact.value.length==0 )){
         confirPassContact.style.border = "red thin solid";
         document.getElementById("alertConfirPassword").innerHTML = "Dato inválido, la contraseña no coincide";
         document.getElementById("alertConfirPassword").style="display: block; margin-bottom: -10px;";
@@ -195,8 +195,6 @@ enviar.addEventListener("click", (event)=> {
      return false;
     }
     
-
-
     // Si no falla validaciones, se muestra alerta de que se registró correctamente
     Swal.fire({
         icon: 'success',
@@ -206,42 +204,7 @@ enviar.addEventListener("click", (event)=> {
         timer: 1500
     })
 
-
-
     //============================== Guardar en el local storage ====================
-//Comentada una segundo opcion!
-
-document.querySelector(`#enviar`).addEventListener(`click`, guardarRegistro);
-
-let usuarios = [];
-obtener_localstorage();
-guardarRegistro();
-
-function obtener_localstorage() {
-    let newUsuario = localStorage.getItem("Usuario");
-    console.log(newUsuario);
-}
-
-
-function guardarRegistro() {
-    /*
-    let nombre = document.querySelector(`#nameContact`).value;
-    let apellidoP = document.querySelector(`#ApellidoPContact`).value;
-    let apellidoM = document.querySelector(`#ApellidoMContact`).value;
-    let contrasena = document.querySelector(`#passwordContact`).value;
-    let numero = document.querySelector(`#numberContact`).value;
-    let email = document.querySelector(`#mailContact`).value;
-
-    let newUsuario = `{ 
-        "nombre": "${nombre}",
-        "apellidoP": "${apellidoP}",
-        "apellidoM": "${apellidoM}",
-        "contrasena" : "${contrasena}",
-        "numero": "${numero}",
-        "email" : "${email}"
-    }`;
-*/
-
 
 let newUsuario =  {
     Nombre : document.querySelector(`#nameContact`).value,
@@ -253,66 +216,15 @@ let newUsuario =  {
     };
 
     usuarios.push(newUsuario);
-    
     localStorage.setItem("Usuario", JSON.stringify (usuarios));
-
-
-    window.addEventListener("load", function() {
-        if (localStorage.getItem("Usuario") != null) {
-            usuarios = JSON.parse(localStorage.getItem("Usuario"));
-        } // if
-    });
-    
-//addUsuarios(sNombre, sApellidoP, sApellidoM, sContraseña, sNumero, sEmail);
-
-}
-
-
-
-
-
-
-/*
-let usuarios = [];
-
-
-function addUsuarios(pnombre, papellidoP, papellidoM, pcontraseña, pnumero, pemail ) {
-    
-    let newUsuario ={
-nombre : pnombre,
-apellidoP: papellidoP,
-apellidoM: papellidoM,
-contraseña : pcontraseña,
-numero : pnumero,
-email : pemail
-};
-console.log(newUsuario);
- usuarios.push(newUsuario);
-}
-*/
-//localStorage.setItem(`NUEVO USUARIO`, JSON.stringify (newUsuario));
-//localStorage.setItem(`contraseña`, JSON.stringify (passwordContact));
-//localStorage.setItem(`numero`, JSON.stringify (numberContact));
-//localStorage.setItem(`email`, JSON.stringify (mailContact));
-
-
-
-
-/*
-
-    let usuario = {
-        nombre: nameContact + ApellidoPContact + ApellidoMContact ,
-        email: mailContact,
-        telefono: numberContact,
-        contraseña: passwordContact,
-    }
-
-localStorage.setItem (JSON.stringify(usuario)   );
-*/
 
 // Se limpia formulario
 document.getElementById('formRe').reset();
 });
 
 
-
+window.addEventListener("load", function() {
+    if (localStorage.getItem("Usuario") != null) {
+        usuarios = JSON.parse(localStorage.getItem("Usuario"));
+    } // if
+});

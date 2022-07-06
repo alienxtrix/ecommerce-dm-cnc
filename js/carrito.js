@@ -51,10 +51,10 @@ function compras(){
           title: 'Inicia sesión',
           text: 'Antes de continuar, por favor inicia sesión',
           showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Iniciar sesión',
-        cancelButtonText: 'Cerrar'
+          confirmButtonColor: '#727272',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Iniciar sesión',
+          cancelButtonText: 'Cerrar'
       }).then((result) => {
         if (result.isConfirmed) {
           location.href = "./login.html";
@@ -92,15 +92,17 @@ let cantidadpiezas = () => {
           quitar[i].addEventListener("click", (event) => {
             let numpiezas = document.getElementById(`piezas${i}`).textContent;
             numpiezas --;
-            document.getElementById(`piezas${i}`).textContent = numpiezas;
             if(numpiezas==0){
               alertborrar(i);
             }
+            else{
+            document.getElementById(`piezas${i}`).textContent = numpiezas;
                 //localStorage
                 carrito[i].piezas = numpiezas;
                 localStorage.setItem("carrito", JSON.stringify(carrito));
                 costo();
                 piezas();
+            }
           });
       } // for quitar
 
@@ -139,7 +141,7 @@ function alertborrar(i){
     text: "¿Deseas eliminar este producto?",
     icon: 'warning',
     showCancelButton: true,
-    confirmButtonColor: '#3085d6',
+    confirmButtonColor: '#727272',
     cancelButtonColor: '#d33',
     confirmButtonText: 'Confirmar',
     cancelButtonText: 'Cancelar'
@@ -164,8 +166,6 @@ function alertborrar(i){
       setTimeout(() => {
         location.reload();
       }, 1500);
-     
-     
-    }; // if es confirmado
+    } // if es confirmado
   });
 } // funcio borrar

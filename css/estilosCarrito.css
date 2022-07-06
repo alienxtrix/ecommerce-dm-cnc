@@ -94,6 +94,10 @@ tbody {
     border-color: inherit;
 }
 
+td{
+    font-size: larger;
+}
+
 
 @media (max-width: 1050px) {
 

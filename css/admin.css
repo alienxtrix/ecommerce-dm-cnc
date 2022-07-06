@@ -226,7 +226,6 @@ main {
 .details table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 10px;
 }
 
 .details table thead td {
@@ -234,7 +233,7 @@ main {
 }
 
 .details .viewTypes table tr {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
 }
 
 .details .viewTypes table thead tr,
@@ -252,7 +251,7 @@ main {
     text-align: left;
 }
 
-.details .viewTypes table tbody tr:hover {
+.details .viewTypes table.tabla1 tbody tr.activeT:hover {
     background: #03a9f4;
     color: #fff;
 }
@@ -328,4 +327,19 @@ main {
 
 #myBtn:hover {
     background-color: rgb(114, 150, 31);
+}
+
+
+table.tabla1 thead tr td {
+    background-color: black;
+    color: white;
+}
+
+.details .viewTypes table.tabla1 tbody tr.tablaImagenesClass tr:hover {
+    background: #03a9f4;
+    color: #fff;
+}
+
+.btnImagenesClass {
+    cursor: pointer;
 }
