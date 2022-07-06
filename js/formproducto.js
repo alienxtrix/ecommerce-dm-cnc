@@ -279,7 +279,7 @@ let enviarEd = document.getElementById("enviarEd");
         } else if (element.getAttribute("id") == "enviarEd") {
             productos[btn_id].name = document.getElementById("nombreEd").value;
             productos[btn_id].description = document.getElementById("descripcionEd").value;
-            productos[btn_id].rate = document.getElementById("calificacionEd").value;
+            productos[btn_id].rate =Math.round(document.getElementById("calificacionEd").value);
             productos[btn_id].cost = document.getElementById("costoEd").value;
             if (document.getElementById("gridRadios1Ed").checked == true) {
                 productos[btn_id].category = "Almacenamiento";

@@ -105,6 +105,20 @@ function validarEmail (){
     }
 } // Validacion de email
 
+emailExistente();
+function emailExistente() {
+    let storageUsuario = localStorage.getItem("Usuario");
+    let check = JSON.parse(storageUsuario);
+        for (let i = 0; i < check.length; i++) {
+        let checkEmail = check[i].Email;
+        if (checkEmail == document.getElementById("mailContact").value){
+            document.getElementById("alertmail").innerHTML = "Correo electrónico ya registrado, favor de utilizar otro";
+            document.getElementById("alertmail").style="display: block; margin-bottom: -10px;";
+            return false;
+        } else;
+    }
+}//Correo ya registrado
+
 function validarPoliticas(){
     let politicas = document.getElementById("politicas");
     if (!politicas.checked) {
