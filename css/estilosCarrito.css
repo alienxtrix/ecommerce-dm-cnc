@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@320&display=swap");
 * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: 'Oswald';
 }
 
@@ -7,57 +10,66 @@ body {
     overflow-x: hidden;
 }
 
+main {
+    position: relative;
+    width: 100%;
+    margin-bottom: inherit;
+    background-image: url('http://drive.google.com/uc?export=view&id=1v-r2nx_WTtSh4c10fZT2ZaLWWS0Utvgg');
+    background-size: cover;
+
+}
+
 /*PAGINA*/
 
-/* #Fondo{
-    background-image: url('http://drive.google.com/uc?export=view&id=1u-G6tdC5FLt6FA9L_1B5ox7AA4ZZUFxu');
-    background-position: right;
-    background-size: cover;
-} */
-
 /*SECTION INGRESO*/
-#ingreso{
+i{
+    margin: 2%;
+}
+#contenedor{
+    display:flex;
+    flex-direction: column;
+}
+.Ingreso{
     margin-top: 20px;
     margin-left: 50px;
 }
 
-#login{
+/* #login{
     margin-right: 10px;
     border-radius: 4%;
 }
 #invitado{
     margin-right: 10px;
     border-radius: 4%;
-}
+} */
 
 
 /*SECTION PRODUCTOS*/
-.Productos{
-    margin-top: 30px;
-    margin-left : 50px;
-    float:left;
+.card{
+    margin-left : 15%;
+    width: 40%;
+    min-width: 30%;
+    padding: 1%;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 }
 
 #listaProductos{
     text-align: center;
     font-size: small;
     margin-top: 20px;
+    margin-bottom: 0%;
 }
 
 #tproductos{
-    text-align: center;
     color: rgb(0, 0, 0);
-    padding: 0.5%;
+    margin-top: 2%;
     letter-spacing: 2px;
+    margin-left : 30%;
 }
 .Imgprod{
     width: 170px;
     height: 170px;
-}
-
-
-.summary.summary-cart {
-    margin-bottom: 3rem;
 }
 
 .summarytitle{
@@ -67,15 +79,14 @@ body {
     letter-spacing: 2px;
 }
 
-.summary {
+#resumen{
     padding: 1rem 2rem 2rem;
-    border: 0.1rem dashed #d7d7d7;
-    background-color: #f9f9f9;
+    border: 0.1rem dashed #727272;
+    background-color: #d6e6f13d;
     border-radius: 0.3rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    margin-right: 50px;
+    margin-right: 2%;
     float: right;
+    width: fit-content; 
 }
 
 tbody {
@@ -83,3 +94,41 @@ tbody {
     border-color: inherit;
 }
 
+
+@media (max-width: 1050px) {
+
+    .card{
+        margin: auto;
+        width: 80%;
+    }
+
+    #ingreso{
+        margin: auto;
+        margin-top: 5%;
+    }
+
+    #resumen{
+        float: none;
+        margin: auto;
+        margin-bottom: 10%;
+    }
+    #botones{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    #listaProductos{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 5%;
+    }
+
+    #contenedor{
+        align-items: center;
+    }
+
+    #tproductos{
+        margin-left : 0%;
+    }
+
+}

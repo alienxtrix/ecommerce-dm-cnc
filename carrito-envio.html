@@ -14,7 +14,7 @@
 
 <!-- Inicio del body -->
 <body>
-<main>
+
     <!--Inicio Navbar-->
     <div id="nav-placeholder">
         <script src="//code.jquery.com/jquery.min.js"></script>
@@ -26,90 +26,86 @@
     
     </div>
 
+<main>
+<section id="contenedor">
+<div>
+<div class="form-opcion col-md-3">
+    <label for="form-opcion" id="labelop">¿Cómo deseas recibir tu pedido? </label>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1">
+        <label class="form-check-label" for="gridRadios1">
+            Entrega en workshop <p>¡Gratis!</p>
+    </label>
+    </div>
 
-<h3>¿Cómo quieres recibir tu pedido?</h3>
-<div><p>Entrega en workshop  ¡Gratis! </p> 
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2">
+        <label class="form-check-label" for="gridRadios2">
+            Envío a domicilio(Entrega local dentro de Uruapan) <p>$50.00 </p>
+    </label>
+    </div>
+
+
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3">
+        <label class="form-check-label" for="gridRadios3">
+            Envío a domicilio(Envío a otra ciudad) <p>¡Próximamente! </p>
+    </label>
+    </div>
 </div>
 
-<div id="optiontienda" style="display: none">
-    <p>Podrás recogerlo en 5 días hábiles</p>
-    //mapa con direccion
-</div>
-
-<div><p>Envío a domicilio $ 250.00</p>
-</div>
-
-<div id="optiontienda" style="display: none">
-    <p>Podrás recibirlo entre 7-10  días hábiles</p>
-<!--COMIENZA FORMULARIO-->
-        <!-- Formulario -->
-        <section class="formulario">
-            <form id ="formEnvio" class="Envio" action="">
-              <h3 id="titulosn">Ingresa los datos de envío</h3>
-
-              <!--Calle-->
-                <div class="form-group col-md-6">
-                    <input type="text" class="form-control" id="calle">
-                    <div class = "alert alert-danger" id="alertcalle" style="display: none"></div>
-                    <label for="calle">Calle y número: </label>
-                </div>
-
-                <!--numero-->
-                <div class="form-group col-md-6">
-                <label for="numeroint"> Número interior: </label>
-                <input type="text" class="form-control" id="numeroint">
-                <div class = "alert alert-danger" id="alertnum" style="display: none"></div>
-                </div>
-
-
-              <!--ENTRE CALLES-->
-                <div class="form-group col-md-6">
-                  <label for="entrecalles">Descripción del producto : </label>
-                  <input type="text" class="form-control" id="entrecalles">
-                  <div class = "alert alert-danger" id="alertcalles" style="display: none"></div>
-                </div>
-
-                
-                <!--CP-->
-                <div class="form-group col-md-6">
-                    <label for="cp">C.P. : </label>
-                    <input type="text" class="form-control" id="CP">
-                    <div class = "alert alert-danger" id="alertcp" style="display: none"></div>
-                </div>
-
-
-                 <!--COLONIA-->
-                 <div class="form-group col-md-6">
-                    <label for="cost">Colonia : </label>
-                    <input type="text" class="form-control" id="colonia">
-                    <div class = "alert alert-danger" id="alertcolonia" style="display: none"></div>
-                </div>
-
-                 <!--CIUDAD-->
-                 <div class="form-group col-md-6">
-                    <label for="cost">Ciudad : </label>
-                    <input type="text" class="form-control" id="ciudad">
-                    <div class = "alert alert-danger" id="alertciudad" style="display: none"></div>
-                </div>
-
-
-                 <!--ESTADO-->
-                 <div class="form-group col-md-6">
-                    <label for="cost">Estado : </label>
-                    <input type="text" class="form-control" id="estado">
-                    <div class = "alert alert-danger" id="alertestado" style="display: none"></div>
-                </div>
-
-
-
-
-
-                <button type="button" class="btn btn-outline" type="submit" id="enviar">Guardar</button>
-            </form>
-        </section> <!-- Formulario-->
-</div>
+<aside id="detallesenvio" style="display: none">
+    <div id="optiontienda" style="display: none">
+        <p><i class="bi bi-shop"></i>Podrás recogerlo en 5 días hábiles</p>
+        <div class="mapResponsive">
+            <!--Mapa-->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.1344332434855!2d-102.04656958509365!3d19.406596686899128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842de3ab96aeb30d%3A0x6f7340bc1d9b1926!2sDise%C3%B1os%20en%20Madera%20%26%20CNC!5e0!3m2!1ses!2smx!4v1654921369488!5m2!1ses!2smx"
+                width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <button type="button" class="btn btn-dark btn-lg" type="submit" id="aceptar1">Aceptar</button>
+    </div>
+    <div id="optionlocal" style="display: none">
+        <p><i class="bi bi-truck"></i>Podrás recibirlo entre 7-10  días hábiles</p>
+    <!--COMIENZA FORMULARIO-->
+            <!-- Formulario -->
+            <section class="formulario">
+                <h3 id="titulosn">Ingresa los datos de envío</h3>
+                <form id ="formEnvio" class="Envio" action="">
+                  <!--Calle-->
+                    <div class="form-group">
+                        <label for="calle">Calle y número: </label>
+                        <input type="text" class="form-control" id="calle">
+                        <div class = "alert alert-danger" id="alertcalle" style="display: none"></div> 
+                    </div>
     
+                    <!--numero-->
+                    <div class="form-group">
+                    <label for="numeroint"> Número interior: </label>
+                    <input type="text" class="form-control" id="numeroint">
+                    <div class = "alert alert-danger" id="alertnum" style="display: none"></div>
+                    </div>
+    
+                    <!--CP-->
+                    <div class="form-group">
+                        <label for="cp">C.P. : </label>
+                        <input type="text" class="form-control" id="CP">
+                        <div class = "alert alert-danger" id="alertcp" style="display: none"></div>
+                    </div>
+    
+                    <button type="button" class="btn btn-dark btn-lg" type="aceptar2" id="enviar">Aceptar</button>
+                </form>
+            </section> <!-- Formulario-->
+    </div>
 
+</aside>
+
+</div>
+</section>
+
+
+
+    
+</main>
              <!--Inicio de Footer-->
              <div id="foot-placeholder">
 
@@ -123,7 +119,7 @@
             </div>
                 <!--Final de Footer-->
 
-</main>
+
     <script src="./js/carrito-envio.js"> </script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>

@@ -126,6 +126,15 @@ let compras = () => {
                         carrito.push(JSON.parse(producto));
                         localStorage.setItem("carrito", JSON.stringify(carrito)); 
                 } //if no se repite
+
+                Swal.fire({
+                    icon: 'success',
+                    width: '20%',
+                    height: '20%',
+                    text: 'Se ha añadido al carrito',
+                    showConfirmButton: false,
+                    timer: 1000
+                })
              } ) //addEventListener 
             } //for compras
 };//funcion compras
