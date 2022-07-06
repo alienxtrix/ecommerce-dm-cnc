@@ -305,6 +305,11 @@ main {
     width: 20%;
 }
 
+.btn:hover {
+    color: white;
+    opacity: 0.8;
+}
+
 #myBtn {
     display: none;
     position: fixed;
@@ -335,11 +340,36 @@ table.tabla1 thead tr td {
     color: white;
 }
 
-.details .viewTypes table.tabla1 tbody tr.tablaImagenesClass tr:hover {
+table.tabla1 tbody tr.tablaImagenesClass tr.imgO {
+    background: white;
+}
+
+table.tabla1 tbody tr.tablaImagenesClass tr.imgO td button.btnImgAgregar {
+    background-color: #17a2b8;
+}
+
+.details .viewTypes table.tabla1 tbody tr.tablaImagenesClass tr.imgT:hover {
     background: #03a9f4;
     color: #fff;
 }
 
 .btnImagenesClass {
     cursor: pointer;
+}
+
+.btnImgCerrar {
+    width: 50%;
+}
+
+.btnImgAgregar {
+    width: 50%;
+}
+
+.fa-eye {
+    cursor: pointer;
+}
+
+.btnEliminar {
+    width: 70px;
+    background-color: rgb(213, 75, 75);
 }
