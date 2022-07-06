@@ -67,7 +67,7 @@
             <h1>Lista de Productos</h1>
             <div class="details">
                 <div class="viewTypes">
-                    <table>
+                    <table class="tabla1" width="100%" cellpadding="0" cellspacing="0">
                         <thead>
                             <tr>
                                 <td>Id</td>
@@ -75,6 +75,8 @@
                                 <td>Valoracion</td>
                                 <td>Precio</td>
                                 <td>Status</td>
+                                <td>Editar</td>
+                                <td>Imágenes</td>
                             </tr>
                         </thead>
                         <tbody id="listItemsAdmin">
@@ -202,14 +204,13 @@
                             <div class="alert alert-danger" id="alertimgEd" style="display: none"></div>
                             <br>
     
-                            <button type="button" class="btn btn-outline" type="submit" id="enviarEd">Guardar</button>
+                            <button type="button" class="btn btn-outline" type="submit" id="enviarEd" onClick="window.location.reload();">Guardar</button>
                         </form>
 
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal" onClick="window.location.reload();"
-                        >Cerrar</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                     </div> 
                 </div>
             </div>
