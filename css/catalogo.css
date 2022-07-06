@@ -113,12 +113,13 @@ main {
 /* ESTILO BOTONES*/
 
 .btnDetallesClass {
-    width: 120px;
+    /* width: 120px; */
+    margin-left: 2%;
     width: fit-content;
 }
 
 .btnAgregarClass {
-    width: 150px;
+    /* width: 150px; */
     width: fit-content;
 }
 
@@ -131,4 +132,16 @@ main {
 .btnsCard{
    display: flex;
    justify-content: center;
+}
+
+/*Estilo de ver detalles*/
+.carousel-inner{
+    margin: 0px auto;
+    width: 50%;
+}
+.modal-header{
+    justify-content: center;
+}
+.modal-body{
+    text-align: center;
 }

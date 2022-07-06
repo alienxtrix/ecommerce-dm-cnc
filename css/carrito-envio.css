@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@320&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald';
+}
+
+body {
+    overflow-x: hidden;
+}
+
+main {
+    position: relative;
+    width: 100%;
+    background-image: url('http://drive.google.com/uc?export=view&id=1v-r2nx_WTtSh4c10fZT2ZaLWWS0Utvgg');
+    background-size: cover;
+}
+
+
+#detallesenvio{
+    padding: 1rem 2rem 2rem;
+    border: 0.1rem dashed #727272;
+    background-color: #d6e6f13d;
+    border-radius: 0.3rem;
+    float: right;
+    width: 35%;
+    height: fit-content; 
+    margin: 5%;
+    text-align: center;
+}
+
+
+.form-opcion{
+    float: left;
+    margin: 8%;
+    padding: 1.5%;
+    width: max-content;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.397);
+    background-color: #74777909;
+    text-align: center;
+    border-radius: 0.3rem;
+}
+
+#contenedor{
+    display: flex;
+    flex-direction: column;
+}
+
+
+#labelop{
+    font-size: 27px;
+    text-align: center;
+}
+
+i{
+margin-right: 1%;
+font-size: 120%;}
+
+
+
+
+@media (max-width: 767px) {
+
+    .form-opcion{
+        float: none;
+        margin: 0%;
+    }
+
+    #contenedor{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    iframe{
+        width:100%;
+        /* height:250px; */
+    }
+
+    #detallesenvio{
+        width: fit-content;
+        float: none;
+
+    }
+
+}

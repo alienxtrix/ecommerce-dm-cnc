@@ -57,7 +57,7 @@
                 <div class="toggle" onclick="toggleMenu(1)"></div>
                 <div class="search">
                     <label for="">
-                    <input type="text" placeholder="Busca aquí">
+                    <input type="text" placeholder="Busca aquí" id="inputSearchList" onkeyup="searchList()">
                     <i class="fa fa-search" aria-hidden="true"></i>
                 </label>
                 </div>
@@ -68,7 +68,7 @@
             <h1>Lista de Productos</h1>
             <div class="details">
                 <div class="viewTypes">
-                    <table>
+                    <table class="tabla1" width="100%" cellpadding="0" cellspacing="0">
                         <thead>
                             <tr>
                                 <td>Id</td>
@@ -76,6 +76,8 @@
                                 <td>Valoracion</td>
                                 <td>Precio</td>
                                 <td>Status</td>
+                                <td>Editar</td>
+                                <td>Imágenes</td>
                             </tr>
                         </thead>
                         <tbody id="listItemsAdmin">
@@ -94,28 +96,28 @@
 
                     <div class="modal-header">
                         <h5 class="modal-title" id="nombreProducto"></h5>
-                    </button>
+                        </button>
                     </div>
                     <div class="modal-body" id="descripcionProducto">
-                        
+
 
                         <form class="formProducto" action="" id="myFormEd">
                             <h3 id="titulosn">Editar un producto</h3>
-    
+
                             <!--NOMBRE-->
                             <div class="form-group col-md-6">
                                 <label for="nombreEd">Nombre del producto: </label>
                                 <input type="text" class="form-control" id="nombreEd">
                                 <div class="alert alert-danger" id="alertnombreEd" style="display: none"></div>
                             </div>
-    
+
                             <!--DESCRIPCION-->
                             <div class="form-group col-md-6">
                                 <label for="descripcionEd">Descripción del producto : </label>
                                 <input type="text" class="form-control" id="descripcionEd">
                                 <div class="alert alert-danger" id="alertdesEd" style="display: none"></div>
                             </div>
-    
+
                             <!--CATEGORIA-->
                             <div class="form-group col-md-6">
                                 <label for="categoriaEd">Categoría : </label>
@@ -145,7 +147,7 @@
                                 </div>
                                 <div class="alert alert-danger" id="alertcatEd" style="display: none"></div>
                             </div>
-    
+
                             <br>
                             <!--RATE-->
                             <div class="form-group col-md-6">
@@ -186,7 +188,7 @@
                                 <input type="text" class="form-control" id="costoEd">
                                 <div class="alert alert-danger" id="alertcostEd" style="display: none"></div>
                             </div>
-    
+
                             <!--IMAGEN-->
                             <div class="form-group col-md-6">
                                 <label for="fileImageEd">Selecciona una imagen:</label>
@@ -202,16 +204,15 @@
                             </div>
                             <div class="alert alert-danger" id="alertimgEd" style="display: none"></div>
                             <br>
-    
+
                             <button type="button" class="btn btn-outline" type="submit" id="enviarEd">Guardar</button>
                         </form>
 
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal" onClick="window.location.reload();"
-                        >Cerrar</button>
-                    </div> 
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -381,6 +382,27 @@
             document.getElementById(description).style.display = "block";
             evt.currentTarget.className += " active";
         } //Function openTab del menu para cambiar de seccion las vistas
+        function searchList() {
+            var input, filter, listItem, rowTr, a, i, txtValue, b, txtValueb, c, txtValueb;
+            input = document.getElementById('inputSearchList');
+            filter = input.value.toUpperCase();
+            listItem = document.getElementById("listItemsAdmin");
+            rowTr = listItem.getElementsByClassName('activeT');
+
+            for (i = 0; i < rowTr.length; i++) {
+                a = rowTr[i].getElementsByTagName("td")[1];
+                b = rowTr[i].getElementsByTagName("td")[3];
+                c = rowTr[i].getElementsByTagName("td")[2];
+                txtValue = a.textContent || a.innerText;
+                txtValueb = b.textContent || b.innerText;
+                txtValuec = c.textContent || c.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1 || txtValueb.toUpperCase().indexOf(filter) > -1 || txtValuec.toUpperCase().indexOf(filter) > -1) {
+                    rowTr[i].style.display = "";
+                } else {
+                    rowTr[i].style.display = "none";
+                } //else
+            } //for
+        } //searchList
     </script>
     <script type="text/javascript" src="./js/admin.js"></script>
     <script type="text/javascript" src="./js/formproducto.js"></script>
