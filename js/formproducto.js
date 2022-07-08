@@ -254,7 +254,7 @@ let enviarEd = document.getElementById("enviarEd");
             showConfirmButton: false,
             timer: 1500
         })
-    
+        contador++;
         // Se crea o se edita la información dependiendo del form
         if (element.getAttribute("id") == "enviar") {
             // JSON de producto
@@ -269,7 +269,6 @@ let enviarEd = document.getElementById("enviarEd");
                 "rate": ${Math.round(calificacion.value)}
             }`;
             // Local Storage
-            contador++;
             //stringify convierte a cadena
             localStorage.setItem("contador", JSON.stringify(contador));
             //parse toma una cadena y la convierte a objeto
@@ -280,7 +279,7 @@ let enviarEd = document.getElementById("enviarEd");
         } else if (element.getAttribute("id") == "enviarEd") {
             productos[btn_id].name = document.getElementById("nombreEd").value;
             productos[btn_id].description = document.getElementById("descripcionEd").value;
-            productos[btn_id].rate = document.getElementById("calificacionEd").value;
+            productos[btn_id].rate =Math.round(document.getElementById("calificacionEd").value);
             productos[btn_id].cost = document.getElementById("costoEd").value;
             if (document.getElementById("gridRadios1Ed").checked == true) {
                 productos[btn_id].category = "Almacenamiento";

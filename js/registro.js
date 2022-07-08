@@ -2,11 +2,12 @@
 let nameContact = document.getElementById("nameContact");
 let ApellidoPContact = document.getElementById("ApellidoPContact");
 let ApellidoMContact = document.getElementById("ApellidoMContact");
+let fechaNac = document.getElementById("birthDate");
 let numberContact = document.getElementById("numberContact")
 let mailContact = document.getElementById("mailContact")
 let passwordContact = document.getElementById("passwordContact")
 let confirPassContact = document.getElementById("confirPassContact")
-
+let usuarios = [];
 
 //------------------------> F U N C I O N E S    D E   V A L I D A C I O N E S <--------------------------------
 function validarNombre () {
@@ -20,7 +21,7 @@ function validarNombre () {
         document.getElementById("alertnombre").style.display="none";
         return true;
     }
-} //Validacion nombre
+} //Validación nombre
 
 function validarApellidoP () {
     if(ApellidoPContact.value.length<3){
@@ -33,7 +34,7 @@ function validarApellidoP () {
         document.getElementById("alertnombreP").style.display="none";
         return true;
     }
-} // Validacion apellido paterno
+} // Validación apellido paterno
 
 function validarApellidoM () {
     if(ApellidoMContact.value.length<3){
@@ -46,12 +47,29 @@ function validarApellidoM () {
         document.getElementById("alertnombreM").style.display="none";
         return true;
     }
-} // Validacion apellido materno
+} // Validación apellido materno
+
+let validacionBD = /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/;
+
+function validarfechaNac () {
+    console.log(birthDate.value);
+    console.log(validacionBD);
+    if (!validacionBD.test(fechaNac.value)){
+        fechaNac.style.border = "red thin solid";
+        document.getElementById("alertBD").innerHTML = "Debes ingresar una fecha de nacimiento válida";
+        document.getElementById("alertBD").style="display: block; margin-bottom: -10px;";
+        return false;
+    } else { 
+        birthDate.style.border = "green thin solid";
+        document.getElementById("alertBD").style.display="none";
+        return true;
+    }
+} // Validación Fecha de Nacimiento
 
 function validarContraseña () {
     if(passwordContact.value.length<5){
         passwordContact.style.border = "red thin solid";
-        document.getElementById("alertPassword").innerHTML = "Dato inválido, tu contraseña debe contener más de 5 caracteres";
+        document.getElementById("alertPassword").innerHTML = "Inválido, tu contraseña debe contener más de 5 caracteres";
         document.getElementById("alertPassword").style="display: block; margin-bottom: -10px;";
         return false;
     }else{
@@ -59,10 +77,10 @@ function validarContraseña () {
         document.getElementById("alertPassword").style.display="none";
         return true;
     }
-} // Validacion contraseña
+} // Validación contraseña
 
 function validarConfirContraseña () {
-    if((confirPassContact.value != passwordContact.value)){
+    if((confirPassContact.value != passwordContact.value || confirPassContact.value.length==0 )){
         confirPassContact.style.border = "red thin solid";
         document.getElementById("alertConfirPassword").innerHTML = "Dato inválido, la contraseña no coincide";
         document.getElementById("alertConfirPassword").style="display: block; margin-bottom: -10px;";
@@ -72,7 +90,7 @@ function validarConfirContraseña () {
         document.getElementById("alertConfirPassword").style.display="none";
         return true;
     }
-} //Validacion confirmacion de contraseña
+} //Validación confirmación de contraseña
 
 
 let validacionCel = /^[0-9]{10}$/;  
@@ -88,7 +106,7 @@ function validarNumero (){
         document.getElementById("alertnum").style.display="none";
         return true;
     }
-} // Validacion de celular
+} // Validación de celular
 
 let validacionEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
 
@@ -100,10 +118,30 @@ function validarEmail (){
         return false;
 
     } else{mailContact.style.border = "green thin solid";
-       document.getElementById("alertmail").style.display="none";
-       return true;
+        document.getElementById("alertmail").style.display="none";
+        return true;
     }
-} // Validacion de email
+} // Validación de email
+
+
+function emailExistente() {
+        for (let i = 0; i < usuarios.length; i++) {
+        let checkEmail = usuarios[i].Email;
+        console.log(checkEmail);
+       console.log(document.getElementById("mailContact").value)
+            if (checkEmail == document.getElementById("mailContact").value){
+                console.log(i);
+                mailContact.style.border = "red thin solid";
+                document.getElementById("alertmail").innerHTML = "Correo electrónico ya registrado, favor de utilizar otro";
+                document.getElementById("alertmail").style="display: block; margin-bottom: -10px;";
+                return false;
+            }
+        }  
+        mailContact.style.border = "green thin solid";
+        document.getElementById("alertmail").style.display="none";
+        return true;  
+    }
+//Correo ya registrado
 
 function validarPoliticas(){
     let politicas = document.getElementById("politicas");
@@ -115,7 +153,7 @@ function validarPoliticas(){
         document.getElementById("alertpoliticas").style.display="none";
         return true;
     }
-} // Validacion de aceptar politicas de privacidad
+} // Validación de aceptar politicas de privacidad
 
 
 //--------------------------> E V E N T O S   I N P U T S   Y   C H E C K B O X <--------------------------------
@@ -123,7 +161,7 @@ function validarPoliticas(){
 const checkbox = document.querySelector("input[name=checkbox]");
 checkbox.addEventListener("change", (e) => {
     if (e.target.checked) {
-       document.getElementById("alertpoliticas").style.display="none";
+        document.getElementById("alertpoliticas").style.display="none";
     }
     else{
         document.getElementById("alertpoliticas").innerHTML = "Por favor, acepta las políticas de privacidad";
@@ -146,15 +184,22 @@ ApellidoMContact.addEventListener("blur",(e)=>{
     validarApellidoM();
 }) //Apellido M
 
+fechaNac.addEventListener("blur",(e)=>{
+    e.target.value = e.target.value.trim();
+    validarfechaNac();
+}) //Fecha Nacimiento
 
 numberContact.addEventListener("blur",(e)=>{
     e.target.value = e.target.value.trim();
     validarNumero();
-}) //Numero
+}) //Número
 
 mailContact.addEventListener("blur",(e)=>{
     e.target.value = e.target.value.trim();
-    validarEmail();
+    if( validarEmail()){
+        emailExistente();
+    }
+   
 }) // Email
 
 passwordContact.addEventListener("blur",(e)=>{
@@ -179,14 +224,15 @@ enviar.addEventListener("click", (event)=> {
     validarNombre();
     validarApellidoP();
     validarApellidoM();
+    validarfechaNac();
     validarContraseña();
     validarConfirContraseña();
     validarNumero();
     validarEmail();
     validarPoliticas();
-
+    123
     //Si falla alguna validacion, se muestra alerta de error 
-    if ((!validarNombre()) || (!validarContraseña()) || (!validarApellidoM()) || (!validarNumero()) || (!validarConfirContraseña()) || (!validarApellidoP()) || (!validarEmail()) || (!validarPoliticas())){
+    if ((!validarNombre()) || (!validarContraseña()) || (!validarApellidoM()) || (!validarNumero()) || (!validarConfirContraseña()) || (!validarApellidoP()) || (!validarEmail()) || (!validarPoliticas()) || (!validarfechaNac())){
         Swal.fire({
             icon: 'error',
             title: 'Error',
@@ -194,9 +240,17 @@ enviar.addEventListener("click", (event)=> {
           })
      return false;
     }
+
+    emailExistente();
+    if(!emailExistente()){
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text:'Este email ya está registrado',
+          })
+        return false;
+    }
     
-
-
     // Si no falla validaciones, se muestra alerta de que se registró correctamente
     Swal.fire({
         icon: 'success',
@@ -206,113 +260,28 @@ enviar.addEventListener("click", (event)=> {
         timer: 1500
     })
 
-
-
     //============================== Guardar en el local storage ====================
-//Comentada una segundo opcion!
-
-document.querySelector(`#enviar`).addEventListener(`click`, guardarRegistro);
-
-let usuarios = [];
-obtener_localstorage();
-guardarRegistro();
-
-function obtener_localstorage() {
-    let newUsuario = localStorage.getItem("Usuario");
-    console.log(newUsuario);
-}
-
-
-function guardarRegistro() {
-    /*
-    let nombre = document.querySelector(`#nameContact`).value;
-    let apellidoP = document.querySelector(`#ApellidoPContact`).value;
-    let apellidoM = document.querySelector(`#ApellidoMContact`).value;
-    let contrasena = document.querySelector(`#passwordContact`).value;
-    let numero = document.querySelector(`#numberContact`).value;
-    let email = document.querySelector(`#mailContact`).value;
-
-    let newUsuario = `{ 
-        "nombre": "${nombre}",
-        "apellidoP": "${apellidoP}",
-        "apellidoM": "${apellidoM}",
-        "contrasena" : "${contrasena}",
-        "numero": "${numero}",
-        "email" : "${email}"
-    }`;
-*/
-
 
 let newUsuario =  {
     Nombre : document.querySelector(`#nameContact`).value,
     ApellidoP : document.querySelector(`#ApellidoPContact`).value,
     ApellidoM : document.querySelector(`#ApellidoMContact`).value,
+    fechaNac : document.querySelector(`#birthDate`).value,
     Contrasena : document.querySelector(`#passwordContact`).value,
     Numero : document.querySelector(`#numberContact`).value,
     Email : document.querySelector(`#mailContact`).value
     };
 
     usuarios.push(newUsuario);
-    
     localStorage.setItem("Usuario", JSON.stringify (usuarios));
-
-
-    window.addEventListener("load", function() {
-        if (localStorage.getItem("Usuario") != null) {
-            usuarios = JSON.parse(localStorage.getItem("Usuario"));
-        } // if
-    });
-    
-//addUsuarios(sNombre, sApellidoP, sApellidoM, sContraseña, sNumero, sEmail);
-
-}
-
-
-
-
-
-
-/*
-let usuarios = [];
-
-
-function addUsuarios(pnombre, papellidoP, papellidoM, pcontraseña, pnumero, pemail ) {
-    
-    let newUsuario ={
-nombre : pnombre,
-apellidoP: papellidoP,
-apellidoM: papellidoM,
-contraseña : pcontraseña,
-numero : pnumero,
-email : pemail
-};
-console.log(newUsuario);
- usuarios.push(newUsuario);
-}
-*/
-//localStorage.setItem(`NUEVO USUARIO`, JSON.stringify (newUsuario));
-//localStorage.setItem(`contraseña`, JSON.stringify (passwordContact));
-//localStorage.setItem(`numero`, JSON.stringify (numberContact));
-//localStorage.setItem(`email`, JSON.stringify (mailContact));
-
-
-
-
-/*
-
-    let usuario = {
-        nombre: nameContact + ApellidoPContact + ApellidoMContact ,
-        email: mailContact,
-        telefono: numberContact,
-        contraseña: passwordContact,
-    }
-
-localStorage.setItem (JSON.stringify(usuario)   );
-*/
 
 // Se limpia formulario
 document.getElementById('formRe').reset();
 });
 
 
-
+window.addEventListener("load", function() {
+    if (localStorage.getItem("Usuario") != null) {
+        usuarios = JSON.parse(localStorage.getItem("Usuario"));
+    } // if
+});
