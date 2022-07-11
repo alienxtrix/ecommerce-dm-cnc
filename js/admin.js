@@ -66,6 +66,10 @@ let modals = () => {
             document.getElementById("calificacionEd").value = productosGrid[detalles[i].getAttribute("id")-1].rate;
             document.getElementById("costoEd").value = productosGrid[detalles[i].getAttribute("id")-1].cost;
             document.getElementById("imageFileEd").setAttribute("src", productosGrid[detalles[i].getAttribute("id")-1].img);
+            for (let  i = 1; i <= contador; i++) {
+                btn_id = "tablaImagen" + i;
+                document.getElementById(btn_id).innerHTML = "";
+            }
             imgT = 0;
         });
     } // for
@@ -121,7 +125,7 @@ let imgView = () => {
                 btn_id = "tablaImagen" + imagenesT[i].getAttribute("id");
                 document.getElementById(btn_id).innerHTML = tablaImagen;
                 imgCerrar();
-                imgT++;
+                imgT = 1;
             }
             imgEliminar();
             imgAgregar();

@@ -122,6 +122,10 @@ document.getElementById("nameContact").value = "";
 document.getElementById("mailContact").value = "";
 document.getElementById("numberContact").value = "";
 document.getElementById("descriptionContact").value = "";
+mailContact.style.border = "grey thin solid";
+nameContact.style.border = "grey thin solid";
+numberContact.style.border = "grey thin solid";
+descriptionContact.style.border = "grey thin solid";
 
 });
 //Funcion enviar correo

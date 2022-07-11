@@ -15,7 +15,7 @@ let costoEd = document.getElementById("costoEd");
 let imageFileEd = document.getElementById('imageFileEd');
 
 // Se establecen las excepciones de validación
-let validacionNombre = /^[A-Z]+[a-z]{3,100}/;
+let validacionNombre = /^[A-z]{3,100}/;
 let validacionCosto = /^[1-9]+[0-9]{2,10}$/;
 
 let alert;
@@ -30,7 +30,7 @@ function validarNombre(elemento) {
     }
     if (!validacionNombre.test(elemento.value)) {
         elemento.style.border = "red thin solid";
-        document.getElementById(alert).innerHTML = "Dato inválido, el nombre debe contener más de 3 caracteres y comenzar con mayúscula";
+        document.getElementById(alert).innerHTML = "Dato inválido, el nombre debe contener más de 3 caracteres";
         document.getElementById(alert).style = "display: block; margin-bottom: -10px;";
         return false;
     } else {
@@ -257,6 +257,7 @@ let enviarEd = document.getElementById("enviarEd");
         contador++;
         // Se crea o se edita la información dependiendo del form
         if (element.getAttribute("id") == "enviar") {
+            nombre.value = nombre.value[0].toUpperCase() + nombre.value.substring(1);
             // JSON de producto
             let prod = `{ 
                 "id": ${contador},

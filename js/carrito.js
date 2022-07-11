@@ -24,9 +24,9 @@ function mostrarlista(carrito) {
                 <div class="card-body">
                   <h5 id = "nombreprod" class="card-title">${element.name}</h5>
                   <p id = "costoprod" class="art-costo">$${element.cost} mxn</p>
-                  <div> <button type="button" id ="btn+" class="btn+ btn-info btn-sm">+</button>
+                  <div> <button type="button" id ="btn-" class="btn- btn-info btn-sm">-</button> 
                     <i id="piezas${cont}" class="art-piezas">${element.piezas}</i>
-                  <button type="button" id ="btn-" class="btn- btn-info btn-sm">-</button>
+                    <button type="button" id ="btn+" class="btn+ btn-info btn-sm">+</button>
                   </div>
                 </div>
               </div>
@@ -45,6 +45,7 @@ function compras(){
   let compra = document.getElementById("btnCompra");
   compra.addEventListener("click", (event) => {
     event.preventDefault();
+    
     if (!localStorage.getItem("statusSesion")) {
         Swal.fire({
           icon: 'error',
@@ -61,7 +62,18 @@ function compras(){
         }
       });
     } //if
+    
+
+    else if((carrito.length==0)){
+      Swal.fire({
+        icon: 'error',
+        title: 'Carrito vacío',
+        text: 'Antes de continuar, por favor añade productos a tu carrito',
+      });
+    }
+     
     else{location.href = "./carrito-envio.html"};
+
   });//click
 };//funcion compras
 
@@ -73,7 +85,6 @@ let numarticulos = 0;
    
 let cantidadpiezas = () => {
         for (let i = 0; i < agregar.length; i++) {
-          console.log(i);
             agregar[i].addEventListener("click", (event) => {
                 let numpiezas = document.getElementById(`piezas${i}`).textContent;
                 numpiezas ++;
