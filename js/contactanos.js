@@ -97,6 +97,7 @@ enviar.addEventListener("click", (event)=> {
     validarDescripcion();
     validarNumero();
     validarEmail();
+    sendEmail();
 
     if ((!validarNombre()) || (!validarDescripcion()) || (!validarNumero()) || (!validarEmail()) ){
         Swal.fire({
@@ -115,12 +116,29 @@ enviar.addEventListener("click", (event)=> {
         showConfirmButton: false,
         timer: 1500
     })
-
+    sendEmail();
     // Se limpia formulario
-document.getElementById('formC').reset();
+document.getElementById("nameContact").value = "";
+document.getElementById("mailContact").value = "";
+document.getElementById("numberContact").value = "";
+document.getElementById("descriptionContact").value = "";
 
 });
-
+//Funcion enviar correo
+function sendEmail() {
+    Email.send({
+        Host: "smtp.gmail.com",
+        Username: "nac.tran.205@gmail.com",
+        Password: "2WsX.5TgB",
+        To: 'nac.tran.205@gmail.com', 
+        From: 'nac.tran.205@gmail.com',  
+        Subject: `Duda`,
+        Body: ` Email: ${mailContact} <br/>
+        Nombre: ${nameContact} <br/>
+        Telefono: ${numberContact} <br/>
+        Mensaje:${descriptionContact}`,
+    }).then();
+}
 /* Botón "Ir Arriba" */
 
 mybutton = document.getElementById("myBtn");
