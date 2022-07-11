@@ -15,8 +15,9 @@ main {
     width: 100%;
     margin-bottom: inherit;
     background-image: url('http://drive.google.com/uc?export=view&id=1v-r2nx_WTtSh4c10fZT2ZaLWWS0Utvgg');
-    background-size: cover;
-
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: bottom;
 }
 
 /*PAGINA*/
@@ -34,15 +35,6 @@ i{
     margin-left: 50px;
 }
 
-/* #login{
-    margin-right: 10px;
-    border-radius: 4%;
-}
-#invitado{
-    margin-right: 10px;
-    border-radius: 4%;
-} */
-
 
 /*SECTION PRODUCTOS*/
 .card{
@@ -50,7 +42,7 @@ i{
     width: 40%;
     min-width: 30%;
     padding: 1%;
-    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.219);
     border-radius: 10px;
 }
 
@@ -61,11 +53,15 @@ i{
     margin-bottom: 0%;
 }
 
+#tituloprod{
+    font-size: 25px;
+}
+
 #tproductos{
     color: rgb(0, 0, 0);
     margin-top: 2%;
     letter-spacing: 2px;
-    margin-left : 30%;
+    margin-left : 29%;
 }
 .Imgprod{
     width: 170px;
@@ -81,13 +77,18 @@ i{
 
 #resumen{
     padding: 1rem 2rem 2rem;
-    border: 0.1rem dashed #727272;
-    background-color: #d6e6f13d;
+    /* border: 0.1rem dashed #727272; */
+    background-color: #d6e6f100;
     border-radius: 0.3rem;
     margin-right: 2%;
     float: right;
     width: fit-content; 
+    /* background-image:url('https://fondosmil.com/fondo/17538.jpg'); */
+    background-color: rgba(222, 226, 230, 0.26);
+    box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.301);
+   
 }
+
 
 tbody {
     vertical-align: middle;
@@ -135,4 +136,7 @@ td{
         margin-left : 0%;
     }
 
+    .Ingreso{
+        margin-left: 0;
+    }
 }

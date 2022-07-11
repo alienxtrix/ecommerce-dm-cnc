@@ -13,6 +13,7 @@ body {
 #fondo{
     background-image: url('http://drive.google.com/uc?export=view&id=1v-r2nx_WTtSh4c10fZT2ZaLWWS0Utvgg');
     background-size: cover;
+    background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -23,7 +24,7 @@ body {
     width: fit-content;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center;   
 }
 
 .btnForm a:hover {
@@ -32,6 +33,10 @@ body {
 }
 
 .formregistro{
+    width: fit-content; 
+    /* border: 50px solid;*/
+    /* border-image: url('https://fondosmil.com/fondo/17538.jpg') 100 round;  */
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.123);
     margin-top: 20px;
     width: 120%;
     margin-bottom: 20px;
@@ -40,7 +45,7 @@ body {
     flex-direction: column;
     align-items: center;
     box-shadow: inset 0 0 3px rgba(58, 59, 59, 0.233);
-    background-color: rgba(99, 99, 99, 0.01);
+    background-image: url('https://fondosmil.com/fondo/17538.jpg');
  }
  
 
@@ -59,7 +64,7 @@ input::placeholder {
 
 .alert {
     color: rgb(255, 0, 0);
-    font-size: 12px;
+    font-size: 79%;
 }
 
 .casillaForm{
