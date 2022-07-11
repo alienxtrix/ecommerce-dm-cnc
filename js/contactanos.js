@@ -117,7 +117,11 @@ enviar.addEventListener("click", (event)=> {
     })
 
     // Se limpia formulario
-document.getElementById('formC').reset();
+document.getElementById('formContactanos').reset();
+mailContact.style.border = "grey thin solid";
+nameContact.style.border = "grey thin solid";
+numberContact.style.border = "grey thin solid";
+descriptionContact.style.border = "grey thin solid";
 
 });
 

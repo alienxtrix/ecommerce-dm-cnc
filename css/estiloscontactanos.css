@@ -32,7 +32,7 @@ main {
 }
 
 .left {
-    width: 30%;
+    width: 40%;
     background-color: #ffffff;
     border-style: inherit;
     box-shadow: rgba(0, 0, 0, 0.178) 0px 0px 10px 0px;
@@ -115,64 +115,11 @@ ul {
     padding-left: 25px;
 }
 
-.iconMail:before {
-    /*Icono y posicion de Mail*/
-    content: '';
-    width: 14px;
-    height: 13px;
-    position: absolute;
-    background-size: contain;
-    background-position: center;
-    left: 5px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.iconTel:before {
-    /*Icono y posicion de Telefono*/
-    content: '';
-    width: 13px;
-    height: 15px;
-    position: absolute;
-    background-size: cover;
-    background-position: center;
-    left: 5px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.iconDire:before {
-    /*Icono y posicion de Direccion*/
-    content: '';
-    width: 13px;
-    height: 16px;
-    position: absolute;
-    background-size: cover;
-    background-position: center;
-    left: 5px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.iconReloj:before {
-    /*Icono y posicion de reloj*/
-    content: '';
-    width: 13px;
-    height: 13px;
-    position: absolute;
-    background-size: cover;
-    background-position: center;
-    left: 5px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-
 /*Final de Aside informacion de la empresa*/
 
 .alert {
     color: red;
-    font-size: 11px;
+    font-size: 79%;
 }
 
 .btn {

@@ -18,8 +18,9 @@ USE `maderas&cnc` ;
 -- Table `maderas&cnc`.`tipo_usuario`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `maderas&cnc`.`tipo_usuario` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(45) NOT NULL,
+  `descripcion` VARCHAR(50) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -51,8 +52,9 @@ ENGINE = InnoDB;
 -- Table `maderas&cnc`.`categorias`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `maderas&cnc`.`categorias` (
-  `id_categorias` INT NOT NULL,
+  `id_categorias` INT NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(45) NOT NULL,
+  `descripcion` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`id_categorias`))
 ENGINE = InnoDB;
 

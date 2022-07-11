@@ -80,6 +80,7 @@ enviar.addEventListener("click", (event) => {
         correo = usuarios[i].Email;
         password = usuarios[i].Contrasena;
         if (correo == mailContact.value && password == passwordContact.value) {
+            console.log("igual");
             Swal.fire({
                 icon: 'success',
                 title: 'Correcto',
@@ -91,6 +92,7 @@ enviar.addEventListener("click", (event) => {
             setTimeout(() => {
                 location.href = "./index.html";
             }, 1500);
+            return true;
         } else {
             Swal.fire({
                 icon: 'error',

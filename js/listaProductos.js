@@ -2,7 +2,10 @@
 let productos = [];
 let carrito = [];
 let contador = 0;
-
+let productoscat = [];
+let pos = 0;
+let categoriasactive = 0;
+let productoscart = [];
 // PARA REINICIAR LOS PRODUCTOS AL POR DEFECTO PRIMERO HAY QUE BORRAR EL LOCALSTORAGE
 
 // Función para mostrar productos de manera automática
@@ -49,6 +52,10 @@ function addItem(item) {
 let categorias = document.getElementsByClassName("btnCategoria");
 for (let i = 0; i < categorias.length; i++) {
     categorias[i].addEventListener("click", (event) => {
+        // productos = JSON.parse(localStorage.getItem("productos"));
+        productoscat = [];
+        pos = 0;
+        categoriasactive =1;
         event.preventDefault();
         removeStyle(categorias);
         addStyle(categorias[i]);
@@ -59,14 +66,17 @@ for (let i = 0; i < categorias.length; i++) {
             for (let i = 0; i < productos.length; i++) {
                 addItem(productos[i]);
             } // for
+            productoscat = productos;
         } // if
         for (let j = 0; j < productos.length; j++) {
             let item = "" + productos[j].category + "";
             if (item == categoria) {
-                // console.log(productos[j]);
                 addItem(productos[j]);
+                productoscat [pos]= productos[j]; 
+                pos++;
             } // if
         } // for
+        compras();
         modals();
     });
 } // for
@@ -101,14 +111,17 @@ let repetido = 1;
 let compras = () => {
         for (let i = 0; i < comprar.length; i++) {
             comprar[i].addEventListener("click", (event) => {
+
+                if (categoriasactive == 1){
+                   productos = productoscat;
+                } else{productos = productoscart;}; 
+                
                 if(carrito.length!=0){
-                    console.log("carrito>0");
                     let IDC;
                     for (let j =0; j<carrito.length;j++){
                         repetido = 1;
-                        IDC = carrito[j].id;
-                        if (IDC == productos[i].id) {
-                            console.log("repetido");
+                        IDC = carrito[j].name;
+                        if (IDC == productos[i].name) {
                             repetido = 2;
                             let data = JSON.parse(localStorage.getItem("carrito"));
                             data[j].piezas = data[j].piezas + 1;
@@ -120,7 +133,6 @@ let compras = () => {
                 } //if carrito>0
                 
                 if(repetido==1){
-                    console.log("agrega no repetido");
                         let producto = `{ 
                             "id": ${productos[i].id},
                             "name": "${productos[i].name}",
@@ -137,7 +149,6 @@ let compras = () => {
                 Swal.fire({
                     icon: 'success',
                     width: '20%',
-                    height: '20%',
                     text: 'Se ha añadido al carrito',
                     showConfirmButton: false,
                     timer: 1000
@@ -150,6 +161,7 @@ let compras = () => {
 window.addEventListener("load", function() {
     if (localStorage.getItem("productos") != null) {
         productos = JSON.parse(localStorage.getItem("productos"));
+        productoscart = productos;
         productos.forEach(element => {
             addItem(element);
         }); // for-each
