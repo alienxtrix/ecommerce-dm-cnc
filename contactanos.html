@@ -64,7 +64,7 @@
             <!-- -->
             <!-- Formulario -->
             <section class="right">
-                <form id="formContactanos" class="formC" action="">
+                <form id="formContactanos" class="formC" method="post">
                     <h3 id="titulosn">Contáctanos</h3>
                     <h4 style="text-align: center;">¡Queremos escucharte!</h4>
                     <div class="form-group col-md-6">
@@ -88,7 +88,7 @@
                         <textarea style="resize: none;" class="form-control" id="descriptionContact" rows="3" placeholder="Aquí escribe lo que quieres decirnos"></textarea>
                         <div class="alert" id="alertdes" style="display: none"></div>
                     </div>
-                    <button type="button" class="btn btn-outline" type="submit" id="enviar"><a href="mailto:someone@yoursite.com" class="a_Contactanos">¿Te ayudo con tus dudas?</a></button>
+                    <button type="button" class="btn btn-outline" type="submit" id="enviar">¿Te ayudo con tus dudas?</button>
                 </form>
             </section>
             <!-- Formulario-->
@@ -112,11 +112,11 @@
         <!--Final de Footer-->
 
     </main>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./js/contactanos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
 </body>
 
 </html>
