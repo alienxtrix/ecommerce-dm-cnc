@@ -274,7 +274,7 @@ enviar.addEventListener("click", (event) => {
     };
 
     usuarios.push(newUsuario);
-    localStorage.setItem("Usuario", JSON.stringify(usuarios));
+    localStorage.setItem("Usuario", JSON.stringify(usuarios)); //<----------------------------------------------------
     // POST solicitud con fetch()
     fetch(URL_MAIN, {
             // Agregar el tipo de método

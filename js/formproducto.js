@@ -17,6 +17,7 @@ let imageFileEd = document.getElementById('imageFileEd');
 // Se establecen las excepciones de validación
 let validacionNombre = /^[A-z]{3,100}/;
 let validacionCosto = /^[1-9]+[0-9]{2,10}$/;
+const URL_MAIN = 'http://localhost:8080/api/products/'; // Url del api del backend para el metodo post de user (path="/api/products/")
 
 let alert;
 
@@ -259,51 +260,88 @@ let enviarEd = document.getElementById("enviarEd");
         if (element.getAttribute("id") == "enviar") {
             nombre.value = nombre.value[0].toUpperCase() + nombre.value.substring(1);
             // JSON de producto
-            let prod = `{ 
-                "id": ${contador},
-                "name": "${nombre.value}",
-                "img": "${reader.result}",
-                "category" : "${categoria.value}",
-                "cost": "${costo.value}",
-                "status": "${statuss.value}",
-                "description" : "${descripcion.value}",
-                "rate": ${Math.round(calificacion.value)}
-            }`;
+            let prod = { 
+                product_name: `${nombre.value}`,
+                product_img: `${reader.result}`,
+                product_cost: `${costo.value}`,
+                product_status: `${statuss.value}`,
+                product_description : `${descripcion.value}`,
+                product_rate: `${Math.round(calificacion.value)}`,
+                product_category: `${categoria.value}`
+            };
+
+            fetch(URL_MAIN, {
+                // Agregar el tipo de método
+                method: "POST",
+                // Agregar cuerpo a enviar
+                body: JSON.stringify(prod),
+                // agrega los encabezados a la solicitud
+                headers: {
+                    "Content-type": "application/json; charset=UTF-8"
+                }
+            })
+            // Convierte a JSON
+            .then(response => response.json())
+            // Visualiza resultado en consola
+            .then(json => console.log(json));
+
             // Local Storage
             //stringify convierte a cadena
-            localStorage.setItem("contador", JSON.stringify(contador));
+            // localStorage.setItem("contador", JSON.stringify(contador));
             //parse toma una cadena y la convierte a objeto
-            productos.push(JSON.parse(prod)); 
+            // productos.push(JSON.parse(prod)); 
             //Limpiar formulario
             document.getElementById('myForm').reset();
             document.getElementById('imageFile').src = "";
         } else if (element.getAttribute("id") == "enviarEd") {
-            productos[btn_id].name = document.getElementById("nombreEd").value;
-            productos[btn_id].description = document.getElementById("descripcionEd").value;
-            productos[btn_id].rate =Math.round(document.getElementById("calificacionEd").value);
-            productos[btn_id].cost = document.getElementById("costoEd").value;
+            productos[btn_id-1].product_name = document.getElementById("nombreEd").value;
+            productos[btn_id-1].product_description = document.getElementById("descripcionEd").value;
+            productos[btn_id-1].product_rate =Math.round(document.getElementById("calificacionEd").value);
+            productos[btn_id-1].product_cost = document.getElementById("costoEd").value;
             if (document.getElementById("gridRadios1Ed").checked == true) {
-                productos[btn_id].category = "Almacenamiento";
+                productos[btn_id-1].product_category = 1;
             } else if (document.getElementById("gridRadios2Ed").checked == true) {
-                productos[btn_id].category = "Cocina";
+                productos[btn_id-1].product_category = 2;
             } else if (document.getElementById("gridRadios3Ed").checked == true) {
-                productos[btn_id].category = "Decoración";
+                productos[btn_id-1].product_category = 3;
             } else if (document.getElementById("gridRadios4Ed").checked == true) {
-                productos[btn_id].category = "Varios";
+                productos[btn_id-1].product_category = 4;
             }
             if (document.getElementById("gridRadiosSAEd").checked == true) {
-                productos[btn_id].status = "activo";
+                productos[btn_id-1].product_status = "activo";
             } else if (document.getElementById("gridRadiosSIEd").checked = true) {
-                productos[btn_id].status = "inactivo";
+                productos[btn_id-1].product_status = "inactivo";
             }
 
             if (v == true) {
-                productos[btn_id].img = reader.result;
+                productos[btn_id-1].product_img = reader.result;
             }
+
+            // PUT 
+            let prod = { 
+                product_name: `${nombre.value}`,
+                product_img: `${reader.result}`,
+                product_cost: `${costo.value}`,
+                product_status: `${statuss.value}`,
+                product_description : `${descripcion.value}`,
+                product_rate: `${Math.round(calificacion.value)}`,
+                product_category: `${categoria.value}`
+            };
+
+            fetch(URL_MAIN+(btn_id-1), {
+                // Agregar el tipo de método
+                method: "PUT",
+                // Agregar cuerpo a enviar
+                body: JSON.stringify(prod),
+                // agrega los encabezados a la solicitud
+                headers: {
+                    "Content-type": "application/json; charset=UTF-8"
+                }
+            })
         }
 
         //stringify convierte a cadena
-        localStorage.setItem("productos", JSON.stringify(productos)); 
+        // localStorage.setItem("productos", JSON.stringify(productos)); 
     });
 });
 
