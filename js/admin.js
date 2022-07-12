@@ -1,6 +1,8 @@
 // Arreglo en dodne se almacenan todos los productos
 let productosGrid = [];
+let imgProd = [];
 let imgT = 0;
+localStorage.setItem("imgT", JSON.stringify(imgT));
 
 // Función para agregar la lista de los productos agregados
 function addItem(item) {
@@ -41,10 +43,7 @@ let modals = () => {
         detalles[i].addEventListener("click", (event) => {
             btn_id = "tablaImagen" + detalles[i].getAttribute("id");
             document.getElementById(btn_id).innerHTML = "";
-            imgT = 0;
-            localStorage.setItem("imgT", JSON.stringify(imgT));
-
-            btn_id = detalles[i].getAttribute("id")-1;
+            btn_id = detalles[i].getAttribute("id");
             document.getElementById("nombreEd").value = productosGrid[detalles[i].getAttribute("id")-1].name;
             document.getElementById("descripcionEd").value = productosGrid[detalles[i].getAttribute("id")-1].description;
             clasB = productosGrid[detalles[i].getAttribute("id")-1].category;
@@ -66,11 +65,11 @@ let modals = () => {
             document.getElementById("calificacionEd").value = productosGrid[detalles[i].getAttribute("id")-1].rate;
             document.getElementById("costoEd").value = productosGrid[detalles[i].getAttribute("id")-1].cost;
             document.getElementById("imageFileEd").setAttribute("src", productosGrid[detalles[i].getAttribute("id")-1].img);
-            for (let  i = 1; i <= contador; i++) {
-                btn_id = "tablaImagen" + i;
-                document.getElementById(btn_id).innerHTML = "";
+
+            if (JSON.parse(localStorage.getItem("imgT")) != 0 ) {
+                document.getElementById("tablaImagen" + JSON.parse(localStorage.getItem("imgT"))).innerHTML = "";
+                localStorage.setItem("imgT", JSON.stringify(0));
             }
-            imgT = 0;
         });
     } // for
 } // función modals()
@@ -113,19 +112,30 @@ let imgView = () => {
                                 <td colspan="2"></td>
                                 <td colspan="1" style="text-align: center;">
                                     <button type="button" id="${imagenesT[i].getAttribute("id")}" class="btn btn-outline-info btnImgAgregar">Agregar</button>
+                                    <input type="file" class="form-control-file" id="fileImageAd" style="display:none" onchange="readFile(this, ${imagenesT[i].getAttribute("id")})">
                                 </td> 
                                 <td colspan="1" style="text-align: center;">
                                 <button type="button" id="${imagenesT[i].getAttribute("id")}" class="btn btn-outline-secondary btnImgCerrar">Cerrar</button>
+                                </td>
+                                <td> 
+                                    <img src="" id="imgdd">
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </td>`;
-            if (imgT == 0) {
+            if (JSON.parse(localStorage.getItem("imgT")) == 0) {
                 btn_id = "tablaImagen" + imagenesT[i].getAttribute("id");
                 document.getElementById(btn_id).innerHTML = tablaImagen;
                 imgCerrar();
-                imgT = 1;
+                localStorage.setItem("imgT", JSON.stringify(parseInt(imagenesT[i].getAttribute("id"))));
+            } else {
+                btn_id = "tablaImagen" + localStorage.getItem("imgT");
+                document.getElementById(btn_id).innerHTML = "";
+                btn_id = "tablaImagen" + imagenesT[i].getAttribute("id");
+                document.getElementById(btn_id).innerHTML = tablaImagen;
+                imgCerrar();
+                localStorage.setItem("imgT", JSON.stringify(parseInt(imagenesT[i].getAttribute("id"))));
             }
             imgEliminar();
             imgAgregar();
@@ -151,20 +161,44 @@ let imgEliminar = () => {
     } // for
 } // función imgEliminar()
 
+
 // Función para agregar una imágen a un producto ++
 let imgAgregar = () => {
     let btnImgAgregar = document.getElementsByClassName("btn btn-outline-info btnImgAgregar");
     btnImgAgregar[0].addEventListener("click", (event) => {
-        // console.log(btnImgAgregar[index]);
-        Swal.fire({
-            icon: 'success',
-            title: 'Correcto',
-            text: 'La imágen se subió correctamente',
-            showConfirmButton: false,
-            timer: 1500
-        })
+
+        fileImageAd.click();
+
+        // // console.log(btnImgAgregar[index]);
+        // Swal.fire({
+        //     icon: 'success',
+        //     title: 'Correcto',
+        //     text: 'La imágen se subió correctamente',
+        //     showConfirmButton: false,
+        //     timer: 5500
+        // })
     });
-} // función imgView()
+} // función imgAgregar()
+
+function readFile (input, id) {
+    console.log(id);
+    let file = input.files[0];
+    let reader = new FileReader();
+    reader.readAsDataURL(file);
+    console.log(file);
+    reader.onload = function () {
+        let imgData = `{ 
+            "id": ${id},
+            "name": "${file.name}",
+            "img": "${reader.result}"
+        }`;
+        imgProd.push(JSON.parse(imgData));
+        localStorage.setItem("imgProd", JSON.stringify(imgProd)); 
+    };
+    reader.onerror = function () {
+        console.log(reader.error);
+    };
+}
 
 // Función para ocultar la tabla de las imágenes del producto
 let imgCerrar = () => {
@@ -172,20 +206,25 @@ let imgCerrar = () => {
     btnImgCerrar[0].addEventListener("click", (event) => {
         btn_id = "tablaImagen" + btnImgCerrar[0].getAttribute("id");
         document.getElementById(btn_id).innerHTML = "";
-        imgT = 0;
+        localStorage.setItem("imgT", JSON.stringify(0));
     });
-} // función imgView()
+} // función imgCerrar()
 
 // Función para traer los productos
 window.addEventListener('load', function() {
     if (localStorage.getItem("contador") != null) {
         contador = JSON.parse(localStorage.getItem("contador"));
     } // if
+    if (localStorage.getItem("imgT") != null) {
+        imgT = JSON.parse(localStorage.getItem("imgT"));
+    } // if
+    if (localStorage.getItem("imgProd") != null) {
+        imgProd = JSON.parse(localStorage.getItem("imgProd"));
+    } // if
     if (localStorage.getItem("productos") != null) {
         productosGrid = JSON.parse(localStorage.getItem("productos"));
         productosGrid.forEach(element => {
             addItem(element);
         }); // for-each
-        // modals();
     } // if
 });
