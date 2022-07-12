@@ -77,8 +77,8 @@ enviar.addEventListener("click", (event) => {
     let correo;
     let password;
     for (let i = 0; i < usuarios.length; i++) {
-        correo = usuarios[i].Email;
-        password = usuarios[i].Contrasena;
+        correo = usuarios[i].user_email;
+        password = usuarios[i].user_pass;
         if (correo == mailContact.value && password == passwordContact.value) {
             console.log("igual");
             Swal.fire({
