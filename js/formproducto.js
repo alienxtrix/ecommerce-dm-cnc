@@ -294,41 +294,52 @@ let enviarEd = document.getElementById("enviarEd");
             document.getElementById('myForm').reset();
             document.getElementById('imageFile').src = "";
         } else if (element.getAttribute("id") == "enviarEd") {
-            productos[btn_id-1].product_name = document.getElementById("nombreEd").value;
-            productos[btn_id-1].product_description = document.getElementById("descripcionEd").value;
-            productos[btn_id-1].product_rate =Math.round(document.getElementById("calificacionEd").value);
-            productos[btn_id-1].product_cost = document.getElementById("costoEd").value;
+
+            let name  = document.getElementById("nombreEd").value;
+            let img;
+            let cost = document.getElementById("costoEd").value;
+            let status;
+            let description = document.getElementById("descripcionEd").value;
+            let rate = Math.round(document.getElementById("calificacionEd").value);
+            let category;
+
             if (document.getElementById("gridRadios1Ed").checked == true) {
-                productos[btn_id-1].product_category = 1;
+                category = 1;
             } else if (document.getElementById("gridRadios2Ed").checked == true) {
-                productos[btn_id-1].product_category = 2;
+                category = 2;
             } else if (document.getElementById("gridRadios3Ed").checked == true) {
-                productos[btn_id-1].product_category = 3;
+                category = 3;
             } else if (document.getElementById("gridRadios4Ed").checked == true) {
-                productos[btn_id-1].product_category = 4;
+                category = 4;
             }
             if (document.getElementById("gridRadiosSAEd").checked == true) {
-                productos[btn_id-1].product_status = "activo";
+                status = "activo";
             } else if (document.getElementById("gridRadiosSIEd").checked = true) {
-                productos[btn_id-1].product_status = "inactivo";
+                status = "inactivo";
             }
 
             if (v == true) {
-                productos[btn_id-1].product_img = reader.result;
+                img = reader.result;
             }
+            
+            // img = img.replace(/\+/g, '%2B');
+            // img = img.replace(/\//g, '%2F');
+            // img = img.replace(/\=/g, '%3D');
 
             // PUT 
             let prod = { 
-                product_name: `${nombre.value}`,
-                product_img: `${reader.result}`,
-                product_cost: `${costo.value}`,
-                product_status: `${statuss.value}`,
-                product_description : `${descripcion.value}`,
-                product_rate: `${Math.round(calificacion.value)}`,
-                product_category: `${categoria.value}`
+                product_name: name,
+                product_img: img,
+                product_cost: cost,
+                product_status: status,
+                product_description : description,
+                product_rate: rate,
+                product_category: category
             };
+            
+            console.log(btn_id);
 
-            fetch(URL_MAIN+(btn_id-1), {
+            fetch(URL_MAIN + btn_id, {
                 // Agregar el tipo de método
                 method: "PUT",
                 // Agregar cuerpo a enviar
@@ -338,7 +349,13 @@ let enviarEd = document.getElementById("enviarEd");
                     "Content-type": "application/json; charset=UTF-8"
                 }
             })
+            // Convierte a JSON
+            .then(response => response.json())
+            // Visualiza resultado en consola
+            .then(json => console.log(json));
+
         }
+        
 
         //stringify convierte a cadena
         // localStorage.setItem("productos", JSON.stringify(productos)); 

@@ -7,24 +7,24 @@ localStorage.setItem("imgT", JSON.stringify(imgT));
 // Función para agregar la lista de los productos agregados
 function addItem(item) {
     let rate = "";
-    for (let i = 1; i <= item.rate; i++) {
+    for (let i = 1; i <= item.product_rate; i++) {
         rate += `<i class="fa fa-star" aria-hidden="true"></i>`
     } // for
     const itemHTML = `
     <tr class="activeT">
-        <td>${item.id}</td>
-        <td>${item.name}</td>
-        <td>${item.rate}</td>
-        <td>$ ${item.cost}</td>
-        <td>${item.status}</td>
+        <td>${item.product_id}</td>
+        <td>${item.product_name}</td>
+        <td>${item.product_rate}</td>
+        <td>$ ${item.product_cost}</td>
+        <td>${item.product_status}</td>
         <td>
-            <i class="fa fa-pencil-square-o btnEditarClass" aria-hidden="true" data-toggle=modal data-target="#staticBackdrop" id="${item.id}"></i>
+            <i class="fa fa-pencil-square-o btnEditarClass" aria-hidden="true" data-toggle=modal data-target="#staticBackdrop" id="${item.product_id}"></i>
         </td>
         <td>
-            <i class="fa fa-picture-o btnImagenesClass" id="${item.id}"></i>
+            <i class="fa fa-picture-o btnImagenesClass" id="${item.product_id}"></i>
         </td>
     </tr>
-    <tr class="tablaImagenesClass" id="tablaImagen${item.id}">
+    <tr class="tablaImagenesClass" id="tablaImagen${item.product_id}">
         <!-- Aquí va la nueva tabla de imágenes -->
     </tr>`;  
     const itemsGrid = document.getElementById("listItemsAdmin");
@@ -41,35 +41,49 @@ let statussB;
 let modals = () => {
     for (let i = 0; i < detalles.length; i++) {
         detalles[i].addEventListener("click", (event) => {
-            btn_id = "tablaImagen" + detalles[i].getAttribute("id");
-            document.getElementById(btn_id).innerHTML = "";
-            btn_id = detalles[i].getAttribute("id");
-            document.getElementById("nombreEd").value = productosGrid[detalles[i].getAttribute("id")-1].name;
-            document.getElementById("descripcionEd").value = productosGrid[detalles[i].getAttribute("id")-1].description;
-            clasB = productosGrid[detalles[i].getAttribute("id")-1].category;
-            if (clasB == "Almacenamiento") {
-                document.getElementById("gridRadios1Ed").checked = true;
-            } else if (clasB == "Cocina") {
-                document.getElementById("gridRadios2Ed").checked = true;
-            } else if (clasB == "Decoración") {
-                document.getElementById("gridRadios3Ed").checked = true;
-            } else if (clasB == "Varios") {
-                document.getElementById("gridRadios4Ed").checked = true;
-            }
-            statussB = productosGrid[detalles[i].getAttribute("id")-1].status;
-            if (statussB == "activo") {
-                document.getElementById("gridRadiosSAEd").checked = true;
-            } else if (statussB == "inactivo") {
-                document.getElementById("gridRadiosSIEd").checked = true;
-            }
-            document.getElementById("calificacionEd").value = productosGrid[detalles[i].getAttribute("id")-1].rate;
-            document.getElementById("costoEd").value = productosGrid[detalles[i].getAttribute("id")-1].cost;
-            document.getElementById("imageFileEd").setAttribute("src", productosGrid[detalles[i].getAttribute("id")-1].img);
+            fetch(URL_MAIN + (detalles[i].getAttribute("id")), {
+                // Agregar el tipo de método
+                method: "GET",
+                // agrega los encabezados a la solicitud
+                headers: {
+                    "Content-type": "application/json; charset=UTF-8"
+                }
+            }).then(function(response) {
+                response.json().then(function (json) {
 
-            if (JSON.parse(localStorage.getItem("imgT")) != 0 ) {
-                document.getElementById("tablaImagen" + JSON.parse(localStorage.getItem("imgT"))).innerHTML = "";
-                localStorage.setItem("imgT", JSON.stringify(0));
-            }
+                    let producto = json;
+
+                    btn_id = "tablaImagen" + detalles[i].getAttribute("id");
+                    document.getElementById(btn_id).innerHTML = "";
+                    btn_id = detalles[i].getAttribute("id");
+                    
+                    document.getElementById("nombreEd").value = producto.product_name;
+                    document.getElementById("descripcionEd").value = producto.product_description;
+                    clasB = producto.product_category;
+                    if (clasB == 1) {
+                        document.getElementById("gridRadios1Ed").checked = true;
+                    } else if (clasB == 2) {
+                        document.getElementById("gridRadios2Ed").checked = true;
+                    } else if (clasB == 3) {
+                        document.getElementById("gridRadios3Ed").checked = true;
+                    } else if (clasB == 4) {
+                        document.getElementById("gridRadios4Ed").checked = true;
+                    }
+                    statussB = producto.product_status;
+                    if (statussB == "activo") {
+                        document.getElementById("gridRadiosSAEd").checked = true;
+                    } else if (statussB == "inactivo") {
+                        document.getElementById("gridRadiosSIEd").checked = true;
+                    }
+                    document.getElementById("calificacionEd").value = producto.product_rate;
+                    document.getElementById("costoEd").value = producto.product_cost;
+                    document.getElementById("imageFileEd").setAttribute("src", producto.product_img);
+        
+                    if (JSON.parse(localStorage.getItem("imgT")) != 0 ) {
+                        document.getElementById("tablaImagen" + JSON.parse(localStorage.getItem("imgT"))).innerHTML = "";
+                        localStorage.setItem("imgT", JSON.stringify(0));
+                    }
+            })});
         });
     } // for
 } // función modals()
@@ -181,11 +195,9 @@ let imgAgregar = () => {
 } // función imgAgregar()
 
 function readFile (input, id) {
-    console.log(id);
     let file = input.files[0];
     let reader = new FileReader();
     reader.readAsDataURL(file);
-    console.log(file);
     reader.onload = function () {
         let imgData = `{ 
             "id": ${id},
@@ -221,10 +233,20 @@ window.addEventListener('load', function() {
     if (localStorage.getItem("imgProd") != null) {
         imgProd = JSON.parse(localStorage.getItem("imgProd"));
     } // if
-    if (localStorage.getItem("productos") != null) {
-        productosGrid = JSON.parse(localStorage.getItem("productos"));
-        productosGrid.forEach(element => {
-            addItem(element);
-        }); // for-each
-    } // if
+
+    fetch(URL_MAIN, {
+        // Agregar el tipo de método
+        method: "GET",
+        // agrega los encabezados a la solicitud
+        headers: {
+            "Content-type": "application/json; charset=UTF-8"
+        }
+    }).then(function(response) {
+        response.json().then(function (json) {
+            productosGrid=json;
+            // console.log(productosGrid);
+            productosGrid.forEach(element => {
+                addItem(element);
+            }); // for-each
+    })});
 });
