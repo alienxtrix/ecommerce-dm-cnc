@@ -110,9 +110,16 @@ enviar.addEventListener("click", (event) => {
                 });
 
                 localStorage.setItem("statusSesion",obj.body.accesToken);
-                setTimeout(() => {
-                location.href = "./index.html";
-                }, 1500);
+                if(obj.body.accesToken==1){
+                    setTimeout(() => {
+                        location.href = "./index.html";
+                    }, 1500);
+                } else{
+                    setTimeout(() => {
+                        location.href = "./admin.html";
+                    }, 1500);
+
+                }
             }
         });
 

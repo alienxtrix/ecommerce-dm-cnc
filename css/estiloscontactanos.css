@@ -166,6 +166,9 @@ ul {
     text-decoration: none;
 }
 
+#enviar:hover{
+    color: #FFFFFF;
+}
 
 /* Botón "Ir Arriba" */
 

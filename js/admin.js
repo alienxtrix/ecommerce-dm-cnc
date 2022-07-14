@@ -249,4 +249,11 @@ window.addEventListener('load', function() {
                 addItem(element);
             }); // for-each
     })});
+    
+});
+
+let salir = document.getElementById("btnForm");
+salir.addEventListener("click", (event) => {
+    event.preventDefault();
+    location.href = "./index.html";
 });

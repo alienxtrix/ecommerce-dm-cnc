@@ -51,6 +51,7 @@ main {
     margin-top: 50px;
     margin-bottom: 50px;
 }
+
 .cards {
     display: flex;
     align-items: center;

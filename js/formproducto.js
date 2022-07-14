@@ -7,6 +7,8 @@ let imagen = document.getElementById("imagen")
 let fileImage = document.getElementById('fileImage');
 let btnFake = document.getElementById('btnFake');
 let imageFile = document.getElementById('imageFile');
+let stringtoken;
+let token;
 
 // Trae los elementos del formulario para editar productos
 let nombreEd = document.getElementById("nombreEd");
@@ -247,14 +249,7 @@ let enviarEd = document.getElementById("enviarEd");
             return false;
         }
     
-        // Si no falla validaciones, se muestra alerta de que se subió correctamente
-        Swal.fire({
-            icon: 'success',
-            title: 'Correcto',
-            text: 'El producto se subió correctamente',
-            showConfirmButton: false,
-            timer: 1500
-        })
+        
         contador++;
         // Se crea o se edita la información dependiendo del form
         if (element.getAttribute("id") == "enviar") {
@@ -277,22 +272,30 @@ let enviarEd = document.getElementById("enviarEd");
                 body: JSON.stringify(prod),
                 // agrega los encabezados a la solicitud
                 headers: {
-                    "Content-type": "application/json; charset=UTF-8"
+                    "Content-type": "application/json; charset=UTF-8",
+                    "Authorization" : token
                 }
             })
             // Convierte a JSON
-            .then(response => response.json())
-            // Visualiza resultado en consola
-            .then(json => console.log(json));
-
-            // Local Storage
-            //stringify convierte a cadena
-            // localStorage.setItem("contador", JSON.stringify(contador));
-            //parse toma una cadena y la convierte a objeto
-            // productos.push(JSON.parse(prod)); 
-            //Limpiar formulario
-            document.getElementById('myForm').reset();
-            document.getElementById('imageFile').src = "";
+            .then(response => {                            // Se inicia sesión correctamente
+                // Si no falla validaciones, se muestra alerta de que se subió correctamente
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Correcto',
+                    text: 'El producto se subió correctamente',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                document.getElementById('myForm').reset();
+                document.getElementById('imageFile').src = "";
+                
+                
+            }). catch(error => {
+                Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                })
+            });
         } else if (element.getAttribute("id") == "enviarEd") {
 
             let name  = document.getElementById("nombreEd").value;
@@ -346,28 +349,35 @@ let enviarEd = document.getElementById("enviarEd");
                 body: JSON.stringify(prod),
                 // agrega los encabezados a la solicitud
                 headers: {
-                    "Content-type": "application/json; charset=UTF-8"
+                    "Content-type": "application/json; charset=UTF-8",
+                    "Authorization" : token
                 }
             })
             // Convierte a JSON
-            .then(response => response.json())
-            // Visualiza resultado en consola
-            .then(json => console.log(json));
+            .then(response => response.json()
+              .then(json => {console.log(json)
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Correcto',
+                    text: 'El producto se actualizó correctamente',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+              })
+            ).catch(error =>{
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    })
+            });
 
         }
         
-
-        //stringify convierte a cadena
-        // localStorage.setItem("productos", JSON.stringify(productos)); 
     });
 });
 
 // Función para traer los productos
 window.addEventListener('load', function() {
-    if (localStorage.getItem("contador") != null) {
-        contador = JSON.parse(localStorage.getItem("contador"));
-    } // if
-    if (localStorage.getItem("productos") != null) {
-        productos = JSON.parse(localStorage.getItem("productos"));
-    } // if
+     stringtoken = localStorage.getItem("statusSesion");
+     token = ("Bearer: "+ stringtoken);
 });

@@ -259,7 +259,7 @@ enviar.addEventListener("click", (event) => {
                 Swal.fire({
                     icon: 'success',
                     title: 'Correcto',
-                    text: 'Se ha iniciado sesión',
+                    text: 'Se ha registrado exitosamente',
                     showConfirmButton: false,
                     timer: 1500
                 });
