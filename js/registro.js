@@ -126,25 +126,6 @@ function validarEmail() {
 } // Validación de email
 
 
-function emailExistente() {
-    for (let i = 0; i < usuarios.length; i++) {
-        let checkEmail = usuarios[i].Email;
-        // console.log(checkEmail);
-        // console.log(document.getElementById("mailContact").value)
-        if (checkEmail == document.getElementById("mailContact").value) {
-            // console.log(i);
-            mailContact.style.border = "red thin solid";
-            document.getElementById("alertmail").innerHTML = "Correo electrónico ya registrado, favor de utilizar otro";
-            document.getElementById("alertmail").style = "display: block; margin-bottom: -10px;";
-            return false;
-        }
-    }
-    mailContact.style.border = "green thin solid";
-    document.getElementById("alertmail").style.display = "none";
-    return true;
-}
-//Correo ya registrado
-
 function validarPoliticas() {
     let politicas = document.getElementById("politicas");
     if (!politicas.checked) {
@@ -197,10 +178,7 @@ numberContact.addEventListener("blur", (e) => {
 
 mailContact.addEventListener("blur", (e) => {
         e.target.value = e.target.value.trim();
-        if (validarEmail()) {
-            emailExistente();
-        }
-
+        validarEmail()
     }) // Email
 
 passwordContact.addEventListener("blur", (e) => {
@@ -242,26 +220,6 @@ enviar.addEventListener("click", (event) => {
         return false;
     }
 
-    emailExistente();
-    if (!emailExistente()) {
-        Swal.fire({
-            icon: 'error',
-            title: 'Error',
-            text: 'Este email ya está registrado',
-        })
-        return false;
-    }
-
-    // Si no falla validaciones, se muestra alerta de que se registró correctamente
-    Swal.fire({
-        icon: 'success',
-        title: 'Correcto',
-        text: 'Se ha registrado exitosamente',
-        showConfirmButton: false,
-        timer: 1500
-    })
-
-    //============================== Guardar en el local storage ====================
 
     let newUsuario = {
         user_name: document.querySelector(`#nameContact`).value,
@@ -270,11 +228,10 @@ enviar.addEventListener("click", (event) => {
         user_date: document.querySelector(`#birthDate`).value,
         user_pass: document.querySelector(`#passwordContact`).value,
         user_phone: document.querySelector(`#numberContact`).value,
-        user_email: document.querySelector(`#mailContact`).value
+        user_email: document.querySelector(`#mailContact`).value,
+        user_type_id: 1
     };
 
-    usuarios.push(newUsuario);
-    localStorage.setItem("Usuario", JSON.stringify(usuarios)); //<----------------------------------------------------
     // POST solicitud con fetch()
     fetch(URL_MAIN, {
             // Agregar el tipo de método
@@ -287,11 +244,31 @@ enviar.addEventListener("click", (event) => {
             }
         })
         // Convierte a JSON
-        .then(response => response.json())
-        // Visualiza resultado en consola
-        .then(json => console.log(json));
-    // Se limpia formulario
-    document.getElementById('formRe').reset();
+        .then(response => response.json()
+        .then(data => ({status: response.status, body: data})))
+        .then(obj=> {                                                // Hacemos validaciones del status del objeto
+            if (obj.status == 500) {                                   // Error internal server (usuario y/o contraseña incorrecto)
+                    Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'Este correo ya está registrado',
+                })
+                mailContact.style.border = "red thin solid";
+            } 
+            else if ( obj.status == 200) {                            // Se inicia sesión correctamente
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Correcto',
+                    text: 'Se ha iniciado sesión',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                // Se limpia formulario
+                document.getElementById('formRe').reset();
+
+            }
+        });
+    
 });
 
 window.addEventListener("load", function() {

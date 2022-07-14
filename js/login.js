@@ -3,6 +3,8 @@ let statusSesion = 0;
 let mailContact = document.getElementById("mailContact")
 let passwordContact = document.getElementById("passwordContact")
 let usuarios = [];
+const URL_MAIN = 'http://localhost:8080/api/login/'; // Url del api del backend para el metodo post de user (path="/api/products/")
+
 
 //------------------------> F U N C I O N E S    D E   V A L I D A C I O N E S <--------------------------------
 
@@ -73,44 +75,58 @@ enviar.addEventListener("click", (event) => {
         return false;
     }
 
-    // Si se accede a correctamente a la cuenta, se cambia login por Mi sesion y redirecciona a index
-    let correo;
-    let password;
-    for (let i = 0; i < usuarios.length; i++) {
-        correo = usuarios[i].user_email;
-        password = usuarios[i].user_pass;
-        if (correo == mailContact.value && password == passwordContact.value) {
-            console.log("igual");
-            Swal.fire({
-                icon: 'success',
-                title: 'Correcto',
-                text: 'Se ha iniciado sesión',
-                showConfirmButton: false,
-                timer: 1500
-            });
-            localStorage.setItem("statusSesion", correo);
-            setTimeout(() => {
+
+    let user = { 
+        user_email: `${mailContact.value}`,
+        user_pass: `${passwordContact.value}`,
+    };
+    let obj;
+        fetch(URL_MAIN, {
+            // Agregar el tipo de método
+            method: "POST",
+            // Agregar cuerpo a enviar
+            body: JSON.stringify(user),
+            // agrega los encabezados a la solicitud
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+            }
+        }).then(response => response.json()                            // Se convierte respuesta a JSON
+        .then(data => ({status: response.status, body: data})))        // Traemos status de la respuesta y el token (data) en un objeto
+        .then (obj => {                                                // Hacemos validaciones del status del objeto
+            if (obj.status == 500) {                                   // Error internal server (usuario y/o contraseña incorrecto)
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'Usuario y/o contraseña incorrecto',
+                })
+            } 
+            else if ( obj.status == 200) {                            // Se inicia sesión correctamente
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Correcto',
+                    text: 'Se ha iniciado sesión',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+
+                localStorage.setItem("statusSesion",obj.body.accesToken);
+                setTimeout(() => {
                 location.href = "./index.html";
-            }, 1500);
-            return true;
-        } else {
-            Swal.fire({
-                icon: 'error',
-                title: 'Error',
-                text: 'Usuario y/o contraseña incorrecto',
-            })
-        }
-    }
+                }, 1500);
+            }
+        });
 
-
-
+        
+      
+       
 
     // Se limpia formulario
     document.getElementById('formIn').reset();
     mailContact.style.border = "grey thin solid";
     passwordContact.style.border = "grey thin solid";
+    });
 
-});
+
 
 // Función para traer nombre de usuario y email
 window.addEventListener('load', function() {

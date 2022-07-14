@@ -20,8 +20,12 @@
     <div id="nav-placeholder">
         <script src="//code.jquery.com/jquery.min.js"></script>
         <script>
-            $.get("./navbar.html", function(data){
-            $("#nav-placeholder").replaceWith(data);
+            $.get("./navbar.html", function(data) {
+                $("#nav-placeholder").replaceWith(data);
+                if (localStorage.getItem("statusSesion")) {
+                    document.getElementById("sesion").style.display = "none";
+                    document.getElementById("sesionActive").style.display = "flex";
+                }
             });
         </script>
     
